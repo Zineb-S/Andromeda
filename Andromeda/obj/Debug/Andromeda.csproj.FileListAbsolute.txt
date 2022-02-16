@@ -39,3 +39,4 @@ C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.csproj.CoreC
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.csproj.CopyComplete
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.exe
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.pdb
+C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.MainMenu.resources
