@@ -19,22 +19,23 @@ namespace Andromeda
         public LoginForm()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             DB db = new DB();
 
-            String username = textBoxUsername.Text;
+            String email = textBoxEmail.Text;
             String password = textBoxPassword.Text;
 
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `User_Name` = @usn and `User_Password` = @pass", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `User_Email` = @email and `User_Password` = @pass", db.getConnection());
 
-            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
+            command.Parameters.Add("@email", MySqlDbType.VarChar).Value = email;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
 
             adapter.SelectCommand = command;
@@ -44,7 +45,10 @@ namespace Andromeda
             // check if the user exists or not
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Welcome " + username);
+                MessageBox.Show("Welcome");
+                this.Hide();
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.Show();
             }
             else
             {

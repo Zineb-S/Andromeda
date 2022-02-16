@@ -31,7 +31,7 @@ namespace Andromeda
         private void textBoxFirstname_Enter(object sender, EventArgs e)
         {
             String fname = textBoxFirstname.Text;
-            if(fname.Equals("first name"))
+            if (fname.Equals("first name"))
             {
                 textBoxFirstname.Text = "";
             }
@@ -42,16 +42,16 @@ namespace Andromeda
                 textBoxLastname.Text = "";
             }
 
-            String username = textBoxUsername.Text;
+            String username = textBoxEmail.Text;
             if (username.Equals("username"))
             {
-                textBoxUsername.Text = "";
+                textBoxEmail.Text = "";
             }
 
-            String email = textBoxEmail.Text;
+            String email = textBoxUsername.Text;
             if (email.Equals("email address"))
             {
-                textBoxEmail.Text = "";
+                textBoxUsername.Text = "";
             }
 
             String password = textBoxPassword.Text;
@@ -83,21 +83,23 @@ namespace Andromeda
         {
             //add new user
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO users(User_Name, User_First_Name, User_Last_Name, User_Email, User_Password) VALUES(@usn, @fn, @ln, @email, @pass)", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO users(User_Name, User_First_Name, User_Last_Name, User_Email, User_Password, Date_Of_Birth, Gender_Users) VALUES(@usn, @fn, @ln, @email, @pass,@year, @gender)", db.getConnection());
             command.Parameters.Add("@fn", MySqlDbType.VarChar).Value = textBoxFirstname.Text;
             command.Parameters.Add("@ln", MySqlDbType.VarChar).Value = textBoxLastname.Text;
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = textBoxUsername.Text;
             command.Parameters.Add("@email", MySqlDbType.VarChar).Value = textBoxEmail.Text;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = textBoxPassword.Text;
-            command.Parameters.Add("@day", MySqlDbType.VarChar).Value = textBoxBirthDay.Text;
-            command.Parameters.Add("@month", MySqlDbType.VarChar).Value = textBoxBirthMonth.Text;
-            command.Parameters.Add("@year", MySqlDbType.VarChar).Value = textBoxBirthYear.Text;
+            command.Parameters.Add("@year", MySqlDbType.VarChar).Value = textBoxBirthYear.Text + "-" + textBoxBirthMonth.Text + "-" + textBoxBirthDay.Text;
+            command.Parameters.Add("@gender", MySqlDbType.VarChar).Value = textBoxGender.Text;
+
+
+
 
 
             //open the connection
             db.openConnection();
 
-            if(!checkTextBoxesValues())
+            if (!checkTextBoxesValues())
             {
                 //check if passwords are the same
                 if (textBoxConfirmPassword.Text.Equals(textBoxPassword.Text))
@@ -108,16 +110,30 @@ namespace Andromeda
                     }
                     else
                     {
-                        //execute query
-                        if (command.ExecuteNonQuery() == 1)
-                        {
-                            MessageBox.Show("Account created");
+                        //error date
 
-                        }
-                        else
                         {
+                            string year = textBoxBirthYear.Text;
+                            string day = textBoxBirthDay.Text;
+                            string month = textBoxBirthMonth.Text;
+                            if ((Int32.Parse(year) > 2022) || (Int32.Parse(day) > 31) || (Int32.Parse(month) > 12))
+                            {
+                                MessageBox.Show("ma3arefch fo9ach tzaditiii ??");
+                            }
+                            else
+                            {
+                                if (command.ExecuteNonQuery() == 1)
+                                {
+                                    MessageBox.Show("Account created");
 
-                            MessageBox.Show("ERROR");
+                                }
+                                else
+                                {
+
+                                    MessageBox.Show("ERROR");
+                                }
+                            }
+
                         }
                     }
                 }
@@ -131,18 +147,18 @@ namespace Andromeda
                 MessageBox.Show("Enter all informations");
             }
 
-            
 
 
-            
+
+
 
             //check if the username already exists
             bool checkUsername(DB db2)
             {
 
-      
 
-                String username = textBoxUsername.Text;
+
+                String username = textBoxEmail.Text;
 
 
                 DataTable table = new DataTable();
@@ -177,12 +193,12 @@ namespace Andromeda
             {
                 String fname = textBoxFirstname.Text;
                 String lname = textBoxLastname.Text;
-                String username = textBoxUsername.Text;
-                String email = textBoxEmail.Text;
+                String username = textBoxEmail.Text;
+                String email = textBoxUsername.Text;
                 String pass = textBoxPassword.Text;
-                
 
-                if(fname.Equals("first name") || lname.Equals("last name") || username.Equals("username") || email.Equals("email address") || pass.Equals("password"))
+
+                if (fname.Equals("first name") || lname.Equals("last name") || username.Equals("username") || email.Equals("email address") || pass.Equals("password"))
                 {
                     return true;
                 }
@@ -190,7 +206,7 @@ namespace Andromeda
                 {
                     return false;
                 }
-                
+
             }
 
 
@@ -198,7 +214,7 @@ namespace Andromeda
             db.closeConnection();
 
 
-            
+
 
         }
 
