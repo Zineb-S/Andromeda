@@ -53,6 +53,36 @@
     <Compile Include="AddComment.Designer.cs">
       <DependentUpon>AddComment.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEvent.Designer.cs">
+      <DependentUpon>AddEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGroup.Designer.cs">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMembers.Designer.cs">
+      <DependentUpon>AddMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPage.Designer.cs">
+      <DependentUpon>AddPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPost.Designer.cs">
+      <DependentUpon>AddPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Aliens.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,11 +138,11 @@
     <Compile Include="GroupDetails.Designer.cs">
       <DependentUpon>GroupDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupsListcs.cs">
+    <Compile Include="GroupsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GroupsListcs.Designer.cs">
-      <DependentUpon>GroupsListcs.cs</DependentUpon>
+    <Compile Include="GroupsList.Designer.cs">
+      <DependentUpon>GroupsList.cs</DependentUpon>
     </Compile>
     <Compile Include="Inbox.cs">
       <SubType>Form</SubType>
@@ -144,11 +174,11 @@
     <Compile Include="MembersList.Designer.cs">
       <DependentUpon>MembersList.cs</DependentUpon>
     </Compile>
-    <Compile Include="MessageBox.cs">
+    <Compile Include="MessageBoxItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MessageBox.Designer.cs">
-      <DependentUpon>MessageBox.cs</DependentUpon>
+    <Compile Include="MessageBoxItem.Designer.cs">
+      <DependentUpon>MessageBoxItem.cs</DependentUpon>
     </Compile>
     <Compile Include="NewsFeed.cs">
       <SubType>Form</SubType>
@@ -233,6 +263,21 @@
     <EmbeddedResource Include="AddComment.resx">
       <DependentUpon>AddComment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEvent.resx">
+      <DependentUpon>AddEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddGroup.resx">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMembers.resx">
+      <DependentUpon>AddMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPage.resx">
+      <DependentUpon>AddPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPost.resx">
+      <DependentUpon>AddPost.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Aliens.resx">
       <DependentUpon>Aliens.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,8 +305,8 @@
     <EmbeddedResource Include="GroupDetails.resx">
       <DependentUpon>GroupDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GroupsListcs.resx">
-      <DependentUpon>GroupsListcs.cs</DependentUpon>
+    <EmbeddedResource Include="GroupsList.resx">
+      <DependentUpon>GroupsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inbox.resx">
       <DependentUpon>Inbox.cs</DependentUpon>
@@ -278,8 +323,8 @@
     <EmbeddedResource Include="MembersList.resx">
       <DependentUpon>MembersList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MessageBox.resx">
-      <DependentUpon>MessageBox.cs</DependentUpon>
+    <EmbeddedResource Include="MessageBoxItem.resx">
+      <DependentUpon>MessageBoxItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewsFeed.resx">
       <DependentUpon>NewsFeed.cs</DependentUpon>

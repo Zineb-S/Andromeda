@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Andromeda
 {
-    public partial class GroupsListcs : Form
+    public partial class AddPage : Form
     {
-        public GroupsListcs()
+        public AddPage()
         {
             InitializeComponent();
         }

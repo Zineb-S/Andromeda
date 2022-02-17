@@ -39,7 +39,9 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Settings settingss = new Settings();
+            settingss.Show();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -64,7 +66,16 @@ namespace Andromeda
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Show();
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Welcome logout = new Welcome();
+            logout.Show();
         }
     }
 }

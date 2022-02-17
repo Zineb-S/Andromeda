@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Andromeda
 {
-    public partial class MessageBox : UserControl
+    public partial class MessageBoxItem : UserControl
     {
-        public MessageBox()
+        public MessageBoxItem()
         {
             InitializeComponent();
         }

@@ -67,5 +67,15 @@ namespace Andromeda
             RegisterForm registerForm = new RegisterForm();
             registerForm.Show();
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

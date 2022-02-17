@@ -62,6 +62,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // PostsList
             // 
@@ -72,6 +73,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Name = "PostsList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PostsList";
             this.ResumeLayout(false);
 

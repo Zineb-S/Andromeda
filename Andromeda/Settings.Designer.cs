@@ -179,6 +179,7 @@
             this.ButtonCreateAccount.TabIndex = 25;
             this.ButtonCreateAccount.Text = "Update";
             this.ButtonCreateAccount.UseVisualStyleBackColor = true;
+            this.ButtonCreateAccount.Click += new System.EventHandler(this.ButtonCreateAccount_Click);
             // 
             // textBoxEmail
             // 
@@ -222,6 +223,7 @@
             this.Controls.Add(this.ButtonCreateAccount);
             this.Controls.Add(this.textBoxEmail);
             this.Name = "Settings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
             this.ResumeLayout(false);
             this.PerformLayout();

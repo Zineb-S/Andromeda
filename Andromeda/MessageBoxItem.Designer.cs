@@ -1,6 +1,6 @@
 ﻿namespace Andromeda
 {
-    partial class MessageBox
+    partial class MessageBoxItem
     {
         /// <summary> 
         /// Required designer variable.

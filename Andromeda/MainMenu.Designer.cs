@@ -85,6 +85,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "News Feed";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -96,6 +97,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Posts";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -119,6 +121,7 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "Events";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -130,6 +133,7 @@
             this.button7.TabIndex = 6;
             this.button7.Text = "Groups";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -141,6 +145,7 @@
             this.button8.TabIndex = 7;
             this.button8.Text = "Profile";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -187,6 +192,7 @@
             this.button11.TabIndex = 12;
             this.button11.Text = "Search";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -277,6 +283,7 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);

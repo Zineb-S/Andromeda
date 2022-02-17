@@ -42,6 +42,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel1
             // 
@@ -60,6 +61,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = " Create ";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // EventsList
             // 
@@ -70,6 +72,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Name = "EventsList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventsList";
             this.ResumeLayout(false);
 

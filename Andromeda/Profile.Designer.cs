@@ -229,6 +229,7 @@
             this.button3.TabIndex = 16;
             this.button3.Text = "Log Out";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label14
             // 
@@ -266,6 +267,7 @@
             this.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Profile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
