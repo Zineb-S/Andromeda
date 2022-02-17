@@ -87,7 +87,7 @@ namespace Andromeda
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.MaximumSize = new System.Drawing.Size(1000, 999);
             this.panel1.MinimumSize = new System.Drawing.Size(1000, 999);
             this.panel1.Name = "panel1";
@@ -175,7 +175,7 @@ namespace Andromeda
             this.textBoxBirthYear.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.textBoxBirthYear.ForeColor = System.Drawing.Color.Black;
             this.textBoxBirthYear.Location = new System.Drawing.Point(633, 590);
-            this.textBoxBirthYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxBirthYear.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBirthYear.Multiline = true;
             this.textBoxBirthYear.Name = "textBoxBirthYear";
             this.textBoxBirthYear.Size = new System.Drawing.Size(87, 26);
@@ -331,7 +331,7 @@ namespace Andromeda
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.Gray;
             this.textBoxPassword.Location = new System.Drawing.Point(303, 473);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(555, 46);
             this.textBoxPassword.TabIndex = 8;
@@ -341,7 +341,7 @@ namespace Andromeda
             this.textBoxLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLastname.ForeColor = System.Drawing.Color.Gray;
             this.textBoxLastname.Location = new System.Drawing.Point(303, 209);
-            this.textBoxLastname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxLastname.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLastname.Multiline = true;
             this.textBoxLastname.Name = "textBoxLastname";
             this.textBoxLastname.Size = new System.Drawing.Size(555, 45);
@@ -353,7 +353,7 @@ namespace Andromeda
             this.textBoxFirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFirstname.ForeColor = System.Drawing.Color.Gray;
             this.textBoxFirstname.Location = new System.Drawing.Point(303, 145);
-            this.textBoxFirstname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxFirstname.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFirstname.Multiline = true;
             this.textBoxFirstname.Name = "textBoxFirstname";
             this.textBoxFirstname.Size = new System.Drawing.Size(555, 45);
@@ -365,7 +365,7 @@ namespace Andromeda
             this.textBoxConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxConfirmPassword.ForeColor = System.Drawing.Color.Gray;
             this.textBoxConfirmPassword.Location = new System.Drawing.Point(303, 405);
-            this.textBoxConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxConfirmPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
             this.textBoxConfirmPassword.Size = new System.Drawing.Size(555, 46);
             this.textBoxConfirmPassword.TabIndex = 5;
@@ -375,7 +375,7 @@ namespace Andromeda
             this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.ForeColor = System.Drawing.Color.Gray;
             this.textBoxUsername.Location = new System.Drawing.Point(303, 274);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Multiline = true;
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(555, 45);
@@ -386,7 +386,7 @@ namespace Andromeda
             // 
             this.ButtonCreateAccount.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonCreateAccount.Location = new System.Drawing.Point(260, 641);
-            this.ButtonCreateAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonCreateAccount.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonCreateAccount.Name = "ButtonCreateAccount";
             this.ButtonCreateAccount.Size = new System.Drawing.Size(541, 59);
             this.ButtonCreateAccount.TabIndex = 3;
@@ -400,7 +400,7 @@ namespace Andromeda
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.ForeColor = System.Drawing.Color.Gray;
             this.textBoxEmail.Location = new System.Drawing.Point(303, 338);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(555, 45);
@@ -411,7 +411,7 @@ namespace Andromeda
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(29, 22);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(293, 71);
             this.panel2.TabIndex = 0;
@@ -436,7 +436,7 @@ namespace Andromeda
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(999, 769);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RegisterForm";

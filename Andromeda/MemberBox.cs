@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Andromeda
 {
-    public partial class CommentBox : UserControl
+    public partial class MemberBox : UserControl
     {
-        public CommentBox()
+        public MemberBox()
         {
             InitializeComponent();
+        }
+
+        private void MemberBox_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -23,16 +28,6 @@ namespace Andromeda
         }
 
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

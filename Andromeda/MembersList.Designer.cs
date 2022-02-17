@@ -1,6 +1,6 @@
 ﻿namespace Andromeda
 {
-    partial class Form1
+    partial class MembersList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // Form1
+            // panel1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Location = new System.Drawing.Point(12, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(767, 610);
+            this.panel1.TabIndex = 0;
+            // 
+            // MembersList
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 485);
-            this.Name = "Form1";
-            this.Text = "MenuForme";
+            this.ClientSize = new System.Drawing.Size(800, 646);
+            this.Controls.Add(this.panel1);
+            this.Name = "MembersList";
+            this.Text = "MembersList";
+            this.Load += new System.EventHandler(this.MembersList_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
     }
 }

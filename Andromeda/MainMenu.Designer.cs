@@ -39,6 +39,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -169,12 +170,24 @@
             this.label2.Text = "0";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // button11
+            // 
+            this.button11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.button11.Location = new System.Drawing.Point(311, 37);
+            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(157, 52);
+            this.button11.TabIndex = 12;
+            this.button11.Text = "Search";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(765, 652);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button9);
@@ -208,5 +221,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button11;
     }
 }

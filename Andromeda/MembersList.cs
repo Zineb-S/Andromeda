@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Andromeda
 {
-    public partial class MessageBox : UserControl
+    public partial class MembersList : Form
     {
-        public MessageBox()
+        public MembersList()
         {
             InitializeComponent();
         }
 
-        private void MessageBox_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void MembersList_Load(object sender, EventArgs e)
         {
 
         }

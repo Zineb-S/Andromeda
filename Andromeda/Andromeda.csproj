@@ -72,12 +72,6 @@
     <Compile Include="EventsList.Designer.cs">
       <DependentUpon>EventsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FriendsRequestList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +101,18 @@
     </Compile>
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MemberBox.Designer.cs">
+      <DependentUpon>MemberBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MembersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MembersList.Designer.cs">
+      <DependentUpon>MembersList.cs</DependentUpon>
     </Compile>
     <Compile Include="MessageBox.cs">
       <SubType>UserControl</SubType>
@@ -158,6 +164,12 @@
     <Compile Include="RequestBox.Designer.cs">
       <DependentUpon>RequestBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchPage.Designer.cs">
+      <DependentUpon>SearchPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,11 +185,14 @@
     <EmbeddedResource Include="CommentsList.resx">
       <DependentUpon>CommentsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="EventsList.resx">
+      <DependentUpon>EventsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FriendsRequestList.resx">
       <DependentUpon>FriendsRequestList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupsListcs.resx">
+      <DependentUpon>GroupsListcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inbox.resx">
       <DependentUpon>Inbox.cs</DependentUpon>
@@ -188,14 +203,29 @@
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MemberBox.resx">
+      <DependentUpon>MemberBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MembersList.resx">
+      <DependentUpon>MembersList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MessageBox.resx">
       <DependentUpon>MessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewsFeed.resx">
+      <DependentUpon>NewsFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages.resx">
+      <DependentUpon>Pages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PostBox.resx">
       <DependentUpon>PostBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PostsList.resx">
       <DependentUpon>PostsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -211,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RequestBox.resx">
       <DependentUpon>RequestBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchPage.resx">
+      <DependentUpon>SearchPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
