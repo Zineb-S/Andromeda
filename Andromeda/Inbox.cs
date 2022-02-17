@@ -26,9 +26,7 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Send_Message msg = new Send_Message();
-            msg.Show();
+            
         }
     }
 }
