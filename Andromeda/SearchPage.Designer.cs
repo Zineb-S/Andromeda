@@ -45,7 +45,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 35);
+            this.textBox1.Location = new System.Drawing.Point(179, 35);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(459, 22);
             this.textBox1.TabIndex = 1;
@@ -53,7 +53,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(653, 27);
+            this.button1.Location = new System.Drawing.Point(666, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 34);
             this.button1.TabIndex = 3;
@@ -69,7 +69,7 @@
             "Groups",
             "Pages",
             "Events"});
-            this.comboBox1.Location = new System.Drawing.Point(25, 33);
+            this.comboBox1.Location = new System.Drawing.Point(30, 33);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 4;

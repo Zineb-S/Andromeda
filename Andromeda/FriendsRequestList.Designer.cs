@@ -29,21 +29,33 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Location = new System.Drawing.Point(12, 24);
+            this.panel1.Location = new System.Drawing.Point(28, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(751, 508);
+            this.panel1.Size = new System.Drawing.Size(727, 420);
             this.panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(28, 485);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(82, 51);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Back";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FriendsRequestList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 544);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Name = "FriendsRequestList";
             this.Text = "FriendsRequestList";
@@ -54,5 +66,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button2;
     }
 }

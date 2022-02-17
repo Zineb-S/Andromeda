@@ -40,11 +40,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Plum;
+            this.button1.BackColor = System.Drawing.Color.MistyRose;
             this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(562, 37);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -57,7 +63,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Indigo;
+            this.button2.BackColor = System.Drawing.Color.PaleVioletRed;
             this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Location = new System.Drawing.Point(12, 37);
@@ -72,7 +78,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(309, 145);
+            this.button3.Location = new System.Drawing.Point(80, 207);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(157, 52);
@@ -83,10 +89,10 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(309, 222);
+            this.button4.Location = new System.Drawing.Point(307, 207);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(159, 46);
+            this.button4.Size = new System.Drawing.Size(159, 52);
             this.button4.TabIndex = 3;
             this.button4.Text = "Posts";
             this.button4.UseVisualStyleBackColor = true;
@@ -94,10 +100,10 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(309, 297);
+            this.button5.Location = new System.Drawing.Point(521, 207);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(157, 49);
+            this.button5.Size = new System.Drawing.Size(190, 52);
             this.button5.TabIndex = 4;
             this.button5.Text = "Pages";
             this.button5.UseVisualStyleBackColor = true;
@@ -106,7 +112,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.button6.Location = new System.Drawing.Point(309, 378);
+            this.button6.Location = new System.Drawing.Point(80, 319);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(157, 52);
@@ -117,7 +123,7 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.button7.Location = new System.Drawing.Point(309, 452);
+            this.button7.Location = new System.Drawing.Point(307, 322);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(159, 49);
@@ -128,7 +134,7 @@
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.button8.Location = new System.Drawing.Point(309, 523);
+            this.button8.Location = new System.Drawing.Point(434, 440);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(159, 50);
@@ -138,8 +144,9 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.Crimson;
+            this.button9.BackColor = System.Drawing.Color.Firebrick;
             this.button9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button9.Location = new System.Drawing.Point(32, 587);
             this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button9.Name = "button9";
@@ -173,7 +180,7 @@
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.button11.Location = new System.Drawing.Point(311, 37);
+            this.button11.Location = new System.Drawing.Point(179, 438);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(157, 52);
@@ -181,12 +188,81 @@
             this.button11.Text = "Search";
             this.button11.UseVisualStyleBackColor = true;
             // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.button10.Location = new System.Drawing.Point(521, 322);
+            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(190, 52);
+            this.button10.TabIndex = 13;
+            this.button10.Text = "My Humans";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(430, 221);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 24);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(677, 221);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 24);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(198, 334);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 24);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(430, 334);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 24);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(677, 336);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(20, 24);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "0";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(765, 652);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -222,5 +298,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
