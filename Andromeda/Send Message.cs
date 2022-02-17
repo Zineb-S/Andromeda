@@ -16,5 +16,10 @@ namespace Andromeda
         {
             InitializeComponent();
         }
+
+        private void Send_Message_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

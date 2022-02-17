@@ -96,6 +96,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Name = "SearchPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchPage";
             this.ResumeLayout(false);
             this.PerformLayout();
