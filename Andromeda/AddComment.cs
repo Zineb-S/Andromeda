@@ -19,7 +19,12 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // 3la 7ssab dik lvariable globale anchufu wach andirigiw luser lgroup wla page wla event li fih dak lpost li zdna fih comment
             MessageBox.Show(" Comment Posted ");
+            this.Hide();
+            MainMenu menu  = new MainMenu();
+            menu.Show();
+
         }
     }
 }

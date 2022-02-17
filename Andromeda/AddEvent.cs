@@ -25,6 +25,9 @@ namespace Andromeda
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Event Added");
+            this.Hide();
+            EventsList evlist = new EventsList();
+            evlist.Show();
         }
     }
 }

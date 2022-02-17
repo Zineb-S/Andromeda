@@ -19,7 +19,11 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Post Added to : ");
+            // hna andiro varible globale bach an3rfo lpost li tcreea fin anziduh wach lgroupe wla page wla event wla profile 
+            MessageBox.Show("Post Added to hadik lvariable globale ");
+            this.Hide();
+            MainMenu menu = new MainMenu();
+            menu.Show();
         }
     }
 }

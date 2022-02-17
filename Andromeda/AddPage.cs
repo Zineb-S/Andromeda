@@ -20,6 +20,9 @@ namespace Andromeda
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Page Added");
+            this.Hide();
+            Pages page = new Pages();
+            page.Show();
         }
     }
 }

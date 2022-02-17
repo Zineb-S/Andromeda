@@ -92,3 +92,4 @@ C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.GroupsList.r
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.AddGroup.resources
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.AddPage.resources
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.AddPost.resources
+C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.AddMemberBox.resources
