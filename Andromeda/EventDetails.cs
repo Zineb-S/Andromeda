@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Andromeda
 {
-    public partial class Form1 : Form
+    public partial class EventDetails : Form
     {
-        public Form1()
+        public EventDetails()
         {
             InitializeComponent();
         }
