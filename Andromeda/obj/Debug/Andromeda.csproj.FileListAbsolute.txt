@@ -62,3 +62,4 @@ C:\Users\lenovo\Documents\GitHub\Andromeda\obj\Debug\Andromeda.csproj.CoreCompil
 C:\Users\lenovo\Documents\GitHub\Andromeda\obj\Debug\Andromeda.csproj.CopyComplete
 C:\Users\lenovo\Documents\GitHub\Andromeda\obj\Debug\Andromeda.exe
 C:\Users\lenovo\Documents\GitHub\Andromeda\obj\Debug\Andromeda.pdb
+C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.PostsList.resources
