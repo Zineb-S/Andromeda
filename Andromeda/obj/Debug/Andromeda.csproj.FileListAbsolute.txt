@@ -89,3 +89,6 @@ C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.Send_Message
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.Settings.resources
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.MessageBoxItem.resources
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.GroupsList.resources
+C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.AddGroup.resources
+C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.AddPage.resources
+C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.AddPost.resources

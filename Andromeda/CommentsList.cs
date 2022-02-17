@@ -16,5 +16,12 @@ namespace Andromeda
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddComment comment = new AddComment();
+            comment.Show();
+        }
     }
 }
