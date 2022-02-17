@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace Andromeda
 {
-    public partial class AddMembers : Form
+    public partial class AddMemberBox : UserControl
     {
-        public AddMembers()
+        public AddMemberBox()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            GroupDetails details = new GroupDetails();
-            details.Show();
+            MessageBox.Show("Member Added ");
         }
     }
 }

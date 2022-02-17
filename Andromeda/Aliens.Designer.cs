@@ -98,6 +98,7 @@
             this.Name = "Aliens";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aliens";
+            this.Load += new System.EventHandler(this.Aliens_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

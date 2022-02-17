@@ -23,5 +23,10 @@ namespace Andromeda
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
         }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

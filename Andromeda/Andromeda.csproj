@@ -65,6 +65,12 @@
     <Compile Include="AddGroup.Designer.cs">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddMemberBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddMemberBox.Designer.cs">
+      <DependentUpon>AddMemberBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddMembers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMemberBox.resx">
+      <DependentUpon>AddMemberBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddMembers.resx">
       <DependentUpon>AddMembers.cs</DependentUpon>

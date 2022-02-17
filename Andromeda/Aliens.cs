@@ -16,5 +16,10 @@ namespace Andromeda
         {
             InitializeComponent();
         }
+
+        private void Aliens_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
