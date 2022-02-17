@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Andromeda
 {
-    public partial class GroupsListcs : Form
+    public partial class AddMembers : Form
     {
-        public GroupsListcs()
+        public AddMembers()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GroupDetails details = new GroupDetails();
+            details.Show();
         }
     }
 }

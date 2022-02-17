@@ -55,6 +55,7 @@ namespace Andromeda
             this.RegisterButton.TabIndex = 1;
             this.RegisterButton.Text = "CREATE ACCOUNT";
             this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // label1
             // 
@@ -62,7 +63,7 @@ namespace Andromeda
             this.label1.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(144, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(363, 41);
+            this.label1.Size = new System.Drawing.Size(350, 40);
             this.label1.TabIndex = 2;
             this.label1.Text = "Welcome To Our Galaxy ";
             // 
@@ -73,7 +74,7 @@ namespace Andromeda
             this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(224, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 41);
+            this.label2.Size = new System.Drawing.Size(181, 40);
             this.label2.TabIndex = 3;
             this.label2.Text = "Andromeda";
             // 
@@ -91,6 +92,7 @@ namespace Andromeda
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Welcome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
             this.ResumeLayout(false);
             this.PerformLayout();

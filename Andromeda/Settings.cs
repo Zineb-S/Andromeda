@@ -16,5 +16,17 @@ namespace Andromeda
         {
             InitializeComponent();
         }
+
+        private void ButtonCreateAccount_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Show();
+        }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

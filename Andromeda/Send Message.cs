@@ -16,5 +16,18 @@ namespace Andromeda
         {
             InitializeComponent();
         }
+
+        private void Send_Message_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Message Sent Succefully");
+            this.Hide();
+            Inbox Dms = new Inbox();
+            Dms.Show();
+        }
     }
 }

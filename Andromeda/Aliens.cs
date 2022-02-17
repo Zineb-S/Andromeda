@@ -16,5 +16,31 @@ namespace Andromeda
         {
             InitializeComponent();
         }
+
+        private void Aliens_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Send_Message msg = new Send_Message();
+            msg.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainMenu menu = new MainMenu();
+            menu.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PostsList posts = new PostsList();
+            posts.Show();
+        }
     }
 }

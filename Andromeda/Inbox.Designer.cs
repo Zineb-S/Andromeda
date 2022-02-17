@@ -35,9 +35,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Location = new System.Drawing.Point(38, 30);
+            this.panel1.Location = new System.Drawing.Point(38, 91);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(755, 487);
+            this.panel1.Size = new System.Drawing.Size(755, 444);
             this.panel1.TabIndex = 0;
             // 
             // button2
@@ -49,6 +49,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Inbox
             // 
@@ -58,6 +59,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Name = "Inbox";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inbox";
             this.ResumeLayout(false);
 

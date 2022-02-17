@@ -99,7 +99,7 @@ namespace Andromeda
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(728, 578);
+            this.label12.Location = new System.Drawing.Point(721, 562);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(122, 41);
@@ -111,7 +111,7 @@ namespace Andromeda
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(21, 578);
+            this.label11.Location = new System.Drawing.Point(31, 558);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(156, 41);
@@ -124,7 +124,7 @@ namespace Andromeda
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(296, 578);
+            this.label10.Location = new System.Drawing.Point(304, 562);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 41);
@@ -136,7 +136,7 @@ namespace Andromeda
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(547, 578);
+            this.label9.Location = new System.Drawing.Point(531, 562);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 41);
@@ -174,7 +174,7 @@ namespace Andromeda
             this.textBoxBirthYear.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textBoxBirthYear.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.textBoxBirthYear.ForeColor = System.Drawing.Color.Black;
-            this.textBoxBirthYear.Location = new System.Drawing.Point(633, 590);
+            this.textBoxBirthYear.Location = new System.Drawing.Point(627, 574);
             this.textBoxBirthYear.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBirthYear.Multiline = true;
             this.textBoxBirthYear.Name = "textBoxBirthYear";
@@ -238,7 +238,7 @@ namespace Andromeda
             "Male",
             "Female",
             "Other"});
-            this.textBoxGender.Location = new System.Drawing.Point(859, 591);
+            this.textBoxGender.Location = new System.Drawing.Point(850, 571);
             this.textBoxGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxGender.Name = "textBoxGender";
             this.textBoxGender.Size = new System.Drawing.Size(121, 29);
@@ -280,7 +280,7 @@ namespace Andromeda
             "29",
             "30",
             "31"});
-            this.textBoxBirthDay.Location = new System.Drawing.Point(199, 591);
+            this.textBoxBirthDay.Location = new System.Drawing.Point(207, 571);
             this.textBoxBirthDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxBirthDay.Name = "textBoxBirthDay";
             this.textBoxBirthDay.Size = new System.Drawing.Size(73, 29);
@@ -304,7 +304,7 @@ namespace Andromeda
             "10",
             "11",
             "12"});
-            this.textBoxBirthMonth.Location = new System.Drawing.Point(429, 591);
+            this.textBoxBirthMonth.Location = new System.Drawing.Point(436, 570);
             this.textBoxBirthMonth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxBirthMonth.Name = "textBoxBirthMonth";
             this.textBoxBirthMonth.Size = new System.Drawing.Size(88, 29);
@@ -316,7 +316,7 @@ namespace Andromeda
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Firebrick;
-            this.label2.Location = new System.Drawing.Point(339, 721);
+            this.label2.Location = new System.Drawing.Point(347, 710);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.MaximumSize = new System.Drawing.Size(500, 39);
             this.label2.MinimumSize = new System.Drawing.Size(500, 39);
@@ -385,7 +385,7 @@ namespace Andromeda
             // ButtonCreateAccount
             // 
             this.ButtonCreateAccount.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonCreateAccount.Location = new System.Drawing.Point(260, 641);
+            this.ButtonCreateAccount.Location = new System.Drawing.Point(261, 632);
             this.ButtonCreateAccount.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonCreateAccount.Name = "ButtonCreateAccount";
             this.ButtonCreateAccount.Size = new System.Drawing.Size(541, 59);
@@ -438,7 +438,7 @@ namespace Andromeda
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.panel1.ResumeLayout(false);

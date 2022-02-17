@@ -42,6 +42,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Post";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -70,6 +71,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "AddComment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddComment";
             this.ResumeLayout(false);
             this.PerformLayout();

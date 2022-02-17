@@ -24,7 +24,16 @@ namespace Andromeda
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            LoginForm login = new LoginForm();
+            login.Show();
+        }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisterForm register = new RegisterForm();
+            register.Show();
         }
     }
 }

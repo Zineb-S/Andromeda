@@ -36,13 +36,14 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(33, 552);
+            this.button2.Location = new System.Drawing.Point(23, 562);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 55);
             this.button2.TabIndex = 2;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel1
             // 
@@ -61,6 +62,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = " Create ";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Pages
             // 
@@ -71,6 +73,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Name = "Pages";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pages";
             this.ResumeLayout(false);
 
