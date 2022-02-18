@@ -61,8 +61,8 @@ namespace Andromeda
                     sb.Append('\n');
                 }
             }
-            Console.WriteLine(sb);
-
+            Console.WriteLine(sb);              
+                
 
         }
         public static void exportUsers() { }
