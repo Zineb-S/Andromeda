@@ -33,9 +33,50 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,312 +86,326 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddComment.cs">
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\Event.cs" />
+    <Compile Include="Entities\Group.cs" />
+    <Compile Include="Entities\Message.cs" />
+    <Compile Include="Entities\Page.cs" />
+    <Compile Include="Entities\Post.cs" />
+    <Compile Include="Entities\Request.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Frames\AddComment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddComment.Designer.cs">
+    <Compile Include="Frames\AddComment.Designer.cs">
       <DependentUpon>AddComment.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddEvent.cs">
+    <Compile Include="Frames\AddEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEvent.Designer.cs">
+    <Compile Include="Frames\AddEvent.Designer.cs">
       <DependentUpon>AddEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddGroup.cs">
+    <Compile Include="Frames\AddGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddGroup.Designer.cs">
+    <Compile Include="Frames\AddGroup.Designer.cs">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddMemberBox.cs">
+    <Compile Include="Frames\AddMemberBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddMemberBox.Designer.cs">
+    <Compile Include="Frames\AddMemberBox.Designer.cs">
       <DependentUpon>AddMemberBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddMembers.cs">
+    <Compile Include="Frames\AddMembers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddMembers.Designer.cs">
+    <Compile Include="Frames\AddMembers.Designer.cs">
       <DependentUpon>AddMembers.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddPage.cs">
+    <Compile Include="Frames\AddPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddPage.Designer.cs">
+    <Compile Include="Frames\AddPage.Designer.cs">
       <DependentUpon>AddPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddPost.cs">
+    <Compile Include="Frames\AddPost.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddPost.Designer.cs">
+    <Compile Include="Frames\AddPost.Designer.cs">
       <DependentUpon>AddPost.cs</DependentUpon>
     </Compile>
-    <Compile Include="Aliens.cs">
+    <Compile Include="Frames\Aliens.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Aliens.Designer.cs">
+    <Compile Include="Frames\Aliens.Designer.cs">
       <DependentUpon>Aliens.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommentBox.cs">
+    <Compile Include="Frames\CommentBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CommentBox.Designer.cs">
+    <Compile Include="Frames\CommentBox.Designer.cs">
       <DependentUpon>CommentBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommentsList.cs">
+    <Compile Include="Frames\CommentsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CommentsList.Designer.cs">
+    <Compile Include="Frames\CommentsList.Designer.cs">
       <DependentUpon>CommentsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="DB.cs" />
-    <Compile Include="EventDetails.cs">
+    <Compile Include="Frames\DB.cs" />
+    <Compile Include="Frames\EventDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventDetails.Designer.cs">
+    <Compile Include="Frames\EventDetails.Designer.cs">
       <DependentUpon>EventDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventsList.cs">
+    <Compile Include="Frames\EventsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventsList.Designer.cs">
+    <Compile Include="Frames\EventsList.Designer.cs">
       <DependentUpon>EventsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FriendBox.cs">
+    <Compile Include="Frames\FriendBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FriendBox.Designer.cs">
+    <Compile Include="Frames\FriendBox.Designer.cs">
       <DependentUpon>FriendBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="FriendsList.cs">
+    <Compile Include="Frames\FriendsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FriendsList.Designer.cs">
+    <Compile Include="Frames\FriendsList.Designer.cs">
       <DependentUpon>FriendsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FriendsRequestList.cs">
+    <Compile Include="Frames\FriendsRequestList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FriendsRequestList.Designer.cs">
+    <Compile Include="Frames\FriendsRequestList.Designer.cs">
       <DependentUpon>FriendsRequestList.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupDetails.cs">
+    <Compile Include="Frames\GroupDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GroupDetails.Designer.cs">
+    <Compile Include="Frames\GroupDetails.Designer.cs">
       <DependentUpon>GroupDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupsList.cs">
+    <Compile Include="Frames\GroupsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GroupsList.Designer.cs">
+    <Compile Include="Frames\GroupsList.Designer.cs">
       <DependentUpon>GroupsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inbox.cs">
+    <Compile Include="Frames\Inbox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inbox.Designer.cs">
+    <Compile Include="Frames\Inbox.Designer.cs">
       <DependentUpon>Inbox.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Frames\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Frames\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu.cs">
+    <Compile Include="Frames\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.cs">
+    <Compile Include="Frames\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberBox.cs">
+    <Compile Include="Frames\MemberBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MemberBox.Designer.cs">
+    <Compile Include="Frames\MemberBox.Designer.cs">
       <DependentUpon>MemberBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="MembersList.cs">
+    <Compile Include="Frames\MembersList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MembersList.Designer.cs">
+    <Compile Include="Frames\MembersList.Designer.cs">
       <DependentUpon>MembersList.cs</DependentUpon>
     </Compile>
-    <Compile Include="MessageBoxItem.cs">
+    <Compile Include="Frames\MessageBoxItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MessageBoxItem.Designer.cs">
+    <Compile Include="Frames\MessageBoxItem.Designer.cs">
       <DependentUpon>MessageBoxItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewsFeed.cs">
+    <Compile Include="Frames\NewsFeed.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewsFeed.Designer.cs">
+    <Compile Include="Frames\NewsFeed.Designer.cs">
       <DependentUpon>NewsFeed.cs</DependentUpon>
     </Compile>
-    <Compile Include="PageDetails.cs">
+    <Compile Include="Frames\PageDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PageDetails.Designer.cs">
+    <Compile Include="Frames\PageDetails.Designer.cs">
       <DependentUpon>PageDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages.cs">
+    <Compile Include="Frames\Pages.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages.Designer.cs">
+    <Compile Include="Frames\Pages.Designer.cs">
       <DependentUpon>Pages.cs</DependentUpon>
     </Compile>
-    <Compile Include="PostBox.cs">
+    <Compile Include="Frames\PostBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PostBox.Designer.cs">
+    <Compile Include="Frames\PostBox.Designer.cs">
       <DependentUpon>PostBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="PostsList.cs">
+    <Compile Include="Frames\PostsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PostsList.Designer.cs">
+    <Compile Include="Frames\PostsList.Designer.cs">
       <DependentUpon>PostsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profile.cs">
+    <Compile Include="Frames\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profile.Designer.cs">
+    <Compile Include="Frames\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Frames\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterForm.cs">
+    <Compile Include="Frames\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterForm.Designer.cs">
+    <Compile Include="Frames\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RequestBox.cs">
+    <Compile Include="Frames\RequestBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RequestBox.Designer.cs">
+    <Compile Include="Frames\RequestBox.Designer.cs">
       <DependentUpon>RequestBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchPage.cs">
+    <Compile Include="Frames\SearchPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchPage.Designer.cs">
+    <Compile Include="Frames\SearchPage.Designer.cs">
       <DependentUpon>SearchPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchResult.cs">
+    <Compile Include="Frames\SearchResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SearchResult.Designer.cs">
+    <Compile Include="Frames\SearchResult.Designer.cs">
       <DependentUpon>SearchResult.cs</DependentUpon>
     </Compile>
-    <Compile Include="Send Message.cs">
+    <Compile Include="Frames\Send Message.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Send Message.Designer.cs">
+    <Compile Include="Frames\Send Message.Designer.cs">
       <DependentUpon>Send Message.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs">
+    <Compile Include="Frames\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings.Designer.cs">
+    <Compile Include="Frames\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Welcome.cs">
+    <Compile Include="Frames\Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Welcome.Designer.cs">
+    <Compile Include="Frames\Welcome.Designer.cs">
       <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddComment.resx">
+    <EmbeddedResource Include="Frames\AddComment.resx">
       <DependentUpon>AddComment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddEvent.resx">
+    <EmbeddedResource Include="Frames\AddEvent.resx">
       <DependentUpon>AddEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddGroup.resx">
+    <EmbeddedResource Include="Frames\AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddMemberBox.resx">
+    <EmbeddedResource Include="Frames\AddMemberBox.resx">
       <DependentUpon>AddMemberBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddMembers.resx">
+    <EmbeddedResource Include="Frames\AddMembers.resx">
       <DependentUpon>AddMembers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddPage.resx">
+    <EmbeddedResource Include="Frames\AddPage.resx">
       <DependentUpon>AddPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddPost.resx">
+    <EmbeddedResource Include="Frames\AddPost.resx">
       <DependentUpon>AddPost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Aliens.resx">
+    <EmbeddedResource Include="Frames\Aliens.resx">
       <DependentUpon>Aliens.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CommentBox.resx">
+    <EmbeddedResource Include="Frames\CommentBox.resx">
       <DependentUpon>CommentBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CommentsList.resx">
+    <EmbeddedResource Include="Frames\CommentsList.resx">
       <DependentUpon>CommentsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventDetails.resx">
+    <EmbeddedResource Include="Frames\EventDetails.resx">
       <DependentUpon>EventDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventsList.resx">
+    <EmbeddedResource Include="Frames\EventsList.resx">
       <DependentUpon>EventsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FriendBox.resx">
+    <EmbeddedResource Include="Frames\FriendBox.resx">
       <DependentUpon>FriendBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FriendsList.resx">
+    <EmbeddedResource Include="Frames\FriendsList.resx">
       <DependentUpon>FriendsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FriendsRequestList.resx">
+    <EmbeddedResource Include="Frames\FriendsRequestList.resx">
       <DependentUpon>FriendsRequestList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GroupDetails.resx">
+    <EmbeddedResource Include="Frames\GroupDetails.resx">
       <DependentUpon>GroupDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GroupsList.resx">
+    <EmbeddedResource Include="Frames\GroupsList.resx">
       <DependentUpon>GroupsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inbox.resx">
+    <EmbeddedResource Include="Frames\Inbox.resx">
       <DependentUpon>Inbox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Frames\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
+    <EmbeddedResource Include="Frames\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberBox.resx">
+    <EmbeddedResource Include="Frames\MemberBox.resx">
       <DependentUpon>MemberBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MembersList.resx">
+    <EmbeddedResource Include="Frames\MembersList.resx">
       <DependentUpon>MembersList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MessageBoxItem.resx">
+    <EmbeddedResource Include="Frames\MessageBoxItem.resx">
       <DependentUpon>MessageBoxItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewsFeed.resx">
+    <EmbeddedResource Include="Frames\NewsFeed.resx">
       <DependentUpon>NewsFeed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PageDetails.resx">
+    <EmbeddedResource Include="Frames\PageDetails.resx">
       <DependentUpon>PageDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages.resx">
+    <EmbeddedResource Include="Frames\Pages.resx">
       <DependentUpon>Pages.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PostBox.resx">
+    <EmbeddedResource Include="Frames\PostBox.resx">
       <DependentUpon>PostBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PostsList.resx">
+    <EmbeddedResource Include="Frames\PostsList.resx">
       <DependentUpon>PostsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profile.resx">
+    <EmbeddedResource Include="Frames\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -362,27 +417,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RegisterForm.resx">
+    <EmbeddedResource Include="Frames\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RequestBox.resx">
+    <EmbeddedResource Include="Frames\RequestBox.resx">
       <DependentUpon>RequestBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchPage.resx">
+    <EmbeddedResource Include="Frames\SearchPage.resx">
       <DependentUpon>SearchPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchResult.resx">
+    <EmbeddedResource Include="Frames\SearchResult.resx">
       <DependentUpon>SearchResult.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Send Message.resx">
+    <EmbeddedResource Include="Frames\Send Message.resx">
       <DependentUpon>Send Message.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings.resx">
+    <EmbeddedResource Include="Frames\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Welcome.resx">
+    <EmbeddedResource Include="Frames\Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -396,5 +452,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
