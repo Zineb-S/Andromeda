@@ -46,6 +46,7 @@ namespace Andromeda
             command.Parameters.Add("@DownV", MySqlDbType.Int32).Value = 0;
             command.Parameters.Add("@ID", MySqlDbType.Int32).Value = Program.CurrentUserID;
 
+           
 
 
             //open the connection

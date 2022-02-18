@@ -21,7 +21,7 @@ namespace Andromeda
         static void Main()
         {
             User.importUsers(liOfUsers);
-
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Welcome());

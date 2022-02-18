@@ -81,141 +81,21 @@ namespace Andromeda
 
         private void ButtonCreateAccount_Click(object sender, EventArgs e)
         {
-            //add new user
-            DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO users(User_Name, User_First_Name, User_Last_Name, User_Email, User_Password, Date_Of_Birth, Gender_Users) VALUES(@usn, @fn, @ln, @email, @pass,@year, @gender)", db.getConnection());
-            command.Parameters.Add("@fn", MySqlDbType.VarChar).Value = textBoxFirstname.Text;
-            command.Parameters.Add("@ln", MySqlDbType.VarChar).Value = textBoxLastname.Text;
-            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = textBoxUsername.Text;
-            command.Parameters.Add("@email", MySqlDbType.VarChar).Value = textBoxEmail.Text;
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = textBoxPassword.Text;
-            command.Parameters.Add("@year", MySqlDbType.VarChar).Value = textBoxBirthYear.Text + "-" + textBoxBirthMonth.Text + "-" + textBoxBirthDay.Text;
-            command.Parameters.Add("@gender", MySqlDbType.VarChar).Value = textBoxGender.Text;
+            string fname = textBoxFirstname.Text;
+            string lname = textBoxLastname.Text;
+            string username = textBoxUsername.Text;
+            string email = textBoxEmail.Text;
+            string password = textBoxPassword.Text;
+            string passwordconfirm = textBoxConfirmPassword.Text;
+            string year = textBoxBirthYear.Text;
+            string month = textBoxBirthMonth.Text;
+            string day =  textBoxBirthDay.Text;
+            string date = textBoxBirthYear.Text + "-" + textBoxBirthMonth.Text + "-" + textBoxBirthDay.Text;
+            string gender = textBoxGender.Text;
 
 
-
-
-
-            //open the connection
-            db.openConnection();
-
-            if (!checkTextBoxesValues())
-            {
-                //check if passwords are the same
-                if (textBoxConfirmPassword.Text.Equals(textBoxPassword.Text))
-                {
-                    if (checkUsername(db))
-                    {
-                        MessageBox.Show("this username already exists");
-                    }
-                    else
-                    {
-                        //error date
-
-                        {
-                            string year = textBoxBirthYear.Text;
-                            string day = textBoxBirthDay.Text;
-                            string month = textBoxBirthMonth.Text;
-                            if ((Int32.Parse(year) > 2022) || (Int32.Parse(day) > 31) || (Int32.Parse(month) > 12))
-                            {
-                                MessageBox.Show("ma3arefch fo9ach tzaditiii ??");
-                            }
-                            else
-                            {
-                                if (command.ExecuteNonQuery() == 1)
-                                {
-                                    MessageBox.Show("Account created");
-
-                                }
-                                else
-                                {
-
-                                    MessageBox.Show("ERROR");
-                                }
-                            }
-
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("WRONG CONFIRM PASSWORD");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Enter all informations");
-            }
-
-
-
-
-
-
-            //check if the username already exists
-            bool checkUsername(DB db2)
-            {
-
-
-
-                String username = textBoxEmail.Text;
-
-
-                DataTable table = new DataTable();
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-                MySqlCommand command2 = new MySqlCommand("SELECT * FROM users WHERE User_Name = @usn", db.getConnection());
-
-                command2.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
-
-
-                adapter.SelectCommand = command2;
-
-                adapter.Fill(table);
-
-                // check if the username already exists
-                if (table.Rows.Count > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-
-            }
-
-
-            //check if the boxes are empty
-            bool checkTextBoxesValues()
-            {
-                String fname = textBoxFirstname.Text;
-                String lname = textBoxLastname.Text;
-                String username = textBoxEmail.Text;
-                String email = textBoxUsername.Text;
-                String pass = textBoxPassword.Text;
-
-
-                if (fname.Equals("first name") || lname.Equals("last name") || username.Equals("username") || email.Equals("email address") || pass.Equals("password"))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            }
-
-
-            //close connection
-            db.closeConnection();
-
-
-
-
+            User.exportUsers(fname, lname, username, email, password, passwordconfirm, year,month ,day , date, gender);
+    
         }
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
