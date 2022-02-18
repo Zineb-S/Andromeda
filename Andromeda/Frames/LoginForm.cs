@@ -28,15 +28,17 @@ namespace Andromeda
 
             String email = textBoxEmail.Text;
             String password = textBoxPassword.Text;
-
+            String username = "";
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `User_Email` = @email and `User_Password` = @pass", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM users WHERE  User_Email = @email and User_Password = @pass", db.getConnection());
 
             command.Parameters.Add("@email", MySqlDbType.VarChar).Value = email;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
+
+
 
             adapter.SelectCommand = command;
 
@@ -45,7 +47,16 @@ namespace Andromeda
             // check if the user exists or not
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Welcome");
+                foreach (DataRow dr in table.Rows)
+                {
+                    object[] arr = dr.ItemArray;
+                    Program.CurrentUserID = Convert.ToInt32(arr[0]);
+                    username = arr[1].ToString();
+
+
+                }
+                Console.WriteLine(Program.CurrentUserID);
+                MessageBox.Show("Welcome to Andromeda " + username);
                 this.Hide();
                 MainMenu mainMenu = new MainMenu();
                 mainMenu.Show();

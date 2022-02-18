@@ -11,12 +11,16 @@ namespace Andromeda
     static class Program
     {
         public static ArrayList liOfUsers = new ArrayList();
+        public static int CurrentUserID = 0;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
         [STAThread]
 
         
+
+
+
         static void Main()
         {
             User.importUsers(liOfUsers);

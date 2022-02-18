@@ -40,12 +40,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.Label();
+            this.textBoxGender = new System.Windows.Forms.Label();
+            this.textBoxLastname = new System.Windows.Forms.Label();
+            this.textBoxFirstname = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxUsername = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +79,7 @@
             this.label1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(296, -26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 22);
+            this.label1.Size = new System.Drawing.Size(46, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -90,7 +90,7 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(88, 187);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 22);
+            this.label2.Size = new System.Drawing.Size(82, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "First Name :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -101,7 +101,7 @@
             this.label3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(88, 239);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 22);
+            this.label3.Size = new System.Drawing.Size(79, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Last Name :";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -112,7 +112,7 @@
             this.label4.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(88, 298);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 22);
+            this.label4.Size = new System.Drawing.Size(65, 18);
             this.label4.TabIndex = 5;
             this.label4.Text = "Gender : ";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -123,7 +123,7 @@
             this.label5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(88, 421);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 22);
+            this.label5.Size = new System.Drawing.Size(52, 18);
             this.label5.TabIndex = 6;
             this.label5.Text = "Email : ";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -134,7 +134,7 @@
             this.label6.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(88, 478);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 22);
+            this.label6.Size = new System.Drawing.Size(77, 18);
             this.label6.TabIndex = 7;
             this.label6.Text = "Password : ";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -145,7 +145,7 @@
             this.label7.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(88, 364);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 22);
+            this.label7.Size = new System.Drawing.Size(77, 18);
             this.label7.TabIndex = 8;
             this.label7.Text = "Birth Date :";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -165,7 +165,7 @@
             this.label8.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(279, 364);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 22);
+            this.label8.Size = new System.Drawing.Size(74, 18);
             this.label8.TabIndex = 15;
             this.label8.Text = "0000-00-00";
             // 
@@ -175,49 +175,50 @@
             this.label9.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(279, 478);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 22);
+            this.label9.Size = new System.Drawing.Size(57, 18);
             this.label9.TabIndex = 14;
             this.label9.Text = "*******";
             // 
-            // label10
+            // textBoxEmail
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(279, 421);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 22);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Address";
+            this.textBoxEmail.AutoSize = true;
+            this.textBoxEmail.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
+            this.textBoxEmail.Location = new System.Drawing.Point(279, 421);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(58, 18);
+            this.textBoxEmail.TabIndex = 13;
+            this.textBoxEmail.Text = "Address";
             // 
-            // label11
+            // textBoxGender
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(279, 298);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 22);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "F/M";
+            this.textBoxGender.AutoSize = true;
+            this.textBoxGender.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
+            this.textBoxGender.Location = new System.Drawing.Point(279, 298);
+            this.textBoxGender.Name = "textBoxGender";
+            this.textBoxGender.Size = new System.Drawing.Size(34, 18);
+            this.textBoxGender.TabIndex = 12;
+            this.textBoxGender.Text = "F/M";
             // 
-            // label12
+            // textBoxLastname
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(279, 239);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 22);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Name";
+            this.textBoxLastname.AutoSize = true;
+            this.textBoxLastname.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
+            this.textBoxLastname.Location = new System.Drawing.Point(279, 239);
+            this.textBoxLastname.Name = "textBoxLastname";
+            this.textBoxLastname.Size = new System.Drawing.Size(45, 18);
+            this.textBoxLastname.TabIndex = 11;
+            this.textBoxLastname.Text = "Name";
             // 
-            // label13
+            // textBoxFirstname
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(279, 187);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 22);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "Name";
+            this.textBoxFirstname.AutoSize = true;
+            this.textBoxFirstname.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
+            this.textBoxFirstname.Location = new System.Drawing.Point(279, 187);
+            this.textBoxFirstname.Name = "textBoxFirstname";
+            this.textBoxFirstname.Size = new System.Drawing.Size(45, 18);
+            this.textBoxFirstname.TabIndex = 10;
+            this.textBoxFirstname.Text = "Name";
+            this.textBoxFirstname.Click += new System.EventHandler(this.textBoxFirstname_Click);
             // 
             // button3
             // 
@@ -231,29 +232,29 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label14
+            // textBoxUsername
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(291, 70);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 22);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "UserName";
+            this.textBoxUsername.AutoSize = true;
+            this.textBoxUsername.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
+            this.textBoxUsername.Location = new System.Drawing.Point(291, 70);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(74, 18);
+            this.textBoxUsername.TabIndex = 17;
+            this.textBoxUsername.Text = "UserName";
             // 
             // Profile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 655);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.textBoxGender);
+            this.Controls.Add(this.textBoxLastname);
+            this.Controls.Add(this.textBoxFirstname);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -290,11 +291,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label textBoxEmail;
+        private System.Windows.Forms.Label textBoxGender;
+        private System.Windows.Forms.Label textBoxLastname;
+        private System.Windows.Forms.Label textBoxFirstname;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label textBoxUsername;
     }
 }

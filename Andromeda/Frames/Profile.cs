@@ -77,5 +77,10 @@ namespace Andromeda
             Welcome logout = new Welcome();
             logout.Show();
         }
+
+        private void textBoxFirstname_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
