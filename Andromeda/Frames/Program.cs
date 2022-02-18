@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+namespace Andromeda
+{
+    static class Program
+    {
+        public static ArrayList liOfUsers = new ArrayList();
+        /// <summary>
+        /// Point d'entrée principal de l'application.
+        /// </summary>
+        [STAThread]
+
+        
+        static void Main()
+        {
+            User.importUsers(liOfUsers);
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Welcome());
+        }
+    }
+}
