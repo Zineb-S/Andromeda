@@ -11,6 +11,7 @@ namespace Andromeda
     static class Program
     {
         public static ArrayList liOfUsers = new ArrayList();
+        public static ArrayList liOfPosts = new ArrayList();
         public static int CurrentUserID = 0;
         /// <summary>
         /// Point d'entrée principal de l'application.
@@ -24,7 +25,7 @@ namespace Andromeda
         static void Main()
         {
             User.importUsers(liOfUsers);
-            
+            Post.importPosts(liOfPosts);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Welcome());

@@ -13,7 +13,7 @@ namespace Andromeda
 {
     public class User
     {   
-        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=andromeda");
+        public MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=andromeda");
         public int UserID { get; set; }
         public string UserName { get; set; }
         public string UserFirstName { get; set; }
@@ -114,14 +114,14 @@ namespace Andromeda
             }
 
             MySqlCommand command = new MySqlCommand("INSERT INTO users(User_Name, User_First_Name, User_Last_Name, User_Email, User_Password, Date_Of_Birth, Gender_Users) VALUES(@usn, @fn, @ln, @email, @pass,@year, @gender)", db.getConnection());
-            command.Parameters.Add("@fn", MySqlDbType.VarChar).Value = fname;
+            
             command.Parameters.Add("@ln", MySqlDbType.VarChar).Value = lname;
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
             command.Parameters.Add("@email", MySqlDbType.VarChar).Value = email;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass;
             command.Parameters.Add("@year", MySqlDbType.VarChar).Value = date;
             command.Parameters.Add("@gender", MySqlDbType.VarChar).Value = gender;
-
+            command.Parameters.Add("@fn", MySqlDbType.VarChar).Value = fname;
 
 
             //open the connection
@@ -137,10 +137,12 @@ namespace Andromeda
             {
                 
                 command.ExecuteNonQuery();
+                importUsers(Program.liOfUsers);
                 MessageBox.Show("Account Created ! Now you have to login  ");
                 RegisterForm.ActiveForm.Hide();
                 LoginForm lf = new LoginForm();
                 lf.Show();
+                
 
             }
 

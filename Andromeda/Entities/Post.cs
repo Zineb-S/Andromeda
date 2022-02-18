@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Andromeda
 {
     public class Post
     {
+        public MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=andromeda");
         public string PostId { get; set; }
         public string PostTitle { get; set; }
         public DateTime PostDate { get; set; }
@@ -30,8 +32,36 @@ namespace Andromeda
             this.PostDownVotes = downvotes;
 
         }
-        public static void importPosts() { }
+        public static void importPosts(ArrayList postsList) 
+        
+        {
+            DB db = new DB();
+
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `posts` ", db.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            StringBuilder sb = new StringBuilder();
+            foreach (DataRow dr in table.Rows)
+            {
+                object[] arr = dr.ItemArray;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    postsList.Add(Convert.ToString(arr[i]));
+                    sb.Append('\n');
+                }
+            }
+            Console.WriteLine(sb);
+        }
         public static void exportPosts(string title , string content ) {
+
+            // create profile page if user doesn't have one and then add post to it 
+            //MySqlCommand command2 = new MySqlCommand("INSERT INTO page(Page_ID	Page_Name	Page_Date	Page_Type	Start_Date	End_Date	) VALUES(@usn, @fn, @ln, @email, @pass,@year, @gender)", db.getConnection());
+            //MySqlCommand command3 = new MySqlCommand("INSERT INTO profile_page(Page_ID,User_ID) VALUES(@pageID, @userID)", db.getConnection());
 
             DB db = new DB();
             DataTable table = new DataTable();
@@ -46,7 +76,7 @@ namespace Andromeda
             command.Parameters.Add("@DownV", MySqlDbType.Int32).Value = 0;
             command.Parameters.Add("@ID", MySqlDbType.Int32).Value = Program.CurrentUserID;
 
-           
+            
 
 
             //open the connection

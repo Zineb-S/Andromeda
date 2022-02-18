@@ -163,6 +163,30 @@
       <DependentUpon>CommentsList.cs</DependentUpon>
     </Compile>
     <Compile Include="Frames\DB.cs" />
+    <Compile Include="Frames\EditComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frames\EditComment.Designer.cs">
+      <DependentUpon>EditComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\EditGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frames\EditGroup.Designer.cs">
+      <DependentUpon>EditGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\EditPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frames\EditPage.Designer.cs">
+      <DependentUpon>EditPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\EditPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frames\EditPost.Designer.cs">
+      <DependentUpon>EditPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frames\EventDetails.cs">
       <SubType>Form</SubType>
     </Compile>

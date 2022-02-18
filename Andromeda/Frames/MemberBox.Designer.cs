@@ -33,6 +33,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -89,17 +91,42 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Admin/Guest";
             // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
+            this.button5.Location = new System.Drawing.Point(527, 15);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 36);
+            this.button5.TabIndex = 21;
+            this.button5.Text = "Edit";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Red;
+            this.button4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.Location = new System.Drawing.Point(646, 9);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(51, 44);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "X";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // MemberBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "MemberBox";
-            this.Size = new System.Drawing.Size(563, 71);
+            this.Size = new System.Drawing.Size(718, 71);
             this.Load += new System.EventHandler(this.MemberBox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -113,5 +140,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
     }
 }

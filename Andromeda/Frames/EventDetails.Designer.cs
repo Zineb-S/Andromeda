@@ -37,6 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -81,9 +83,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(666, 20);
+            this.button1.Location = new System.Drawing.Point(439, 13);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 43);
+            this.button1.Size = new System.Drawing.Size(91, 48);
             this.button1.TabIndex = 11;
             this.button1.Text = "Members";
             this.button1.UseVisualStyleBackColor = true;
@@ -122,20 +124,45 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(666, 81);
+            this.button3.Location = new System.Drawing.Point(536, 13);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 42);
+            this.button3.Size = new System.Drawing.Size(91, 47);
             this.button3.TabIndex = 16;
             this.button3.Text = "Add Post";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Red;
+            this.button4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.Location = new System.Drawing.Point(741, 15);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(47, 47);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "X";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
+            this.button5.Location = new System.Drawing.Point(635, 13);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 47);
+            this.button5.TabIndex = 22;
+            this.button5.Text = "Edit";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // EventDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 693);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -164,5 +191,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

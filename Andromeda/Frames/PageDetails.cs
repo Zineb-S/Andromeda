@@ -23,5 +23,10 @@ namespace Andromeda
             AddPost post = new AddPost();
             post.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
