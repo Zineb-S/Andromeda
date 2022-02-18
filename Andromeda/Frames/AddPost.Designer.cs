@@ -95,6 +95,7 @@
             this.Name = "AddPost";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddPost";
+            this.Load += new System.EventHandler(this.AddPost_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
