@@ -51,9 +51,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 74);
+            this.label1.Location = new System.Drawing.Point(54, 60);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 24);
+            this.label1.Size = new System.Drawing.Size(86, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Event Title ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -62,9 +63,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 141);
+            this.label2.Location = new System.Drawing.Point(53, 115);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 24);
+            this.label2.Size = new System.Drawing.Size(83, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Start Date ";
             // 
@@ -72,9 +74,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(72, 296);
+            this.label3.Location = new System.Drawing.Point(54, 240);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 24);
+            this.label3.Size = new System.Drawing.Size(71, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "End Date";
             // 
@@ -82,9 +85,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(72, 366);
+            this.label4.Location = new System.Drawing.Point(54, 297);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 24);
+            this.label4.Size = new System.Drawing.Size(76, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "End Time ";
             // 
@@ -92,18 +96,20 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(72, 212);
+            this.label5.Location = new System.Drawing.Point(54, 172);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 24);
+            this.label5.Size = new System.Drawing.Size(84, 19);
             this.label5.TabIndex = 4;
             this.label5.Text = "Start Time ";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(198, 67);
+            this.textBox1.Location = new System.Drawing.Point(148, 54);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(482, 38);
+            this.textBox1.Size = new System.Drawing.Size(362, 32);
             this.textBox1.TabIndex = 5;
             // 
             // textBoxBirthDay
@@ -142,10 +148,10 @@
             "29",
             "30",
             "31"});
-            this.textBoxBirthDay.Location = new System.Drawing.Point(188, 287);
-            this.textBoxBirthDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxBirthDay.Location = new System.Drawing.Point(141, 233);
+            this.textBoxBirthDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxBirthDay.Name = "textBoxBirthDay";
-            this.textBoxBirthDay.Size = new System.Drawing.Size(73, 29);
+            this.textBoxBirthDay.Size = new System.Drawing.Size(56, 25);
             this.textBoxBirthDay.TabIndex = 20;
             // 
             // textBoxBirthMonth
@@ -165,10 +171,10 @@
             "10",
             "11",
             "12"});
-            this.textBoxBirthMonth.Location = new System.Drawing.Point(317, 290);
-            this.textBoxBirthMonth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxBirthMonth.Location = new System.Drawing.Point(238, 236);
+            this.textBoxBirthMonth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxBirthMonth.Name = "textBoxBirthMonth";
-            this.textBoxBirthMonth.Size = new System.Drawing.Size(88, 29);
+            this.textBoxBirthMonth.Size = new System.Drawing.Size(67, 25);
             this.textBoxBirthMonth.TabIndex = 19;
             // 
             // comboBox1
@@ -207,10 +213,10 @@
             "29",
             "30",
             "31"});
-            this.comboBox1.Location = new System.Drawing.Point(188, 135);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Location = new System.Drawing.Point(141, 110);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(73, 29);
+            this.comboBox1.Size = new System.Drawing.Size(56, 25);
             this.comboBox1.TabIndex = 23;
             // 
             // comboBox2
@@ -230,10 +236,10 @@
             "10",
             "11",
             "12"});
-            this.comboBox2.Location = new System.Drawing.Point(317, 128);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox2.Location = new System.Drawing.Point(238, 106);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(88, 29);
+            this.comboBox2.Size = new System.Drawing.Size(67, 25);
             this.comboBox2.TabIndex = 22;
             // 
             // comboBox3
@@ -265,10 +271,10 @@
             "21",
             "22",
             "23"});
-            this.comboBox3.Location = new System.Drawing.Point(188, 360);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox3.Location = new System.Drawing.Point(141, 292);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(73, 29);
+            this.comboBox3.Size = new System.Drawing.Size(56, 25);
             this.comboBox3.TabIndex = 25;
             // 
             // comboBox4
@@ -300,10 +306,10 @@
             "21",
             "22",
             "23"});
-            this.comboBox4.Location = new System.Drawing.Point(188, 206);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox4.Location = new System.Drawing.Point(141, 167);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(73, 29);
+            this.comboBox4.Size = new System.Drawing.Size(56, 25);
             this.comboBox4.TabIndex = 26;
             // 
             // comboBox5
@@ -324,10 +330,10 @@
             "50",
             "55",
             ""});
-            this.comboBox5.Location = new System.Drawing.Point(317, 206);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox5.Location = new System.Drawing.Point(238, 167);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(73, 29);
+            this.comboBox5.Size = new System.Drawing.Size(56, 25);
             this.comboBox5.TabIndex = 27;
             // 
             // comboBox6
@@ -348,10 +354,10 @@
             "50",
             "55",
             ""});
-            this.comboBox6.Location = new System.Drawing.Point(317, 360);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox6.Location = new System.Drawing.Point(238, 292);
+            this.comboBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(73, 29);
+            this.comboBox6.Size = new System.Drawing.Size(56, 25);
             this.comboBox6.TabIndex = 28;
             // 
             // comboBox7
@@ -363,10 +369,10 @@
             "2023",
             "2024",
             "2025"});
-            this.comboBox7.Location = new System.Drawing.Point(454, 290);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox7.Location = new System.Drawing.Point(340, 236);
+            this.comboBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(73, 29);
+            this.comboBox7.Size = new System.Drawing.Size(56, 25);
             this.comboBox7.TabIndex = 29;
             // 
             // comboBox8
@@ -378,18 +384,19 @@
             "2023",
             "2024",
             "2025"});
-            this.comboBox8.Location = new System.Drawing.Point(454, 131);
-            this.comboBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox8.Location = new System.Drawing.Point(340, 106);
+            this.comboBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(73, 29);
+            this.comboBox8.Size = new System.Drawing.Size(56, 25);
             this.comboBox8.TabIndex = 30;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(281, 427);
+            this.button1.Location = new System.Drawing.Point(211, 347);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 44);
+            this.button1.Size = new System.Drawing.Size(128, 36);
             this.button1.TabIndex = 31;
             this.button1.Text = "Add Event";
             this.button1.UseVisualStyleBackColor = true;
@@ -397,10 +404,10 @@
             // 
             // AddEvent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSalmon;
-            this.ClientSize = new System.Drawing.Size(760, 493);
+            this.ClientSize = new System.Drawing.Size(570, 401);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox8);
             this.Controls.Add(this.comboBox7);
@@ -418,6 +425,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEvent";
