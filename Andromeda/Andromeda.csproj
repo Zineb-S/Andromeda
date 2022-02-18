@@ -169,11 +169,23 @@
     <Compile Include="Frames\EditComment.Designer.cs">
       <DependentUpon>EditComment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frames\EditEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frames\EditEvent.Designer.cs">
+      <DependentUpon>EditEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frames\EditGroup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frames\EditGroup.Designer.cs">
       <DependentUpon>EditGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\EditMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frames\EditMembers.Designer.cs">
+      <DependentUpon>EditMembers.cs</DependentUpon>
     </Compile>
     <Compile Include="Frames\EditPage.cs">
       <SubType>Form</SubType>
@@ -374,6 +386,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frames\CommentsList.resx">
       <DependentUpon>CommentsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\EditComment.resx">
+      <DependentUpon>EditComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\EditEvent.resx">
+      <DependentUpon>EditEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\EditGroup.resx">
+      <DependentUpon>EditGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\EditMembers.resx">
+      <DependentUpon>EditMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\EditPage.resx">
+      <DependentUpon>EditPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\EditPost.resx">
+      <DependentUpon>EditPost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frames\EventDetails.resx">
       <DependentUpon>EventDetails.cs</DependentUpon>

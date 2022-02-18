@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Andromeda.Frames;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,13 @@ namespace Andromeda
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditComment editC = new EditComment();
+            editC.Show();
         }
     }
 }

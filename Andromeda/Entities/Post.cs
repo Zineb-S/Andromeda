@@ -40,11 +40,11 @@ namespace Andromeda
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `posts` ", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `post` WHERE User_ID	='" + Program.CurrentUserID + "'", db.getConnection());
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
-
+                
             StringBuilder sb = new StringBuilder();
             foreach (DataRow dr in table.Rows)
             {
@@ -59,7 +59,10 @@ namespace Andromeda
         }
         public static void exportPosts(string title , string content ) {
 
-            // create profile page if user doesn't have one and then add post to it 
+            //create profile page if user doesn't have one and then add post to it 
+
+            
+
             //MySqlCommand command2 = new MySqlCommand("INSERT INTO page(Page_ID	Page_Name	Page_Date	Page_Type	Start_Date	End_Date	) VALUES(@usn, @fn, @ln, @email, @pass,@year, @gender)", db.getConnection());
             //MySqlCommand command3 = new MySqlCommand("INSERT INTO profile_page(Page_ID,User_ID) VALUES(@pageID, @userID)", db.getConnection());
 

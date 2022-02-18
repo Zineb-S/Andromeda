@@ -8,25 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Andromeda
+namespace Andromeda.Frames
 {
-    public partial class CommentsList : Form
+    public partial class EditMembers : Form
     {
-        public CommentsList()
+        public EditMembers()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddComment comment = new AddComment();
-            comment.Show();
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
         }
     }
 }

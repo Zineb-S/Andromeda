@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Andromeda.Frames;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,6 +56,20 @@ namespace Andromeda
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditPost editp = new EditPost();
+            editp.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            CommentsList cmtList = new CommentsList();
+            cmtList.Show();
         }
     }
 }

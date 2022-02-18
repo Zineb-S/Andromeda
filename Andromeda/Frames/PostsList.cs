@@ -15,6 +15,17 @@ namespace Andromeda
         public PostsList()
         {
             InitializeComponent();
+            
+            
+            
+            postsPanel.FlowDirection = FlowDirection.TopDown;
+            postsPanel.WrapContents = false;
+            postsPanel.AutoScroll = true;
+            PostBox pb = new PostBox();
+            PostBox nb = new PostBox();
+            postsPanel.Controls.Add(pb);
+            postsPanel.Controls.Add(nb);
+            postsPanel.Controls.Add(nb);
         }
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
@@ -31,7 +42,7 @@ namespace Andromeda
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -39,6 +50,16 @@ namespace Andromeda
             this.Hide();
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
+        }
+
+        private void PostsList_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void postsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

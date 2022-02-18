@@ -12,6 +12,8 @@ namespace Andromeda
     {
         public static ArrayList liOfUsers = new ArrayList();
         public static ArrayList liOfPosts = new ArrayList();
+        public static ArrayList liOfPages = new ArrayList();
+        public static ArrayList liOfUserPages = new ArrayList();
         public static int CurrentUserID = 0;
         /// <summary>
         /// Point d'entrée principal de l'application.
@@ -25,7 +27,9 @@ namespace Andromeda
         static void Main()
         {
             User.importUsers(liOfUsers);
-            Post.importPosts(liOfPosts);
+            Console.WriteLine(" ALl users amount : "+liOfUsers.Count/9);
+            Page.importPages(Program.liOfPages);
+            Console.WriteLine("All pages amount : " + Program.liOfPages.Count/6);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Welcome());
