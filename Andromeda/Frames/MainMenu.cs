@@ -15,6 +15,7 @@ namespace Andromeda
         public MainMenu()
         {
             InitializeComponent();
+            Page.CreateProfilePage();
         }
 
         private void button1_Click(object sender, EventArgs e)

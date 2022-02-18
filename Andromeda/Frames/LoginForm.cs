@@ -57,7 +57,7 @@ namespace Andromeda
                 }
                 Console.WriteLine("CurrentUser ID : "+Program.CurrentUserID);
                 // Check if this user has a profile page or not then create one 
-                Page.CreateProfilePage();
+                
                 Post.importPosts(Program.liOfPosts);
                 Console.WriteLine("This User has this amount of posts : " + Program.liOfPosts.Count/7);
                 Page.importUserPages(Program.liOfUserPages);

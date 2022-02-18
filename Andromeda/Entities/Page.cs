@@ -87,73 +87,79 @@ namespace Andromeda
 
         public static void CreateProfilePage()
         {
+            bool found = false;
             MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=andromeda");
-            Console.WriteLine("here0");
+            
             for (var i = 0; i < Program.liOfUserPages.Count; i+=2)
             {
-                Console.WriteLine("here1");
+                
                 for (var j = 0; j < Program.liOfPages.Count; j++)
                 {
-                    Console.WriteLine("here2");
+                    
                     if (Program.liOfUserPages[i].ToString().Equals( Program.liOfPages[j].ToString()))
                     {
-                        Console.WriteLine("here3");
+                        
                         if (Program.liOfPages[j+1].ToString().Equals("Profile"))
                         {
                             Console.WriteLine("User Has already a profile page ");
+                             found = true;
                             break;
+                            
                         }
-                        else
-                        {
-                            //Create profile page
-                            DB db = new DB();
-                            MySqlCommand command = new MySqlCommand("INSERT INTO page(Page_Name,Page_Date,Page_Type ,Start_Date) VALUES(@name, @date, @type,@startdate)", db.getConnection());
-                            MySqlCommand command2 = new MySqlCommand("INSERT INTO profile_page(Page_ID,User_ID) VALUES(@pageID, @ID)", db.getConnection());
-
-                            DateTime now = DateTime.Now;
-                            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = "Profile";
-                            command.Parameters.Add("@date", MySqlDbType.Datetime).Value = now;
-                            command.Parameters.Add("@type", MySqlDbType.VarChar).Value = "Profile";
-                            command.Parameters.Add("@startdate", MySqlDbType.Datetime).Value = now;
-
-
-
-
-                            //open the connection
-                            db.openConnection();
-
-
-                            command.ExecuteNonQuery();
-                            Console.WriteLine("Profile page created ");
-
-
-
-                            //close connection
-                           
-                            importPages(Program.liOfPages);
-                            int PageID = (int)Program.liOfPages[Program.liOfPages.Count - 10];
-                            command2.Parameters.Add("@ID", MySqlDbType.Int32).Value = Program.CurrentUserID;
-                            command2.Parameters.Add("@pageID", MySqlDbType.Datetime).Value = PageID;
-                            db.openConnection();
-
-
-                            command2.ExecuteNonQuery();
-                            Console.WriteLine("info profile page added ");
-
-
-
-                            //close connection
-                            db.closeConnection();
-
-
-
-
-
-                            break;
-
-                        }
+                        
                     }
                 }
+            }
+
+
+            if (!found) 
+            {
+                    //Create profile page
+                    Console.WriteLine("here0");
+                    DB db = new DB();
+                    MySqlCommand command = new MySqlCommand("INSERT INTO page(Page_Name,Page_Date,Page_Type ,Start_Date) VALUES(@name, @date, @type,@startdate)", db.getConnection());
+                    MySqlCommand command2 = new MySqlCommand("INSERT INTO profile_page(Page_ID,User_ID) VALUES(@pageID, @ID)", db.getConnection());
+
+                    DateTime now = DateTime.Now;
+                    command.Parameters.Add("@name", MySqlDbType.VarChar).Value = "Profile";
+                    command.Parameters.Add("@date", MySqlDbType.Datetime).Value = now;
+                    command.Parameters.Add("@type", MySqlDbType.VarChar).Value = "Profile";
+                    command.Parameters.Add("@startdate", MySqlDbType.Datetime).Value = now;
+
+
+
+
+                    //open the connection
+                    db.openConnection();
+
+
+                    command.ExecuteNonQuery();
+                    Console.WriteLine("Profile page created ");
+
+
+
+                    //close connection
+
+                    importPages(Program.liOfPages);
+                    int index = Convert.ToInt32(Program.liOfPages.Count)-6;
+                    
+                    string PageID = Program.liOfPages[index].ToString();
+                Console.WriteLine(PageID);
+                    command2.Parameters.Add("@ID", MySqlDbType.Int32).Value = Program.CurrentUserID;
+                    command2.Parameters.Add("@pageID", MySqlDbType.Int32).Value = Int32.Parse(PageID);
+                    db.openConnection();
+
+
+                    command2.ExecuteNonQuery();
+                    Console.WriteLine("info profile page added ");
+
+
+
+                    //close connection
+                    db.closeConnection();
+
+                
+
             }
         } 
 
