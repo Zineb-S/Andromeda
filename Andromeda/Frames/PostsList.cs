@@ -14,18 +14,27 @@ namespace Andromeda
     {
         public PostsList()
         {
+            
+            Program.PreviousPage = "Profile";
+            Post.importProfilePosts(Program.liOfProfilePosts, Program.CurrentUserID, Program.CurrentUserProfileID);
             InitializeComponent();
-            
-            
-            
+            postsPanel.Update();
             postsPanel.FlowDirection = FlowDirection.TopDown;
             postsPanel.WrapContents = false;
             postsPanel.AutoScroll = true;
-            PostBox pb = new PostBox();
-            PostBox nb = new PostBox();
-            postsPanel.Controls.Add(pb);
-            postsPanel.Controls.Add(nb);
-            postsPanel.Controls.Add(nb);
+
+
+
+            
+            
+            
+            for (int i = 0;i<Program.liOfProfilePosts.Count;i+=7)
+            {
+              
+                postsPanel.Controls.Add(new PostBox(Program.liOfProfilePosts[i + 1].ToString(), Program.liOfProfilePosts[i + 2].ToString(), Program.liOfProfilePosts[i + 3].ToString(), Program.liOfProfilePosts[i + 4].ToString(), Convert.ToString(Program.liOfProfilePosts[i + 5])));
+            }
+            
+
         }
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
@@ -35,7 +44,9 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.postsPanel.Update();
+            this.postsPanel.Controls.Clear();
+            this.Dispose();
             AddPost NewPost = new AddPost();
             NewPost.Show();
         }

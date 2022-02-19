@@ -36,7 +36,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(546, 21);
+            this.button1.Location = new System.Drawing.Point(581, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 50);
             this.button1.TabIndex = 0;
@@ -60,9 +60,9 @@
             this.postsPanel.BackColor = System.Drawing.Color.Transparent;
             this.postsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.postsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.postsPanel.Location = new System.Drawing.Point(30, 87);
+            this.postsPanel.Location = new System.Drawing.Point(48, 86);
             this.postsPanel.Name = "postsPanel";
-            this.postsPanel.Size = new System.Drawing.Size(689, 506);
+            this.postsPanel.Size = new System.Drawing.Size(662, 506);
             this.postsPanel.TabIndex = 0;
             this.postsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.postsPanel_Paint);
             // 

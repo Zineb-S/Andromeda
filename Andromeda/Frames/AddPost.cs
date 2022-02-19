@@ -19,20 +19,38 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+           
             String postTitle = textBoxPostTitle.Text;
             String postContent = textBoxPostContent.Text;
-
             Post.exportPosts(postTitle, postContent);
-
             this.Hide();
-            MainMenu menu = new MainMenu();
-            menu.Show();
+            PostsList newMenu = new PostsList();
+            newMenu.Show();
         }
 
         private void AddPost_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void textBoxPostTitle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPostContent_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

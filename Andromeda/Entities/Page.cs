@@ -101,6 +101,7 @@ namespace Andromeda
                         
                         if (Program.liOfPages[j+1].ToString().Equals("Profile"))
                         {
+                            Program.CurrentUserProfileID = Convert.ToInt32(Program.liOfUserPages[i]);
                             Console.WriteLine("User Has already a profile page ");
                              found = true;
                             break;
@@ -115,7 +116,7 @@ namespace Andromeda
             if (!found) 
             {
                     //Create profile page
-                    Console.WriteLine("here0");
+                   
                     DB db = new DB();
                     MySqlCommand command = new MySqlCommand("INSERT INTO page(Page_Name,Page_Date,Page_Type ,Start_Date) VALUES(@name, @date, @type,@startdate)", db.getConnection());
                     MySqlCommand command2 = new MySqlCommand("INSERT INTO profile_page(Page_ID,User_ID) VALUES(@pageID, @ID)", db.getConnection());
@@ -144,10 +145,10 @@ namespace Andromeda
                     int index = Convert.ToInt32(Program.liOfPages.Count)-6;
                     
                     string PageID = Program.liOfPages[index].ToString();
-                Console.WriteLine(PageID);
+                    Console.WriteLine(PageID);
                     command2.Parameters.Add("@ID", MySqlDbType.Int32).Value = Program.CurrentUserID;
                     command2.Parameters.Add("@pageID", MySqlDbType.Int32).Value = Int32.Parse(PageID);
-                    db.openConnection();
+                    
 
 
                     command2.ExecuteNonQuery();

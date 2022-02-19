@@ -16,6 +16,9 @@ namespace Andromeda
         {
             InitializeComponent();
             Page.CreateProfilePage();
+            
+           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,6 +81,7 @@ namespace Andromeda
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
+            
             PostsList posts = new PostsList();
             posts.Show();
         }

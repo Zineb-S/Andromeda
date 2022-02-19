@@ -30,53 +30,7 @@ namespace Andromeda
 
         private void textBoxFirstname_Enter(object sender, EventArgs e)
         {
-            String fname = textBoxFirstname.Text;
-            if (fname.Equals("first name"))
-            {
-                textBoxFirstname.Text = "";
-            }
-
-            String lname = textBoxLastname.Text;
-            if (lname.Equals("last name"))
-            {
-                textBoxLastname.Text = "";
-            }
-
-            String username = textBoxEmail.Text;
-            if (username.Equals("username"))
-            {
-                textBoxEmail.Text = "";
-            }
-
-            String email = textBoxUsername.Text;
-            if (email.Equals("email address"))
-            {
-                textBoxUsername.Text = "";
-            }
-
-            String password = textBoxPassword.Text;
-            if (password.Equals("password"))
-            {
-                textBoxPassword.Text = "";
-            }
-
-            String birthday = textBoxBirthDay.Text;
-            if (birthday.Equals("Day"))
-            {
-                textBoxBirthDay.Text = "";
-            }
-
-            String birthmonth = textBoxBirthMonth.Text;
-            if (birthmonth.Equals("Month"))
-            {
-                textBoxBirthMonth.Text = "";
-            }
-
-            String birthyear = textBoxBirthYear.Text;
-            if (birthyear.Equals("Year"))
-            {
-                textBoxBirthYear.Text = "";
-            }
+            
         }
 
         private void ButtonCreateAccount_Click(object sender, EventArgs e)
