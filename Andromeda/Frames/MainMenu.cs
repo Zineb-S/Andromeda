@@ -16,6 +16,8 @@ namespace Andromeda
         {
             InitializeComponent();
             Page.CreateProfilePage();
+            Page.importUserPages(Program.liOfUserPages);
+            Page.importPages(Program.liOfPages);
             
            
 

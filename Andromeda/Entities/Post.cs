@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Andromeda.Frames;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -201,7 +202,74 @@ namespace Andromeda
 
             
         }
-        public static void deletePost() { }
-        public static void updatePost() { }
+        public static void deletePost(int postID , int userID) 
+        {
+
+            DB db = new DB();
+           
+            MySqlCommand command = new MySqlCommand("DELETE FROM post_informations WHERE  User_ID	='" + userID+ "' and POST_ID	='" + postID + "'", db.getConnection());
+            MySqlCommand command2 = new MySqlCommand("DELETE FROM post WHERE  User_ID	='" + userID + "' and POST_ID	='" + postID+ "'", db.getConnection());
+
+
+            //open the connection
+            db.openConnection();
+            command.ExecuteNonQuery();
+            command2.ExecuteNonQuery();
+            db.closeConnection();
+            MessageBox.Show(" Post succefully Deleted ");
+
+
+        }
+
+        public static void UpVote(int postID, int currentVote) 
+        {
+            DB db = new DB();
+
+            MySqlCommand command = new MySqlCommand("UPDATE post SET Post_Up_Votes ='" + (currentVote+1 )+ "' WHERE POST_ID	='" + postID + "'", db.getConnection());
+           
+
+
+            //open the connection
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+        }
+        public static void DownVote(int postID , int currentVote) 
+        {
+
+            DB db = new DB();
+
+            MySqlCommand command = new MySqlCommand("UPDATE post SET Post_Down_Votes ='" + (currentVote + 1) + "' WHERE POST_ID	='" + postID + "'", db.getConnection());
+
+            //open the connection
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();   
+        }
+        public static void updatePost(int postID, string title, string content) 
+        {
+            if (title.Equals("") || content.Equals(""))
+            {
+                MessageBox.Show(" Please make sure to fill the whole form !");
+
+                EditPost.ActiveForm.Hide();
+                EditPost NewPost = new EditPost(postID);
+                NewPost.Show();
+
+            }
+            DB db = new DB();
+
+            MySqlCommand command = new MySqlCommand("UPDATE post SET Post_Title ='" + title + "' , Post_Content  ='" + content + "' WHERE POST_ID	='" + postID + "'", db.getConnection());
+
+
+
+            //open the connection
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+            MessageBox.Show(" Post succefully Edited ");
+
+
+        }
     }
 }

@@ -86,6 +86,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.FlowLayoutPanel postsPanel;
+        public System.Windows.Forms.FlowLayoutPanel postsPanel;
     }
 }

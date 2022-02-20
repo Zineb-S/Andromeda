@@ -13,27 +13,22 @@ namespace Andromeda
     public partial class PostsList : Form
     {
         public PostsList()
-        {
-            
+        {   
+            Program.liOfProfilePosts.Clear();
             Program.PreviousPage = "Profile";
             Post.importProfilePosts(Program.liOfProfilePosts, Program.CurrentUserID, Program.CurrentUserProfileID);
-            InitializeComponent();
-            postsPanel.Update();
+            InitializeComponent();           
+            postsPanel = new FlowLayoutPanel();
             postsPanel.FlowDirection = FlowDirection.TopDown;
             postsPanel.WrapContents = false;
             postsPanel.AutoScroll = true;
-
-
-
-            
-            
-            
+            postsPanel.Controls.Clear();    
             for (int i = 0;i<Program.liOfProfilePosts.Count;i+=7)
             {
               
-                postsPanel.Controls.Add(new PostBox(Program.liOfProfilePosts[i + 1].ToString(), Program.liOfProfilePosts[i + 2].ToString(), Program.liOfProfilePosts[i + 3].ToString(), Program.liOfProfilePosts[i + 4].ToString(), Convert.ToString(Program.liOfProfilePosts[i + 5])));
+                postsPanel.Controls.Add(new PostBox(Convert.ToInt32(Program.liOfProfilePosts[i]),Program.liOfProfilePosts[i + 1].ToString(), Program.liOfProfilePosts[i + 2].ToString(), Program.liOfProfilePosts[i + 3].ToString(), Program.liOfProfilePosts[i + 4].ToString(), Convert.ToString(Program.liOfProfilePosts[i + 5])));
             }
-            
+           
 
         }
 
@@ -44,8 +39,8 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.postsPanel.Update();
-            this.postsPanel.Controls.Clear();
+
+            postsPanel.Controls.Clear();
             this.Dispose();
             AddPost NewPost = new AddPost();
             NewPost.Show();

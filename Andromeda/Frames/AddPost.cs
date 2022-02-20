@@ -19,13 +19,15 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
             String postTitle = textBoxPostTitle.Text;
             String postContent = textBoxPostContent.Text;
             Post.exportPosts(postTitle, postContent);
             this.Hide();
             PostsList newMenu = new PostsList();
             newMenu.Show();
+
+            
+            
         }
 
         private void AddPost_Load(object sender, EventArgs e)
@@ -52,5 +54,7 @@ namespace Andromeda
         {
 
         }
+
+        
     }
 }

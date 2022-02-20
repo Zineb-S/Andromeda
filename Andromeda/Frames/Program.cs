@@ -15,7 +15,10 @@ namespace Andromeda
         public static ArrayList liOfPages = new ArrayList();
         public static ArrayList liOfUserPages = new ArrayList();
         public static ArrayList liOfProfilePosts = new ArrayList();
+
+
         public static int CurrentUserID = 0;
+        public static int CurrentPostID = 0;
         public static int PreviousPageID = 0;
         public static int CurrentUserProfileID = 0;
         public static string PreviousPage = "";

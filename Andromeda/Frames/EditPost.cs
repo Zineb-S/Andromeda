@@ -12,9 +12,26 @@ namespace Andromeda.Frames
 {
     public partial class EditPost : Form
     {
-        public EditPost()
+        public EditPost(int PostID)
         {
             InitializeComponent();
+            label3.Text = PostID.ToString();    
+        }
+
+        private void EditPost_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String Title = BoxTitle.Text;
+            String Content = BoxContent.Text;
+            int PostID = Convert.ToInt32(label3.Text);
+            Post.updatePost(PostID,Title, Content);
+            EditPost.ActiveForm.Dispose();
+            PostsList newMenu = new PostsList();
+            newMenu.Show();
         }
     }
 }

@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxPostContent = new System.Windows.Forms.TextBox();
+            this.BoxContent = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBoxPostTitle = new System.Windows.Forms.TextBox();
+            this.BoxTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBoxPostContent
+            // BoxContent
             // 
-            this.textBoxPostContent.Location = new System.Drawing.Point(155, 155);
-            this.textBoxPostContent.Multiline = true;
-            this.textBoxPostContent.Name = "textBoxPostContent";
-            this.textBoxPostContent.Size = new System.Drawing.Size(482, 299);
-            this.textBoxPostContent.TabIndex = 44;
+            this.BoxContent.Location = new System.Drawing.Point(155, 155);
+            this.BoxContent.Multiline = true;
+            this.BoxContent.Name = "BoxContent";
+            this.BoxContent.Size = new System.Drawing.Size(482, 299);
+            this.BoxContent.TabIndex = 44;
             // 
             // label2
             // 
@@ -62,14 +63,15 @@
             this.button1.TabIndex = 42;
             this.button1.Text = "Edit Post";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBoxPostTitle
+            // BoxTitle
             // 
-            this.textBoxPostTitle.Location = new System.Drawing.Point(155, 69);
-            this.textBoxPostTitle.Multiline = true;
-            this.textBoxPostTitle.Name = "textBoxPostTitle";
-            this.textBoxPostTitle.Size = new System.Drawing.Size(482, 38);
-            this.textBoxPostTitle.TabIndex = 41;
+            this.BoxTitle.Location = new System.Drawing.Point(155, 69);
+            this.BoxTitle.Multiline = true;
+            this.BoxTitle.Name = "BoxTitle";
+            this.BoxTitle.Size = new System.Drawing.Size(482, 38);
+            this.BoxTitle.TabIndex = 41;
             // 
             // label1
             // 
@@ -81,19 +83,31 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "Post Title";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(363, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "label3";
+            this.label3.Visible = false;
+            // 
             // EditPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 549);
-            this.Controls.Add(this.textBoxPostContent);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.BoxContent);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBoxPostTitle);
+            this.Controls.Add(this.BoxTitle);
             this.Controls.Add(this.label1);
             this.Name = "EditPost";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditPost";
+            this.Load += new System.EventHandler(this.EditPost_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,10 +115,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxPostContent;
+        private System.Windows.Forms.TextBox BoxContent;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBoxPostTitle;
+        private System.Windows.Forms.TextBox BoxTitle;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
