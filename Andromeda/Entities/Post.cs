@@ -153,7 +153,7 @@ namespace Andromeda
 
         }
 
-        public static void importProfilePosts( ArrayList postsList , int CurrentUserID , int CurrentUserPfpID)
+        public static void importProfilePosts(ArrayList postsList, int CurrentUserID, int CurrentUserPfpID)
         {
 
             DB db = new DB();
@@ -161,7 +161,7 @@ namespace Andromeda
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
-            MySqlCommand command = new MySqlCommand("SELECT Post_ID FROM `post_informations` WHERE User_ID	='" + Program.CurrentUserID + "' and Page_ID	='" + Program.CurrentUserProfileID + "'", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT P.`Post_ID`, `Post_Title`, `Post_Date`, `Post_Content`, `Post_Up_Votes`, `Post_Down_Votes`, P.`User_ID` FROM post P INNER JOIN post_informations PI ON p.Post_ID = pi.Post_ID AND pi.User_ID ='" + CurrentUserID + "' AND pi.Page_ID='" + CurrentUserPfpID + "'", db.getConnection());
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
@@ -171,33 +171,18 @@ namespace Andromeda
             foreach (DataRow dr in table.Rows)
             {
                 object[] arr = dr.ItemArray;
-                Console.WriteLine("HERE");
+
                 for (int i = 0; i < arr.Length; i++)
                 {
-                   
-                    for (int j = 0;j<Program.liOfPosts.Count; j+=7)
-                    {
-                       
-                        if (Program.liOfPosts[j].Equals(Convert.ToString(arr[i])))
-                        {
 
-                            Console.WriteLine("FOUND IT");
-                            Console.WriteLine(Program.liOfPosts[j+1]);
-                            postsList.Add(Program.liOfPosts[j]);
-                            postsList.Add(Program.liOfPosts[j + 1]);
-                            postsList.Add(Program.liOfPosts[j + 2]);
-                            postsList.Add(Program.liOfPosts[j + 3]);
-                            postsList.Add(Program.liOfPosts[j + 4]);
-                            postsList.Add(Program.liOfPosts[j + 5]);
-                            postsList.Add(Program.liOfPosts[j + 6]);
-                            sb.Append('\n');
-                            break;
-                        }
-                       
-                    }
-                    
+                    postsList.Add(Convert.ToString(arr[i]));
+
+
                 }
+
+
             }
+        
 
 
             
@@ -253,16 +238,15 @@ namespace Andromeda
                 MessageBox.Show(" Please make sure to fill the whole form !");
 
                 EditPost.ActiveForm.Hide();
-                EditPost NewPost = new EditPost(postID);
+                EditPost NewPost = new EditPost(postID,title,content);
                 NewPost.Show();
 
             }
             DB db = new DB();
 
-            MySqlCommand command = new MySqlCommand("UPDATE post SET Post_Title ='" + title + "' , Post_Content  ='" + content + "' WHERE POST_ID	='" + postID + "'", db.getConnection());
-
-
-
+            MySqlCommand command = new MySqlCommand("UPDATE post SET Post_Title =@title , Post_Content  =@content  WHERE POST_ID	= " + postID + "", db.getConnection());
+            command.Parameters.Add("@title", MySqlDbType.VarChar).Value = title;
+            command.Parameters.Add("@content", MySqlDbType.VarChar).Value = content;
             //open the connection
             db.openConnection();
             command.ExecuteNonQuery();

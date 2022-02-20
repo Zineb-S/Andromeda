@@ -123,9 +123,9 @@ namespace Andromeda
 
                     DateTime now = DateTime.Now;
                     command.Parameters.Add("@name", MySqlDbType.VarChar).Value = "Profile";
-                    command.Parameters.Add("@date", MySqlDbType.Datetime).Value = now;
+                    command.Parameters.Add("@date", MySqlDbType.DateTime).Value = now;
                     command.Parameters.Add("@type", MySqlDbType.VarChar).Value = "Profile";
-                    command.Parameters.Add("@startdate", MySqlDbType.Datetime).Value = now;
+                    command.Parameters.Add("@startdate", MySqlDbType.DateTime).Value = now;
 
 
 

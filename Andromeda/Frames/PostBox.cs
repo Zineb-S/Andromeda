@@ -73,10 +73,10 @@ namespace Andromeda
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PostsList.postsPanel.Controls.Clear();
+          
             int PostID = Convert.ToInt32(label9.Text);
-            PostsList.ActiveForm.Dispose();
-            EditPost editp = new EditPost( PostID );
+            PostsList.ActiveForm.Hide();
+            EditPost editp = new EditPost( PostID ,TitleLabel.Text.ToString(),ContentLabel.Text);
             editp.Show();
         }
 

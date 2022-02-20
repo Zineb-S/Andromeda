@@ -17,16 +17,14 @@ namespace Andromeda
             Program.liOfProfilePosts.Clear();
             Program.PreviousPage = "Profile";
             Post.importProfilePosts(Program.liOfProfilePosts, Program.CurrentUserID, Program.CurrentUserProfileID);
-            InitializeComponent();           
-            postsPanel = new FlowLayoutPanel();
+            InitializeComponent();               
             postsPanel.FlowDirection = FlowDirection.TopDown;
             postsPanel.WrapContents = false;
             postsPanel.AutoScroll = true;
             postsPanel.Controls.Clear();    
             for (int i = 0;i<Program.liOfProfilePosts.Count;i+=7)
             {
-              
-                postsPanel.Controls.Add(new PostBox(Convert.ToInt32(Program.liOfProfilePosts[i]),Program.liOfProfilePosts[i + 1].ToString(), Program.liOfProfilePosts[i + 2].ToString(), Program.liOfProfilePosts[i + 3].ToString(), Program.liOfProfilePosts[i + 4].ToString(), Convert.ToString(Program.liOfProfilePosts[i + 5])));
+         postsPanel.Controls.Add(new PostBox(Convert.ToInt32(Program.liOfProfilePosts[i]),Program.liOfProfilePosts[i + 1].ToString(), Program.liOfProfilePosts[i + 2].ToString(), Program.liOfProfilePosts[i + 3].ToString(), Program.liOfProfilePosts[i + 4].ToString(), Convert.ToString(Program.liOfProfilePosts[i + 5])));
             }
            
 
