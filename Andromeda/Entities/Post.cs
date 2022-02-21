@@ -64,6 +64,41 @@ namespace Andromeda
             }
             Console.WriteLine(sb);
         }
+
+        public static void importProfilePosts(ArrayList postsList, int CurrentUserID, int CurrentUserPfpID)
+        {
+
+            DB db = new DB();
+
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            MySqlCommand command = new MySqlCommand("SELECT P.`Post_ID`, `Post_Title`, `Post_Date`, `Post_Content`, `Post_Up_Votes`, `Post_Down_Votes`, P.`User_ID` FROM post P INNER JOIN post_informations PI ON p.Post_ID = pi.Post_ID AND pi.User_ID ='" + CurrentUserID + "' AND pi.Page_ID='" + CurrentUserPfpID + "'", db.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            importPosts(Program.liOfPosts);
+            Console.WriteLine(Program.liOfPosts.Count);
+            StringBuilder sb = new StringBuilder();
+            foreach (DataRow dr in table.Rows)
+            {
+                object[] arr = dr.ItemArray;
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+
+                    postsList.Add(Convert.ToString(arr[i]));
+
+
+                }
+
+
+            }
+
+
+
+
+        }
         public static void exportPosts(string title , string content ) {
 
 
@@ -152,41 +187,6 @@ namespace Andromeda
 
 
         }
-
-        public static void importProfilePosts(ArrayList postsList, int CurrentUserID, int CurrentUserPfpID)
-        {
-
-            DB db = new DB();
-
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            DataTable table = new DataTable();
-            MySqlCommand command = new MySqlCommand("SELECT P.`Post_ID`, `Post_Title`, `Post_Date`, `Post_Content`, `Post_Up_Votes`, `Post_Down_Votes`, P.`User_ID` FROM post P INNER JOIN post_informations PI ON p.Post_ID = pi.Post_ID AND pi.User_ID ='" + CurrentUserID + "' AND pi.Page_ID='" + CurrentUserPfpID + "'", db.getConnection());
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            importPosts(Program.liOfPosts);
-            Console.WriteLine(Program.liOfPosts.Count);
-            StringBuilder sb = new StringBuilder();
-            foreach (DataRow dr in table.Rows)
-            {
-                object[] arr = dr.ItemArray;
-
-                for (int i = 0; i < arr.Length; i++)
-                {
-
-                    postsList.Add(Convert.ToString(arr[i]));
-
-
-                }
-
-
-            }
-        
-
-
-            
-        }
         public static void deletePost(int postID , int userID) 
         {
 
@@ -205,7 +205,30 @@ namespace Andromeda
 
 
         }
+        public static void updatePost(int postID, string title, string content)
+        {
+            if (title.Equals("") || content.Equals(""))
+            {
+                MessageBox.Show(" Please make sure to fill the whole form !");
 
+                EditPost.ActiveForm.Hide();
+                EditPost NewPost = new EditPost(postID, title, content);
+                NewPost.Show();
+
+            }
+            DB db = new DB();
+
+            MySqlCommand command = new MySqlCommand("UPDATE post SET Post_Title =@title , Post_Content  =@content  WHERE POST_ID	= " + postID + "", db.getConnection());
+            command.Parameters.Add("@title", MySqlDbType.VarChar).Value = title;
+            command.Parameters.Add("@content", MySqlDbType.VarChar).Value = content;
+            //open the connection
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+            MessageBox.Show(" Post succefully Edited ");
+
+
+        }
         public static void UpVote(int postID, int currentVote) 
         {
             DB db = new DB();
@@ -231,29 +254,6 @@ namespace Andromeda
             command.ExecuteNonQuery();
             db.closeConnection();   
         }
-        public static void updatePost(int postID, string title, string content) 
-        {
-            if (title.Equals("") || content.Equals(""))
-            {
-                MessageBox.Show(" Please make sure to fill the whole form !");
-
-                EditPost.ActiveForm.Hide();
-                EditPost NewPost = new EditPost(postID,title,content);
-                NewPost.Show();
-
-            }
-            DB db = new DB();
-
-            MySqlCommand command = new MySqlCommand("UPDATE post SET Post_Title =@title , Post_Content  =@content  WHERE POST_ID	= " + postID + "", db.getConnection());
-            command.Parameters.Add("@title", MySqlDbType.VarChar).Value = title;
-            command.Parameters.Add("@content", MySqlDbType.VarChar).Value = content;
-            //open the connection
-            db.openConnection();
-            command.ExecuteNonQuery();
-            db.closeConnection();
-            MessageBox.Show(" Post succefully Edited ");
-
-
-        }
+       
     }
 }

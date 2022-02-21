@@ -30,7 +30,8 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CommentBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -54,25 +55,37 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Add Comment";
             // 
-            // textBox1
+            // CommentBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(29, 82);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(707, 363);
-            this.textBox1.TabIndex = 2;
+            this.CommentBox.Location = new System.Drawing.Point(29, 82);
+            this.CommentBox.Multiline = true;
+            this.CommentBox.Name = "CommentBox";
+            this.CommentBox.Size = new System.Drawing.Size(707, 363);
+            this.CommentBox.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(418, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "label2";
+            this.label2.Visible = false;
             // 
             // AddComment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 550);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.CommentBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "AddComment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddComment";
+            this.Load += new System.EventHandler(this.AddComment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,6 +95,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox CommentBox;
+        private System.Windows.Forms.Label label2;
     }
 }

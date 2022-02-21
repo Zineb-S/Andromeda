@@ -82,8 +82,8 @@ namespace Andromeda
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            CommentsList cmtList = new CommentsList();
+            int PostID = Convert.ToInt32(label9.Text);
+            CommentsList cmtList = new CommentsList(PostID);
             cmtList.Show();
         }
 
