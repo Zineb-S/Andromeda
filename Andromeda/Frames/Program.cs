@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Andromeda.Entities;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,11 @@ namespace Andromeda
         public static ArrayList liOfPosts = new ArrayList();
         public static ArrayList liOfPostsComments = new ArrayList();
         public static ArrayList liOfPages = new ArrayList();
+        public static ArrayList liOfNormalPages = new ArrayList();
         public static ArrayList liOfComments = new ArrayList();
         public static ArrayList liOfUserPages = new ArrayList();
         public static ArrayList liOfProfilePosts = new ArrayList();
+        public static List<Vote> VotesList = new List<Vote>();
 
 
         public static int CurrentUserID = 0;

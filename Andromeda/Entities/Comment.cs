@@ -140,6 +140,8 @@ namespace Andromeda
                 NewPost.Show();
 
             }
+            else
+            {
             DB db = new DB();
 
             MySqlCommand command = new MySqlCommand("UPDATE comments SET Comment_Text =@content WHERE Comment_ID	= " + commentID + "", db.getConnection());
@@ -149,6 +151,8 @@ namespace Andromeda
             command.ExecuteNonQuery();
             db.closeConnection();
             MessageBox.Show(" Comment succefully Edited ");
+            }
+           
 
 
         }

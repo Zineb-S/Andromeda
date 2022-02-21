@@ -102,6 +102,7 @@
     <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\Request.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Vote.cs" />
     <Compile Include="Frames\AddComment.cs">
       <SubType>Form</SubType>
     </Compile>

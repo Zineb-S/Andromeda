@@ -19,7 +19,7 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Page Added");
+            Page.exportPages(textBox1.Text);
             this.Hide();
             Pages page = new Pages();
             page.Show();
