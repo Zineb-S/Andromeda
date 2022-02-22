@@ -29,29 +29,20 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
+            this.postsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(656, 22);
+            this.button1.Location = new System.Drawing.Point(581, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 50);
             this.button1.TabIndex = 0;
             this.button1.Text = " Create ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Location = new System.Drawing.Point(30, 89);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(764, 508);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button2
             // 
@@ -64,17 +55,29 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // postsPanel
+            // 
+            this.postsPanel.BackColor = System.Drawing.Color.Transparent;
+            this.postsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.postsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.postsPanel.Location = new System.Drawing.Point(48, 86);
+            this.postsPanel.Name = "postsPanel";
+            this.postsPanel.Size = new System.Drawing.Size(662, 506);
+            this.postsPanel.TabIndex = 0;
+            this.postsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.postsPanel_Paint);
+            // 
             // PostsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 697);
+            this.ClientSize = new System.Drawing.Size(749, 705);
+            this.Controls.Add(this.postsPanel);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Name = "PostsList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PostsList";
+            this.Load += new System.EventHandler(this.PostsList_Load);
             this.ResumeLayout(false);
 
         }
@@ -82,7 +85,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.FlowLayoutPanel postsPanel;
     }
 }

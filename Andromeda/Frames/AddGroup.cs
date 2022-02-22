@@ -24,7 +24,7 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Group Added ");
+            Group.exportGroups(textBox1.Text);
             this.Hide();
             GroupsList grpL = new GroupsList();
             grpL.Show();

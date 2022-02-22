@@ -93,7 +93,7 @@
             this.button4.Location = new System.Drawing.Point(307, 207);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(159, 52);
+            this.button4.Size = new System.Drawing.Size(175, 52);
             this.button4.TabIndex = 3;
             this.button4.Text = "Posts";
             this.button4.UseVisualStyleBackColor = true;
@@ -210,11 +210,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(430, 221);
+            this.label3.Location = new System.Drawing.Point(446, 221);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(20, 24);
             this.label3.TabIndex = 14;
             this.label3.Text = "0";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 

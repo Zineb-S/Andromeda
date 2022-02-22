@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Andromeda.Frames;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,13 @@ namespace Andromeda
             this.Hide();
             AddPost post = new AddPost();
             post.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditPage editpage = new EditPage();
+            editpage.Show();
         }
     }
 }

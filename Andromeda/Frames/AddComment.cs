@@ -12,18 +12,24 @@ namespace Andromeda
 {
     public partial class AddComment : Form
     {
-        public AddComment()
+        public AddComment(int PostID)
         {
             InitializeComponent();
+            label2.Text = PostID.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // 3la 7ssab dik lvariable globale anchufu wach andirigiw luser lgroup wla page wla event li fih dak lpost li zdna fih comment
-            MessageBox.Show(" Comment Posted ");
+
+            Comment.exportComments(CommentBox.Text, Int32.Parse(label2.Text));
             this.Hide();
-            MainMenu menu  = new MainMenu();
+            CommentsList menu  = new CommentsList(Int32.Parse(label2.Text));
             menu.Show();
+
+        }
+
+        private void AddComment_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -13,8 +13,18 @@ namespace Andromeda
     public partial class MainMenu : Form
     {
         public MainMenu()
+
         {
+
+            Program.liOfProfilePosts.Clear();
+            Page.CreateProfilePage();
+            Page.importUserPages(Program.liOfUserPages);
+            Page.importPages(Program.liOfPages);
+            Post.importProfilePosts(Program.liOfProfilePosts, Program.CurrentUserID, Program.CurrentUserProfileID);
             InitializeComponent();
+            label3.Text = (Program.liOfProfilePosts.Count/7).ToString();
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,6 +87,7 @@ namespace Andromeda
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
+            
             PostsList posts = new PostsList();
             posts.Show();
         }
@@ -107,6 +118,11 @@ namespace Andromeda
             this.Hide();
             Profile prof = new Profile();
             prof.Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,6 +53,7 @@
             this.textBoxPostTitle.Name = "textBoxPostTitle";
             this.textBoxPostTitle.Size = new System.Drawing.Size(482, 38);
             this.textBoxPostTitle.TabIndex = 36;
+            this.textBoxPostTitle.TextChanged += new System.EventHandler(this.textBoxPostTitle_TextChanged);
             // 
             // label1
             // 
@@ -63,6 +64,7 @@
             this.label1.Size = new System.Drawing.Size(89, 24);
             this.label1.TabIndex = 35;
             this.label1.Text = "Post Title";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -73,6 +75,7 @@
             this.label2.Size = new System.Drawing.Size(120, 24);
             this.label2.TabIndex = 38;
             this.label2.Text = "Post Content";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBoxPostContent
             // 
@@ -81,6 +84,7 @@
             this.textBoxPostContent.Name = "textBoxPostContent";
             this.textBoxPostContent.Size = new System.Drawing.Size(482, 299);
             this.textBoxPostContent.TabIndex = 39;
+            this.textBoxPostContent.TextChanged += new System.EventHandler(this.textBoxPostContent_TextChanged);
             // 
             // AddPost
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Andromeda.Frames;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,25 @@ namespace Andromeda
 {
     public partial class PostBox : UserControl
     {
-        public PostBox()
+        public PostBox(int PostID, string Title, string Date, string Content, string upVotes, string Downvotes)
         {
+            
+            
             InitializeComponent();
+            
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.WrapContents = false;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Controls.Add(ContentLabel);
+            label9.Text = PostID.ToString();
+            ContentLabel.Text = Content;
+            TitleLabel.Text = Title;
+            label2.Text = Date;
+            label6.Text = upVotes;
+            label8.Text = Downvotes;
+
+            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,8 +69,61 @@ namespace Andromeda
 
         }
 
+        
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+          
+            int PostID = Convert.ToInt32(label9.Text);
+            PostsList.ActiveForm.Hide();
+            EditPost editp = new EditPost( PostID ,TitleLabel.Text.ToString(),ContentLabel.Text);
+            editp.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int PostID = Convert.ToInt32(label9.Text);
+            CommentsList cmtList = new CommentsList(PostID);
+            cmtList.Show();
+        }
+
+        private void PostBox_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            int PostID = Convert.ToInt32(label9.Text);
+            Post.deletePost(PostID, Program.CurrentUserID);
+            PostsList.ActiveForm.Dispose();
+            PostsList newList = new PostsList();
+            newList.Show();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
+            int PostID = Convert.ToInt32(label9.Text);
+            int CurrentVote = Convert.ToInt32(label6.Text);
+            Post.UpVote(PostID, CurrentVote);
+            CurrentVote++;
+            label6.Text =CurrentVote.ToString();
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int PostID = Convert.ToInt32(label9.Text);
+            int CurrentVote = Convert.ToInt32(label8.Text);
+            Post.DownVote(PostID, CurrentVote);
+            CurrentVote++;
+            label8.Text =CurrentVote.ToString();
+
 
         }
     }

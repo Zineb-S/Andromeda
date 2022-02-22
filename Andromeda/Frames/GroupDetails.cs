@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Andromeda.Frames;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,13 @@ namespace Andromeda
             this.Hide();
             GroupsList grpList = new GroupsList();
             grpList.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditGroup Editgrp = new EditGroup();
+            Editgrp.Show();
         }
     }
 }
