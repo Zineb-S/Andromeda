@@ -86,8 +86,7 @@ namespace Andromeda
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            
+            this.Dispose();
             PostsList posts = new PostsList();
             posts.Show();
         }

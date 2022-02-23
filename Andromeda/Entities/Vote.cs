@@ -46,7 +46,14 @@ namespace Andromeda.Entities
             DB db = new DB();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
-            MySqlCommand command = new MySqlCommand("SELECT Post_ID, count(*) VoteNumber , sum(Vote_Like) LikeNumber , sum(Vote_Dislike) DislikeNumber , SUM(if(User_ID='1', Vote_Like , 0)) as Like_Current_User ,SUM(if(User_ID='" + Program.CurrentUserID + "', Vote_Dislike , 0)) as Dislike_Current_User FROM votes GROUP BY Post_ID;", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT " +
+                "Post_ID,"+
+                "count(*) VoteNumber,"+
+                "sum(Vote_Like) LikeNumber,"+
+                "sum(Vote_Dislike) DislikeNumber," +
+               " SUM(if (User_ID = "+Program.CurrentUserID+", Vote_Like , 0)) as Like_Current_User ," +
+                "SUM(if (User_ID = " + Program.CurrentUserID + ", Vote_Dislike , 0)) as Dislike_Current_User" +
+                " FROM votes GROUP BY Post_ID; ", db.getConnection());
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
@@ -63,21 +70,21 @@ namespace Andromeda.Entities
             Console.WriteLine(sb);
         }
 
-        public static void ImportPostVotes(int PostID, ArrayList AllVotesList, ArrayList PostVotesList)
+        public static void ImportPostVotes(int PostID, ArrayList PostVotesList)
         {
             Program.AllVotesList.Clear();
             ImportAllPostsVotes(Program.AllVotesList);
 
-            for (int i = 0; i < AllVotesList.Count; i++)
+            for (int i = 0; i < Program.AllVotesList.Count; i+=6)
             {
-                if (Convert.ToInt32(AllVotesList[i]).Equals(PostID))
+                if (Convert.ToInt32(Program.AllVotesList[i]).Equals(PostID))
                 {
-                    PostVotesList.Add(AllVotesList[i]);
-                    PostVotesList.Add(AllVotesList[i + 1]);
-                    PostVotesList.Add(AllVotesList[i + 2]);
-                    PostVotesList.Add(AllVotesList[i + 3]);
-                    PostVotesList.Add(AllVotesList[i + 4]);
-                    PostVotesList.Add(AllVotesList[i + 5]);
+                    PostVotesList.Add(Program.AllVotesList[i]);
+                    PostVotesList.Add(Program.AllVotesList[i + 1]);
+                    PostVotesList.Add(Program.AllVotesList[i + 2]);
+                    PostVotesList.Add(Program.AllVotesList[i + 3]);
+                    PostVotesList.Add(Program.AllVotesList[i + 4]);
+                    PostVotesList.Add(Program.AllVotesList[i + 5]);
                     break;
                 }
             }
@@ -90,7 +97,7 @@ namespace Andromeda.Entities
             bool checkUserVoted(int UserID, string PoID)
             {   Program.AllVotesList.Clear();
                 Program.VotesList.Clear();
-                ImportPostVotes(Convert.ToInt32(PostID),Program.AllVotesList,Program.VotesList);
+                ImportPostVotes(Convert.ToInt32(PostID),Program.VotesList);
                 if(Program.VotesList.Count > 0)
                 {
                     return true;

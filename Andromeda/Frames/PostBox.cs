@@ -18,7 +18,6 @@ namespace Andromeda
         public Boolean Dislike ;
         public PostBox(int PostID, string Title, string Date, string Content, string upVotes, string Downvotes , int L,int DL)
         {
-            
             InitializeComponent();
             Console.WriteLine(PostID + " : " + L + " " + DL);
             if (L == 0 & DL == 0)

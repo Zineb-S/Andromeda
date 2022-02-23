@@ -16,9 +16,9 @@ namespace Andromeda
         public PostsList()
         {   
             Program.liOfProfilePosts.Clear();
-            Program.AllVotesList.Clear();
+           
             Program.PreviousPage = "Profile";
-            Vote.ImportAllPostsVotes(Program.AllVotesList);
+            
             Post.importProfilePosts(Program.liOfProfilePosts, Program.CurrentUserID, Program.CurrentUserProfileID);
             InitializeComponent();               
             postsPanel.FlowDirection = FlowDirection.TopDown;
@@ -29,9 +29,9 @@ namespace Andromeda
             {
                 
                 Program.VotesList.Clear();
-                Vote.ImportPostVotes(Convert.ToInt32(Program.liOfProfilePosts[i]), Program.AllVotesList, Program.VotesList);
+                Vote.ImportPostVotes(Convert.ToInt32(Program.liOfProfilePosts[i]), Program.VotesList);
 
-                if (Program.VotesList.Count > 0)
+                if (Program.VotesList.Count/6 == 1)
                 {
                    
                     for (int j = 0; j < Program.VotesList.Count; j += 6)
@@ -43,7 +43,12 @@ namespace Andromeda
                 }
                 else
                 {
-                    postsPanel.Controls.Add(new PostBox(Convert.ToInt32(Program.liOfProfilePosts[i]), Program.liOfProfilePosts[i+ 1].ToString(), Program.liOfProfilePosts[i+ 2].ToString(), Program.liOfProfilePosts[i + 3].ToString(), "0", "0", 0, 0));
+                    for (int j = 0; j < Program.VotesList.Count; j += 6)
+                    {
+
+
+                        postsPanel.Controls.Add(new PostBox(Convert.ToInt32(Program.liOfProfilePosts[i]), Program.liOfProfilePosts[i + 1].ToString(), Program.liOfProfilePosts[i + 2].ToString(), Program.liOfProfilePosts[i + 3].ToString(), Program.VotesList[j + 2].ToString(), Program.VotesList[j + 3].ToString(),0, 0));
+                    }
                 }
             }
            
@@ -71,7 +76,7 @@ namespace Andromeda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
         }
