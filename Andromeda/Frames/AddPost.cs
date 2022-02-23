@@ -23,8 +23,18 @@ namespace Andromeda
             String postContent = textBoxPostContent.Text;
             Post.exportPosts(postTitle, postContent);
             this.Hide();
-            PostsList newMenu = new PostsList();
-            newMenu.Show();
+            switch(Program.PreviousPage)
+            {
+                case "Profile":
+                    PostsList newMenu = new PostsList();
+                    newMenu.Show();
+                    break;
+                case "Page":
+                    Pages newP = new Pages();
+                    newP.Show();
+                    break ;
+            }
+            
 
             
             

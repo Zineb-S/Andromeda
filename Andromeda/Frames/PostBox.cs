@@ -127,9 +127,21 @@ namespace Andromeda
             
             int PostID = Convert.ToInt32(label9.Text);
             Post.deletePost(PostID, Program.CurrentUserID);
-            PostsList.ActiveForm.Dispose();
-            PostsList newList = new PostsList();
-            newList.Show();
+
+            switch(Program.PreviousPage)
+            {
+                case "Profile":
+                    PostsList.ActiveForm.Dispose();
+                    PostsList newList = new PostsList();
+                    newList.Show();
+                    break;
+                case "Page":
+                    Pages.ActiveForm.Dispose();
+                    Pages newPGL = new Pages();
+                    newPGL.Show();
+                    break;
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

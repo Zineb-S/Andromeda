@@ -12,9 +12,12 @@ namespace Andromeda
 {
     public partial class SearchResult : UserControl
     {
+        public string T = "";
+        public int I = 0;
         public SearchResult(int ID , string Title, string date, string Type)
         {
-          
+            T = Title;
+            I = ID;
             InitializeComponent();
             label1.Text = Type;
             label3.Text = Title;
@@ -39,12 +42,15 @@ namespace Andromeda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+                
             switch (label1.Text)
             {
                 case "Page":
+                    Program.PreviousPageID = I;
                     Pages.ActiveForm.Dispose();
-                    PageDetails pageDetails = new PageDetails(Convert.ToInt32(label4.Text),label3.Text);
+                    Program.liOfPagesPosts.Clear();
+                    Post.importPageposts(Program.liOfPagesPosts, Program.CurrentUserID, Program.PreviousPageID);
+                    PageDetails pageDetails = new PageDetails(T,label4.Text);
                     pageDetails.Show();
                     break;
                 case "Event":

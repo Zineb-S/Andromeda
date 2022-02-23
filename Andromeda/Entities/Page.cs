@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Andromeda.Frames;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -232,8 +233,48 @@ namespace Andromeda
             }
             Console.WriteLine(sb);
         }
-        public static void deletePage() { }
-        public static void updatePage() { }
+        public static void deletePage(string ID) 
+        {
+
+            DB db = new DB();
+
+            MySqlCommand command = new MySqlCommand("DELETE FROM profile_page WHERE Page_ID='" + Convert.ToInt32(ID) + "' and User_ID='" + Program.CurrentUserID + "' ", db.getConnection());
+            MySqlCommand command2 = new MySqlCommand("DELETE FROM comments WHERE Comment_ID	='" + Convert.ToInt32(ID) + "'", db.getConnection());
+
+
+            //open the connection
+            db.openConnection();
+            command.ExecuteNonQuery();
+            command2.ExecuteNonQuery();
+            db.closeConnection();   
+            MessageBox.Show(" Page succefully Deleted ");
+        }
+        public static void updatePage(string ID,string Title)
+        
+        {
+
+            if (Title.Equals(""))
+            {
+                MessageBox.Show(" Please make sure to fill the whole form !");
+
+                EditPage.ActiveForm.Hide();
+                EditPage NewPost = new EditPage(Title);
+                NewPost.Show();
+
+            }
+            else
+            {
+                DB db = new DB();
+
+                MySqlCommand command = new MySqlCommand("UPDATE page SET Page_Name=@title WHERE Page_ID= '" + Convert.ToInt32(ID) + "'", db.getConnection());
+                command.Parameters.Add("@title", MySqlDbType.VarChar).Value = Title;
+                //open the connection
+                db.openConnection();
+                command.ExecuteNonQuery();
+                db.closeConnection();
+                MessageBox.Show(" Page succefully Edited ");
+            }
+        }
 
     }
 }

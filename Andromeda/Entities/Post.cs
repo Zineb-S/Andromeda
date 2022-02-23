@@ -99,6 +99,40 @@ namespace Andromeda
 
 
         }
+        public static void importPageposts(ArrayList pagePostsList, int CurrentUserID, int PreviousPageID)
+        {
+
+            DB db = new DB();
+
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            MySqlCommand command = new MySqlCommand("SELECT P.`Post_ID`, `Post_Title`, `Post_Date`, `Post_Content`,Post_Up_Votes,Post_Down_Votes, P.`User_ID` FROM post P INNER JOIN post_informations PI ON p.Post_ID = pi.Post_ID AND pi.User_ID ='" + CurrentUserID + "' AND pi.Page_ID='" + PreviousPageID + "'", db.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            importPosts(Program.liOfPosts);
+            Console.WriteLine(Program.liOfPosts.Count);
+            StringBuilder sb = new StringBuilder();
+            foreach (DataRow dr in table.Rows)
+            {
+                object[] arr = dr.ItemArray;
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+
+                    pagePostsList.Add(Convert.ToString(arr[i]));
+
+
+                }
+
+
+            }
+
+
+
+
+        }
         public static void exportPosts(string title , string content ) {
 
 
@@ -168,6 +202,48 @@ namespace Andromeda
                         break;// because if need to dispaly the details of that event we will absolutely need that specific page ID 
                               // so once we get it put it in a global variable called Previous page ID 
                     case "Page": //in this case the post will be added to the page details 
+
+                        DB db3 = new DB();
+                        DataTable table3 = new DataTable();
+
+                        MySqlDataAdapter adapter3 = new MySqlDataAdapter();
+                        DateTime now3 = DateTime.Now;
+                        MySqlCommand command5 = new MySqlCommand("INSERT INTO post(Post_Title,Post_Date,Post_Content,Post_Up_Votes,Post_Down_Votes,User_ID) VALUES(@title, @Date, @Content, @UpV, @DownV,@ID)", db3.getConnection());
+                        command5.Parameters.Add("@title", MySqlDbType.VarChar).Value = title;
+                        command5.Parameters.Add("@Date", MySqlDbType.DateTime).Value = now3;
+                        command5.Parameters.Add("@Content", MySqlDbType.VarChar).Value = content;
+                        command5.Parameters.Add("@UpV", MySqlDbType.Int32).Value = 0;
+                        command5.Parameters.Add("@DownV", MySqlDbType.Int32).Value = 0;
+                        command5.Parameters.Add("@ID", MySqlDbType.Int32).Value = Program.CurrentUserID;
+
+
+
+
+                        //open the connection
+                        db3.openConnection();
+                        if (command5.ExecuteNonQuery() == 1)
+                        {
+                            MessageBox.Show("Post created");
+
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("ERROR in creating post");
+                        }
+                        db3.openConnection();
+                        importPosts(Program.liOfPosts);
+                        int index2 = Convert.ToInt32(Program.liOfPosts.Count) - 7;
+
+                        string PostID4 = Program.liOfPosts[index2].ToString();
+                        MySqlCommand command4 = new MySqlCommand("INSERT INTO post_informations(Page_ID,Post_ID,User_ID) VALUES(@pgID, @psID, @usID)", db3.getConnection());
+                        command4.Parameters.Add("@pgID", MySqlDbType.Int32).Value = Program.PreviousPageID;
+                        command4.Parameters.Add("@psID", MySqlDbType.Int32).Value = Int32.Parse(PostID4);
+                        command4.Parameters.Add("@usID", MySqlDbType.Int32).Value = Program.CurrentUserID;
+
+                        command4.ExecuteNonQuery();
+                        //close connection
+                        db3.closeConnection();
                         break;
                     case "Group": //in this case the post will be added to the group details 
                         break;

@@ -16,6 +16,7 @@ namespace Andromeda
         public static ArrayList liOfPostsComments = new ArrayList();
         public static ArrayList liOfPages = new ArrayList();
         public static ArrayList liOfNormalPages = new ArrayList();
+        public static ArrayList liOfPagesPosts = new ArrayList();
         public static ArrayList liOfComments = new ArrayList();
         public static ArrayList liOfUserPages = new ArrayList();
         public static ArrayList liOfProfilePosts = new ArrayList();

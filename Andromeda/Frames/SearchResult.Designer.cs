@@ -77,7 +77,6 @@
             this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 10;
             this.label2.Text = "label2";
-            this.label2.Visible = false;
             // 
             // label4
             // 

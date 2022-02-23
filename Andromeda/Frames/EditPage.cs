@@ -12,9 +12,24 @@ namespace Andromeda.Frames
 {
     public partial class EditPage : Form
     {
-        public EditPage()
+        public EditPage(string title)
         {
             InitializeComponent();
+            textBox1.Text = title;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Page.updatePage(Program.PreviousPageID.ToString(),textBox1.Text);
+            this.Dispose();
+            Pages pages = new Pages();
+            pages.Show();
+
         }
     }
 }

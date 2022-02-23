@@ -53,11 +53,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(341, 43);
+            this.label2.Location = new System.Drawing.Point(316, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 22);
             this.label2.TabIndex = 5;
             this.label2.Text = "Owner";
+            this.label2.Visible = false;
             // 
             // label1
             // 
@@ -92,6 +93,7 @@
             this.button4.TabIndex = 18;
             this.button4.Text = "X";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -111,6 +113,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(727, 433);
             this.flowLayoutPanel1.TabIndex = 22;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // PageDetails
             // 
