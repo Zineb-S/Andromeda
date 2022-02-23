@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Andromeda.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,16 +16,35 @@ namespace Andromeda
         public PostsList()
         {   
             Program.liOfProfilePosts.Clear();
+            Program.AllVotesList.Clear();
             Program.PreviousPage = "Profile";
+            Vote.ImportAllPostsVotes(Program.AllVotesList);
             Post.importProfilePosts(Program.liOfProfilePosts, Program.CurrentUserID, Program.CurrentUserProfileID);
             InitializeComponent();               
             postsPanel.FlowDirection = FlowDirection.TopDown;
             postsPanel.WrapContents = false;
             postsPanel.AutoScroll = true;
-            postsPanel.Controls.Clear();    
-            for (int i = 0;i<Program.liOfProfilePosts.Count;i+=7)
+            postsPanel.Controls.Clear();
+            for (int i = 0; i < Program.liOfProfilePosts.Count; i += 7)
             {
-         postsPanel.Controls.Add(new PostBox(Convert.ToInt32(Program.liOfProfilePosts[i]),Program.liOfProfilePosts[i + 1].ToString(), Program.liOfProfilePosts[i + 2].ToString(), Program.liOfProfilePosts[i + 3].ToString(), Program.liOfProfilePosts[i + 4].ToString(), Convert.ToString(Program.liOfProfilePosts[i + 5])));
+                
+                Program.VotesList.Clear();
+                Vote.ImportPostVotes(Convert.ToInt32(Program.liOfProfilePosts[i]), Program.AllVotesList, Program.VotesList);
+
+                if (Program.VotesList.Count > 0)
+                {
+                   
+                    for (int j = 0; j < Program.VotesList.Count; j += 6)
+                    {
+                       
+                       
+                        postsPanel.Controls.Add(new PostBox(Convert.ToInt32(Program.liOfProfilePosts[i]), Program.liOfProfilePosts[i+ 1].ToString(), Program.liOfProfilePosts[i + 2].ToString(), Program.liOfProfilePosts[i+ 3].ToString(), Program.VotesList[j + 2].ToString(), Program.VotesList[j + 3].ToString(),Convert.ToInt32( Program.VotesList[j + 4]), Convert.ToInt32(Program.VotesList[j + 5])));
+                    }
+                }
+                else
+                {
+                    postsPanel.Controls.Add(new PostBox(Convert.ToInt32(Program.liOfProfilePosts[i]), Program.liOfProfilePosts[i+ 1].ToString(), Program.liOfProfilePosts[i+ 2].ToString(), Program.liOfProfilePosts[i + 3].ToString(), "0", "0", 0, 0));
+                }
             }
            
 

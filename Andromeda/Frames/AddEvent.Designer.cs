@@ -34,15 +34,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBoxBirthDay = new System.Windows.Forms.ComboBox();
-            this.textBoxBirthMonth = new System.Windows.Forms.ComboBox();
+            this.Box3 = new System.Windows.Forms.ComboBox();
+            this.Box2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.Box4 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.Box5 = new System.Windows.Forms.ComboBox();
+            this.Box1 = new System.Windows.Forms.ComboBox();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -106,11 +106,11 @@
             this.textBox1.Size = new System.Drawing.Size(482, 38);
             this.textBox1.TabIndex = 5;
             // 
-            // textBoxBirthDay
+            // Box3
             // 
-            this.textBoxBirthDay.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBirthDay.FormattingEnabled = true;
-            this.textBoxBirthDay.Items.AddRange(new object[] {
+            this.Box3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box3.FormattingEnabled = true;
+            this.Box3.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -142,17 +142,17 @@
             "29",
             "30",
             "31"});
-            this.textBoxBirthDay.Location = new System.Drawing.Point(188, 287);
-            this.textBoxBirthDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxBirthDay.Name = "textBoxBirthDay";
-            this.textBoxBirthDay.Size = new System.Drawing.Size(73, 29);
-            this.textBoxBirthDay.TabIndex = 20;
+            this.Box3.Location = new System.Drawing.Point(188, 287);
+            this.Box3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Box3.Name = "Box3";
+            this.Box3.Size = new System.Drawing.Size(73, 29);
+            this.Box3.TabIndex = 20;
             // 
-            // textBoxBirthMonth
+            // Box2
             // 
-            this.textBoxBirthMonth.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBirthMonth.FormattingEnabled = true;
-            this.textBoxBirthMonth.Items.AddRange(new object[] {
+            this.Box2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box2.FormattingEnabled = true;
+            this.Box2.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -165,11 +165,11 @@
             "10",
             "11",
             "12"});
-            this.textBoxBirthMonth.Location = new System.Drawing.Point(302, 291);
-            this.textBoxBirthMonth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxBirthMonth.Name = "textBoxBirthMonth";
-            this.textBoxBirthMonth.Size = new System.Drawing.Size(88, 29);
-            this.textBoxBirthMonth.TabIndex = 19;
+            this.Box2.Location = new System.Drawing.Point(302, 291);
+            this.Box2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Box2.Name = "Box2";
+            this.Box2.Size = new System.Drawing.Size(88, 29);
+            this.Box2.TabIndex = 19;
             // 
             // comboBox1
             // 
@@ -236,11 +236,11 @@
             this.comboBox2.Size = new System.Drawing.Size(88, 29);
             this.comboBox2.TabIndex = 22;
             // 
-            // comboBox3
+            // Box4
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.Box4.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box4.FormattingEnabled = true;
+            this.Box4.Items.AddRange(new object[] {
             "00",
             "01",
             "02",
@@ -265,11 +265,11 @@
             "21",
             "22",
             "23"});
-            this.comboBox3.Location = new System.Drawing.Point(188, 360);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(73, 29);
-            this.comboBox3.TabIndex = 25;
+            this.Box4.Location = new System.Drawing.Point(188, 360);
+            this.Box4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Box4.Name = "Box4";
+            this.Box4.Size = new System.Drawing.Size(73, 29);
+            this.Box4.TabIndex = 25;
             // 
             // comboBox4
             // 
@@ -330,11 +330,11 @@
             this.comboBox5.Size = new System.Drawing.Size(73, 29);
             this.comboBox5.TabIndex = 27;
             // 
-            // comboBox6
+            // Box5
             // 
-            this.comboBox6.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.Box5.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box5.FormattingEnabled = true;
+            this.Box5.Items.AddRange(new object[] {
             "00",
             "05",
             "10",
@@ -348,26 +348,26 @@
             "50",
             "55",
             ""});
-            this.comboBox6.Location = new System.Drawing.Point(317, 360);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(73, 29);
-            this.comboBox6.TabIndex = 28;
+            this.Box5.Location = new System.Drawing.Point(317, 360);
+            this.Box5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Box5.Name = "Box5";
+            this.Box5.Size = new System.Drawing.Size(73, 29);
+            this.Box5.TabIndex = 28;
             // 
-            // comboBox7
+            // Box1
             // 
-            this.comboBox7.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
+            this.Box1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box1.FormattingEnabled = true;
+            this.Box1.Items.AddRange(new object[] {
             "2022",
             "2023",
             "2024",
             "2025"});
-            this.comboBox7.Location = new System.Drawing.Point(444, 287);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(73, 29);
-            this.comboBox7.TabIndex = 29;
+            this.Box1.Location = new System.Drawing.Point(444, 287);
+            this.Box1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Box1.Name = "Box1";
+            this.Box1.Size = new System.Drawing.Size(73, 29);
+            this.Box1.TabIndex = 29;
             // 
             // comboBox8
             // 
@@ -403,15 +403,15 @@
             this.ClientSize = new System.Drawing.Size(760, 493);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox8);
-            this.Controls.Add(this.comboBox7);
-            this.Controls.Add(this.comboBox6);
+            this.Controls.Add(this.Box1);
+            this.Controls.Add(this.Box5);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.Box4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBoxBirthDay);
-            this.Controls.Add(this.textBoxBirthMonth);
+            this.Controls.Add(this.Box3);
+            this.Controls.Add(this.Box2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -421,6 +421,7 @@
             this.Name = "AddEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEvent";
+            this.Load += new System.EventHandler(this.AddEvent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,15 +435,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox textBoxBirthDay;
-        private System.Windows.Forms.ComboBox textBoxBirthMonth;
+        private System.Windows.Forms.ComboBox Box3;
+        private System.Windows.Forms.ComboBox Box2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox Box4;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox Box5;
+        private System.Windows.Forms.ComboBox Box1;
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.Button button1;
     }
