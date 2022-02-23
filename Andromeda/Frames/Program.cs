@@ -19,7 +19,8 @@ namespace Andromeda
         public static ArrayList liOfComments = new ArrayList();
         public static ArrayList liOfUserPages = new ArrayList();
         public static ArrayList liOfProfilePosts = new ArrayList();
-        public static List<Vote> VotesList = new List<Vote>();
+        public static ArrayList VotesList = new ArrayList();
+        public static ArrayList AllVotesList = new ArrayList();
 
 
         public static int CurrentUserID = 0;

@@ -24,10 +24,18 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Event Added");
+            string title = textBox1.Text;
+            string sdate = comboBox8.Text+'-'+ comboBox2.Text+'-'+ comboBox1.Text+' '+comboBox4.Text+':'+comboBox5.Text+":00";
+            string edate = Box1.Text + '-' + Box2.Text + '-' + Box3.Text + ' ' + Box4.Text + ':' + Box5.Text + ":00";
+            Event.exportEvents(title, sdate, edate);
             this.Hide();
             EventsList evlist = new EventsList();
             evlist.Show();
+        }
+
+        private void AddEvent_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

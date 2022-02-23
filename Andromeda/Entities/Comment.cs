@@ -1,4 +1,4 @@
-﻿using Andromeda.Frames;
+﻿ using Andromeda.Frames;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
@@ -13,6 +13,7 @@ namespace Andromeda
 {
     internal class Comment
     {
+        public MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=andromeda");
         public int CommentID { get; set; }
         public string CommentText { get; set; }
         public DateTime CommentDate { get; set; }
@@ -144,7 +145,7 @@ namespace Andromeda
             {
             DB db = new DB();
 
-            MySqlCommand command = new MySqlCommand("UPDATE comments SET Comment_Text =@content WHERE Comment_ID	= " + commentID + "", db.getConnection());
+            MySqlCommand command = new MySqlCommand("UPDATE comments SET Comment_Text=@content WHERE Comment_ID	= " + commentID + "", db.getConnection());
             command.Parameters.Add("@content", MySqlDbType.VarChar).Value = content;
             //open the connection
             db.openConnection();
