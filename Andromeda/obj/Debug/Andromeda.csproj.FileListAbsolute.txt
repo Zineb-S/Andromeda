@@ -163,3 +163,9 @@ C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.Frames.EditG
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.Frames.EditMembers.resources
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.Frames.EditPage.resources
 C:\Users\zselm\source\repos\Andromeda\Andromeda\obj\Debug\Andromeda.Frames.EditPost.resources
+C:\Users\lenovo\Documents\GitHub\Andromeda\obj\Debug\Andromeda.Frames.EditComment.resources
+C:\Users\lenovo\Documents\GitHub\Andromeda\obj\Debug\Andromeda.Frames.EditEvent.resources
+C:\Users\lenovo\Documents\GitHub\Andromeda\obj\Debug\Andromeda.Frames.EditGroup.resources
+C:\Users\lenovo\Documents\GitHub\Andromeda\obj\Debug\Andromeda.Frames.EditMembers.resources
+C:\Users\lenovo\Documents\GitHub\Andromeda\obj\Debug\Andromeda.Frames.EditPage.resources
+C:\Users\lenovo\Documents\GitHub\Andromeda\obj\Debug\Andromeda.Frames.EditPost.resources
