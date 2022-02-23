@@ -51,6 +51,15 @@ namespace Andromeda
                 {
                     object[] arr = dr.ItemArray;
                     Program.CurrentUserID = Convert.ToInt32(arr[0]);
+                    Program.CurrentUserUsername = Convert.ToString(arr[1]);
+                    Program.CurrentUserfname = Convert.ToString(arr[2]);
+                    Program.CurrentUserlname = Convert.ToString(arr[3]);
+                    Program.CurrentUserEmail = Convert.ToString(arr[4]);
+                    Program.CurrentUserPassword = Convert.ToString(arr[5]);
+                    Program.CurrentUserGender = Convert.ToString(arr[6]);
+                    Program.CurrentUserBirth = Convert.ToString(arr[7]);
+                    
+        
                     username = arr[1].ToString();
                     
 

@@ -15,7 +15,16 @@ namespace Andromeda
         public Profile()
         {
             InitializeComponent();
+            textBoxUsername.Text = Program.CurrentUserUsername;
+            textBoxFirstname.Text = Program.CurrentUserfname;
+            textBoxLastname.Text = Program.CurrentUserlname;
+            textBoxGender.Text = Program.CurrentUserGender;
+            label8.Text = Program.CurrentUserBirth;
+            textBoxEmail.Text = Program.CurrentUserEmail;
+            label9.Text = String.Concat(Enumerable.Repeat("*", Program.CurrentUserPassword.Length)) ;
+
         }
+
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -39,8 +48,8 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Settings settingss = new Settings();
+            this.Dispose();
+            Settings settingss = new Settings(Program.CurrentUserUsername, Program.CurrentUserEmail, Program.CurrentUserPassword);
             settingss.Show();
         }
 
@@ -81,6 +90,11 @@ namespace Andromeda
         private void textBoxFirstname_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            User.DeleteUser();
         }
     }
 }

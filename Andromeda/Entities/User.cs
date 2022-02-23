@@ -153,8 +153,88 @@ namespace Andromeda
             db.closeConnection();
         }
     
-        public static void deleteUser() { }
-        public static void updateUser() { }
+        public static void DeleteUser() 
+        {
+
+            DB db = new DB();
+
+            MySqlCommand command = new MySqlCommand("DELETE FROM users WHERE User_ID='" + Program.CurrentUserID + "'", db.getConnection());
+
+
+            //open the connection
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+            MessageBox.Show("Your Account has been deleted !! BYE ");
+
+        }
+        public static void UpdateUser( string Username , string email , string password , string cpassword) 
+        {
+            
+            DB db = new DB();
+            bool checkTextBoxesValues()
+            {
+                if (Username.Equals("") || email.Equals("") || password.Equals("") || password!=cpassword)
+                {
+                    MessageBox.Show(" Please make sure to fill the whole form !");
+                    return true;
+                }
+
+                for (var i = 0; i < Program.liOfUsers.Count; i++)
+                {
+                    if (Program.liOfUsers[i].ToString().Equals(Username))
+                    {
+                        MessageBox.Show(" User Name already exists ! Please Change it ");
+                        return true;
+                    }
+
+                    if (Program.liOfUsers[i].ToString().Equals(email))
+                    {
+                        MessageBox.Show(" Email already exists ! Please Change it ");
+                        return true;
+                    }
+                }
+                return false;
+            }
+            MySqlCommand command = new MySqlCommand("UPDATE users SET User_Name='"+ Username + "' , User_Email='"+email+"', User_Password='"+password+"' WHERE User_ID="+Program.CurrentUserID+"", db.getConnection());
+
+          
+          
+
+            if (checkTextBoxesValues())
+            {
+                Settings.ActiveForm.Hide();
+                Settings rf = new Settings(Username,email,password);
+                rf.Show();
+            }
+            else
+            {
+                db.openConnection();
+                command.ExecuteNonQuery();
+                db.closeConnection();
+                importUsers(Program.liOfUsers);
+                Program.CurrentUserUsername=Username;
+                Program.CurrentUserEmail = email;
+                Program.CurrentUserPassword = password;
+                   
+                MessageBox.Show("Your Informations have been updated !");
+                Profile profile = new Profile();
+                profile.Show();
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+            
+        }
         public static void ShowPosts() { }
 
     }

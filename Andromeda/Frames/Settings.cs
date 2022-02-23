@@ -12,21 +12,34 @@ namespace Andromeda
 {
     public partial class Settings : Form
     {
-        public Settings()
+        public Settings(string Username , string email , string password )
         {
             InitializeComponent();
+            textBoxUsername.Text = Username;
+            textBoxEmail.Text = email;
+            textBoxConfirmPassword.Text = password;
+
+
         }
 
         private void ButtonCreateAccount_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.Show();
+            User.UpdateUser(textBoxUsername.Text,textBoxEmail.Text,textBoxPassword.Text,textBoxConfirmPassword.Text);
+            this.Dispose();
+         
+            
         }
 
         private void Settings_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Profile newpfp = new Profile();
+            newpfp.Show();
         }
     }
 }

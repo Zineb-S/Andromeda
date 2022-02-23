@@ -405,6 +405,7 @@ namespace Andromeda
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(555, 45);
             this.textBoxEmail.TabIndex = 1;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged_1);
             // 
             // panel2
             // 

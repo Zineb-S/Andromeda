@@ -114,5 +114,10 @@ namespace Andromeda
         {
 
         }
+
+        private void textBoxEmail_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

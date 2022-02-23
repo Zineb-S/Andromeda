@@ -24,6 +24,13 @@ namespace Andromeda
 
 
         public static int CurrentUserID = 0;
+        public static string CurrentUserUsername = "";
+        public static string CurrentUserfname = "";
+        public static string CurrentUserlname = "";
+        public static string CurrentUserGender = "";
+        public static string CurrentUserBirth = "";
+        public static string CurrentUserEmail = "";
+        public static string CurrentUserPassword = "";
         public static int CurrentPostID = 0;
         public static int PreviousPageID = 0;
         public static int CurrentUserProfileID = 0;
