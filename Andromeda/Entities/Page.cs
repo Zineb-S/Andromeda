@@ -85,7 +85,6 @@ namespace Andromeda
             }
             Console.WriteLine(sb);
         }
-
         public static void CreateProfilePage()
         {
             bool found = false;
@@ -98,16 +97,17 @@ namespace Andromeda
                 {
                     
                     if (Program.liOfUserPages[i].ToString().Equals( Program.liOfPages[j].ToString()))
-                    {
-                        
+                    {   
+                   
                         if (Program.liOfPages[j+1].ToString().Equals("Profile"))
                         {
                             Program.CurrentUserProfileID = Convert.ToInt32(Program.liOfUserPages[i]);
                             Console.WriteLine("User Has already a profile page ");
-                             found = true;
+                            found = true;
                             break;
                             
                         }
+                        
                         
                     }
                 }
@@ -164,7 +164,6 @@ namespace Andromeda
 
             }
         } 
-
         public static void exportPages(string Title) 
         {
 

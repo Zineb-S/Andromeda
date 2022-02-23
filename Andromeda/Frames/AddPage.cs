@@ -20,7 +20,7 @@ namespace Andromeda
         private void button1_Click(object sender, EventArgs e)
         {
             Page.exportPages(textBox1.Text);
-            this.Hide();
+            this.Dispose();
             Pages page = new Pages();
             page.Show();
         }

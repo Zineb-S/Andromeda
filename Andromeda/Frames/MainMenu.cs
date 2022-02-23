@@ -17,12 +17,17 @@ namespace Andromeda
         {
 
             Program.liOfProfilePosts.Clear();
-            Page.CreateProfilePage();
+           Program.liOfUserPages.Clear();
+            Program.liOfPages.Clear();
+            Program.liOfNormalPages.Clear();
             Page.importUserPages(Program.liOfUserPages);
             Page.importPages(Program.liOfPages);
+            Page.CreateProfilePage();
+            Page.importNormalPages(Program.liOfNormalPages);
             Post.importProfilePosts(Program.liOfProfilePosts, Program.CurrentUserID, Program.CurrentUserProfileID);
             InitializeComponent();
             label3.Text = (Program.liOfProfilePosts.Count/7).ToString();
+            label4.Text = (Program.liOfNormalPages.Count/8).ToString();
 
 
         }

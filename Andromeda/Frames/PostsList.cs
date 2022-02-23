@@ -43,12 +43,11 @@ namespace Andromeda
                 }
                 else
                 {
-                    for (int j = 0; j < Program.VotesList.Count; j += 6)
-                    {
+                    
 
 
-                        postsPanel.Controls.Add(new PostBox(Convert.ToInt32(Program.liOfProfilePosts[i]), Program.liOfProfilePosts[i + 1].ToString(), Program.liOfProfilePosts[i + 2].ToString(), Program.liOfProfilePosts[i + 3].ToString(), Program.VotesList[j + 2].ToString(), Program.VotesList[j + 3].ToString(),0, 0));
-                    }
+                        postsPanel.Controls.Add(new PostBox(Convert.ToInt32(Program.liOfProfilePosts[i]), Program.liOfProfilePosts[i + 1].ToString(), Program.liOfProfilePosts[i + 2].ToString(), Program.liOfProfilePosts[i + 3].ToString(), "0", "0",0, 0));
+                    
                 }
             }
            

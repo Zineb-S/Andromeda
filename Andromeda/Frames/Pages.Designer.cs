@@ -75,6 +75,7 @@
             this.Name = "Pages";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pages";
+            this.Load += new System.EventHandler(this.Pages_Load);
             this.ResumeLayout(false);
 
         }

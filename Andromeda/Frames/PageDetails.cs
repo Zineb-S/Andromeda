@@ -13,9 +13,10 @@ namespace Andromeda
 {
     public partial class PageDetails : Form
     {
-        public PageDetails()
+        public PageDetails(int PageID , string Title)
         {
             InitializeComponent();
+            label1.Text = Title;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,6 +31,18 @@ namespace Andromeda
             this.Hide();
             EditPage editpage = new EditPage();
             editpage.Show();
+        }
+
+        private void PageDetails_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Pages pages = new Pages();
+            pages.Show();
         }
     }
 }
