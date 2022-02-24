@@ -14,10 +14,14 @@ namespace Andromeda
     {
         public string T = "";
         public int I = 0;
-        public SearchResult(int ID , string Title, string date, string Type)
+        public string S = "";
+        public string E = "";
+        public SearchResult(int ID , string Title, string date, string Type,string sdate , string edate )
         {
             T = Title;
             I = ID;
+            S = sdate;
+            E = edate;
             InitializeComponent();
             label1.Text = Type;
             label3.Text = Title;
@@ -50,12 +54,17 @@ namespace Andromeda
                     Pages.ActiveForm.Dispose();
                     Program.liOfPagesPosts.Clear();
                     Post.importPageposts(Program.liOfPagesPosts, Program.CurrentUserID, Program.PreviousPageID);
+                   
                     PageDetails pageDetails = new PageDetails(T,label4.Text);
                     pageDetails.Show();
                     break;
                 case "Event":
+                    Program.PreviousPageID = I;
+
                     Pages.ActiveForm.Dispose();
-                    EventDetails eventDetails = new EventDetails();
+                    Program.liOfEventsPosts.Clear();
+                    Post.importPageposts(Program.liOfEventsPosts, Program.CurrentUserID, Program.PreviousPageID);
+                    EventDetails eventDetails = new EventDetails(T,I.ToString(),S,E);
                     eventDetails.Show();
                     break ;
                 case "Group":

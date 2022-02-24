@@ -1,6 +1,9 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Andromeda.Frames;
+using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +25,32 @@ namespace Andromeda
             this.StartDate = Sdate;
             this.EndDate = Edate;
         }
-        public static void importEvents() { }
+        public static void importEvents( ArrayList liOfEvents) 
+        {
+
+
+            DB db = new DB();
+
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `page` P INNER JOIN profile_page PI on PI.Page_ID=P.Page_ID WHERE Page_Type='Event' and User_ID='" + Program.CurrentUserID + "'", db.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            StringBuilder sb = new StringBuilder();
+            foreach (DataRow dr in table.Rows)
+            {
+                object[] arr = dr.ItemArray;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    liOfEvents.Add(Convert.ToString(arr[i]));
+                    sb.Append('\n');
+                }
+            }
+            Console.WriteLine(sb);
+        }
         public static void exportEvents(string Title , string StartDate , string EndDate ) 
         {
             DateTime Date1= DateTime.Parse(StartDate);
@@ -68,8 +96,51 @@ namespace Andromeda
 
 
         }
-        public static void deleteEvent() { }
-        public static void updateEvent() { }
+        public static void deleteEvent(string ID)
+        {
+
+            DB db = new DB();
+
+            MySqlCommand command = new MySqlCommand("DELETE FROM profile_page WHERE Page_ID='" + Convert.ToInt32(ID) + "' and User_ID='" + Program.CurrentUserID + "' ", db.getConnection());
+            MySqlCommand command2 = new MySqlCommand("DELETE FROM page WHERE Page_ID	='" + Convert.ToInt32(ID) + "'", db.getConnection());
+
+
+            //open the connection
+            db.openConnection();
+            command.ExecuteNonQuery();
+            command2.ExecuteNonQuery();
+            db.closeConnection();
+            MessageBox.Show(" Event succefully Deleted ");
+        }
+        public static void updateEvent(string ID, string Title ,string StartDate , string EndDate)
+
+        {
+            DateTime Date1 = DateTime.Parse(StartDate);
+            DateTime Date2 = DateTime.Parse(EndDate);
+            if (Title.Equals("")|| StartDate.Equals("") || EndDate.Equals("")|| Date2<Date1 )
+            {
+                MessageBox.Show(" Please make sure to fill the whole form !");
+
+                EditEvent.ActiveForm.Hide();
+                EditEvent NewPost = new EditEvent(ID,Title,StartDate,EndDate);
+                NewPost.Show();
+
+            }
+            else
+            {
+                DB db = new DB();
+
+                MySqlCommand command = new MySqlCommand("UPDATE page SET Page_Name=@title, Start_Date=@sdate , End_Date=@edate WHERE Page_ID= '" + Convert.ToInt32(ID) + "'", db.getConnection());
+                command.Parameters.Add("@title", MySqlDbType.VarChar).Value = Title;
+                command.Parameters.Add("@sdate", MySqlDbType.DateTime).Value = StartDate;
+                command.Parameters.Add("@edate", MySqlDbType.DateTime).Value = EndDate;
+                //open the connection
+                db.openConnection();
+                command.ExecuteNonQuery();
+                db.closeConnection();
+                MessageBox.Show(" Event succefully Edited ");
+            }
+        }
     }
 
 

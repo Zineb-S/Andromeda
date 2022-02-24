@@ -24,6 +24,7 @@ namespace Andromeda
             flowLayoutPanel1.WrapContents = false;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Clear();
+
             for (int i = 0; i < Program.liOfPagesPosts.Count; i += 7)
             {
 

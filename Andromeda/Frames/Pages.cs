@@ -25,7 +25,7 @@ namespace Andromeda
 
             for (int i = 0; i < Program.liOfPages.Count; i+=8)
             {
-                flowLayoutPanel1.Controls.Add(new SearchResult(Convert.ToInt32(Program.liOfPages[i]), Program.liOfPages[i+1].ToString(), Program.liOfPages[i + 2].ToString(), Program.liOfPages[i + 3].ToString()));
+                flowLayoutPanel1.Controls.Add(new SearchResult(Convert.ToInt32(Program.liOfPages[i]), Program.liOfPages[i+1].ToString(), Program.liOfPages[i + 2].ToString(), Program.liOfPages[i + 3].ToString(),"1","1"));
             }
             
         }

@@ -199,9 +199,7 @@ namespace Andromeda
                         db.closeConnection();
                         break;
                     case "Event": // in this case the post will be added to the event details / we already gonna have the ID 
-                        break;// because if need to dispaly the details of that event we will absolutely need that specific page ID 
-                              // so once we get it put it in a global variable called Previous page ID 
-                    case "Page": //in this case the post will be added to the page details 
+
 
                         DB db3 = new DB();
                         DataTable table3 = new DataTable();
@@ -244,6 +242,63 @@ namespace Andromeda
                         command4.ExecuteNonQuery();
                         //close connection
                         db3.closeConnection();
+
+
+
+
+
+
+
+
+                        break;
+
+
+                        
+                        // because if need to dispaly the details of that event we will absolutely need that specific page ID 
+                              // so once we get it put it in a global variable called Previous page ID 
+                    case "Page": //in this case the post will be added to the page details 
+
+                        DB db4 = new DB();
+                        DataTable table6 = new DataTable();
+
+                        MySqlDataAdapter adapter4 = new MySqlDataAdapter();
+                        DateTime now4 = DateTime.Now;
+                        MySqlCommand command6 = new MySqlCommand("INSERT INTO post(Post_Title,Post_Date,Post_Content,Post_Up_Votes,Post_Down_Votes,User_ID) VALUES(@title, @Date, @Content, @UpV, @DownV,@ID)", db4.getConnection());
+                        command6.Parameters.Add("@title", MySqlDbType.VarChar).Value = title;
+                        command6.Parameters.Add("@Date", MySqlDbType.DateTime).Value = now4;
+                        command6.Parameters.Add("@Content", MySqlDbType.VarChar).Value = content;
+                        command6.Parameters.Add("@UpV", MySqlDbType.Int32).Value = 0;
+                        command6.Parameters.Add("@DownV", MySqlDbType.Int32).Value = 0;
+                        command6.Parameters.Add("@ID", MySqlDbType.Int32).Value = Program.CurrentUserID;
+
+
+
+
+                        //open the connection
+                        db4.openConnection();
+                        if (command6.ExecuteNonQuery() == 1)
+                        {
+                            MessageBox.Show("Post created");
+
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("ERROR in creating post");
+                        }
+                        db4.openConnection();
+                        importPosts(Program.liOfPosts);
+                        int index3 = Convert.ToInt32(Program.liOfPosts.Count) - 7;
+
+                        string PostID5 = Program.liOfPosts[index3].ToString();
+                        MySqlCommand command7 = new MySqlCommand("INSERT INTO post_informations(Page_ID,Post_ID,User_ID) VALUES(@pgID, @psID, @usID)", db4.getConnection());
+                        command7.Parameters.Add("@pgID", MySqlDbType.Int32).Value = Program.PreviousPageID;
+                        command7.Parameters.Add("@psID", MySqlDbType.Int32).Value = Int32.Parse(PostID5);
+                        command7.Parameters.Add("@usID", MySqlDbType.Int32).Value = Program.CurrentUserID;
+
+                        command7.ExecuteNonQuery();
+                        //close connection
+                        db4.closeConnection();
                         break;
                     case "Group": //in this case the post will be added to the group details 
                         break;

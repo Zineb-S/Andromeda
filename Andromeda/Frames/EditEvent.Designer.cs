@@ -56,6 +56,7 @@
             this.button1.TabIndex = 48;
             this.button1.Text = "Edit Event";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox8
             // 
@@ -419,6 +420,7 @@
             this.Name = "EditEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditEvent";
+            this.Load += new System.EventHandler(this.EditEvent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

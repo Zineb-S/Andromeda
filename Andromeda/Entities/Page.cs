@@ -239,7 +239,7 @@ namespace Andromeda
             DB db = new DB();
 
             MySqlCommand command = new MySqlCommand("DELETE FROM profile_page WHERE Page_ID='" + Convert.ToInt32(ID) + "' and User_ID='" + Program.CurrentUserID + "' ", db.getConnection());
-            MySqlCommand command2 = new MySqlCommand("DELETE FROM comments WHERE Comment_ID	='" + Convert.ToInt32(ID) + "'", db.getConnection());
+            MySqlCommand command2 = new MySqlCommand("DELETE FROM page WHERE Page_ID ='" + Convert.ToInt32(ID) + "'", db.getConnection());
 
 
             //open the connection

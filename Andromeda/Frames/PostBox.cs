@@ -140,6 +140,11 @@ namespace Andromeda
                     Pages newPGL = new Pages();
                     newPGL.Show();
                     break;
+                case "Event":
+                    EventsList eventsList = new EventsList();
+                    eventsList.Show();
+                        
+                    break;
             }
             
         }

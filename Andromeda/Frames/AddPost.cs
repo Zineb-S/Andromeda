@@ -33,6 +33,10 @@ namespace Andromeda
                     Pages newP = new Pages();
                     newP.Show();
                     break ;
+                case "Event":
+                    EventsList newEvents = new EventsList();
+                    newEvents.Show();
+                    break ;
             }
             
 
