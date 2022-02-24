@@ -235,7 +235,19 @@ namespace Andromeda
 
             
         }
-        public static void ShowPosts() { }
+        public static void ExportMembers(string UserID , ) 
+        
+        {
+            switch(Program.PreviousPage)
+            {
+                case "Event":
+                    break;
+                case "Group":
+                    break ;
+            }
+        
+        
+        }
 
     }
 }

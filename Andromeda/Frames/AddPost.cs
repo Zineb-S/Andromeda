@@ -37,6 +37,10 @@ namespace Andromeda
                     EventsList newEvents = new EventsList();
                     newEvents.Show();
                     break ;
+                case "Group":
+                    GroupsList groupsList = new GroupsList();
+                    groupsList.Show();
+                    break ;
             }
             
 

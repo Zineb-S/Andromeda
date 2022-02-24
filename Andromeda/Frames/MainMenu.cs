@@ -21,16 +21,25 @@ namespace Andromeda
             Program.liOfPages.Clear();
             Program.liOfEvents.Clear();
             Program.liOfNormalPages.Clear();
+            Program.liOfGroups.Clear();
+
+
+
             Page.importUserPages(Program.liOfUserPages);
             Page.importPages(Program.liOfPages);
             Page.CreateProfilePage();
             Page.importNormalPages(Program.liOfNormalPages);
             Post.importProfilePosts(Program.liOfProfilePosts, Program.CurrentUserID, Program.CurrentUserProfileID);
             Event.importEvents(Program.liOfEvents);
+            Group.importGroups(Program.liOfGroups);
+
+
             InitializeComponent();
+
             label3.Text = (Program.liOfProfilePosts.Count/7).ToString();
             label4.Text = (Program.liOfNormalPages.Count/8).ToString();
             label5.Text = (Program.liOfEvents.Count/8).ToString();
+            label6.Text = (Program.liOfGroups.Count / 8).ToString();
 
 
         }

@@ -12,7 +12,7 @@ namespace Andromeda.Frames
 {
     public partial class EditGroup : Form
     {
-        public EditGroup()
+        public EditGroup(string title)
         {
             InitializeComponent();
         }

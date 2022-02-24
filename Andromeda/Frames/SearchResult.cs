@@ -68,8 +68,11 @@ namespace Andromeda
                     eventDetails.Show();
                     break ;
                 case "Group":
-                    Pages.ActiveForm.Dispose();
-                    GroupDetails groupDetails = new GroupDetails();
+                    Program.PreviousPageID = I;
+                    Program.liOfGroupsPosts.Clear();
+                    Post.importPageposts(Program.liOfGroupsPosts, Program.CurrentUserID, Program.PreviousPageID);
+                    GroupsList.ActiveForm.Dispose();
+                    GroupDetails groupDetails = new GroupDetails(T, I.ToString());
                     groupDetails.Show();
                     break;
 

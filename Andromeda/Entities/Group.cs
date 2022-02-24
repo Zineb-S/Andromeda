@@ -1,6 +1,9 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Andromeda.Frames;
+using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +25,32 @@ namespace Andromeda
             this.GroupName=name;
             this.GroupDate=date;
         }
-        public static void importGroups() { }
+        public static void importGroups(ArrayList liOfGroups ) 
+        {
+
+            DB db = new DB();
+
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `page` P INNER JOIN profile_page PI on PI.Page_ID=P.Page_ID WHERE Page_Type='Group' and User_ID='" + Program.CurrentUserID + "'", db.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            StringBuilder sb = new StringBuilder();
+            foreach (DataRow dr in table.Rows)
+            {
+                object[] arr = dr.ItemArray;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    liOfGroups.Add(Convert.ToString(arr[i]));
+                    sb.Append('\n');
+                }
+            }
+            Console.WriteLine(sb);
+
+        }
         public static void exportGroups(string Title) 
         {
 
@@ -66,7 +94,49 @@ namespace Andromeda
 
             
         }
-        public static void deleteGroup() { }
-        public static void updateGroup() { }
+        public static void deleteGroup(string ID)
+        {
+
+
+            DB db = new DB();
+
+            MySqlCommand command = new MySqlCommand("DELETE FROM profile_page WHERE Page_ID='" + Convert.ToInt32(ID) + "' and User_ID='" + Program.CurrentUserID + "' ", db.getConnection());
+            MySqlCommand command2 = new MySqlCommand("DELETE FROM page WHERE Page_ID	='" + Convert.ToInt32(ID) + "'", db.getConnection());
+
+
+            //open the connection
+            db.openConnection();
+            command.ExecuteNonQuery();
+            command2.ExecuteNonQuery();
+            db.closeConnection();
+            MessageBox.Show(" Group succefully Deleted ");
+        }
+        
+        public static void updateGroup(string ID, string Title)
+        {
+
+
+            if (Title.Equals(""))
+            {
+                MessageBox.Show(" Please make sure to fill the whole form !");
+
+                EditGroup.ActiveForm.Hide();
+                EditGroup NewPost = new EditGroup(Title);
+                NewPost.Show();
+
+            }
+            else
+            {
+                DB db = new DB();
+
+                MySqlCommand command = new MySqlCommand("UPDATE page SET Page_Name=@title WHERE Page_ID= '" + Convert.ToInt32(ID) + "'", db.getConnection());
+                command.Parameters.Add("@title", MySqlDbType.VarChar).Value = Title;
+                //open the connection
+                db.openConnection();
+                command.ExecuteNonQuery();
+                db.closeConnection();
+                MessageBox.Show(" Group succefully Edited ");
+            }
+        }
     }
 }

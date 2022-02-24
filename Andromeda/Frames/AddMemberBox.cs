@@ -19,6 +19,7 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
+            User.ExportMembers();
             MessageBox.Show("Member Added ");
             
         }
