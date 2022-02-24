@@ -66,6 +66,63 @@ namespace Andromeda
 
 
         }
+
+        public static void importNONmembers(ArrayList nonmembers)
+
+
+        {
+            DB db = new DB();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            switch (Program.PreviousPage)
+            {
+                case "Group":
+
+                    MySqlCommand command = new MySqlCommand("SELECT us.User_ID, us.User_Name FROM users us WHERE us.User_ID not in (SELECT User_ID from group_members gm WHERE gm.Page_ID = '" + Program.PreviousPageID + "')", db.getConnection());
+
+                    adapter.SelectCommand = command;
+                    adapter.Fill(table);
+
+                    StringBuilder sb = new StringBuilder();
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        object[] arr = dr.ItemArray;
+                        for (int i = 0; i < arr.Length; i++)
+                        {
+                            nonmembers.Add(Convert.ToString(arr[i]));
+                            sb.Append('\n');
+                        }
+                    }
+                    Console.WriteLine(sb);
+
+                    break;
+                case "Event":
+
+                    MySqlCommand command2 = new MySqlCommand("SELECT us.User_ID, us.User_Name FROM users us WHERE us.User_ID not in (SELECT User_ID from event_members gm WHERE gm.Page_ID = '" + Program.PreviousPageID + "')", db.getConnection());
+
+                    adapter.SelectCommand = command2;
+                    adapter.Fill(table);
+
+                  
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        object[] arr = dr.ItemArray;
+                        for (int i = 0; i < arr.Length; i++)
+                        {
+                            nonmembers.Add(Convert.ToString(arr[i]));
+                           
+                        }
+                    }
+                    
+
+                    break;
+            }
+            
+
+
+           
+
+        }
         public static void exportUsers(string fname, string lname, string username, string email, string pass, string confirm, string year, string month, string day, string date, string gender)
         {
             //add new user
@@ -235,18 +292,134 @@ namespace Andromeda
 
             
         }
-        public static void ExportMembers(string UserID , ) 
+
+        public static void ImportGroupMembers(ArrayList GroupMembers)
+
+        {
+            DB db = new DB();
+
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            MySqlCommand command = new MySqlCommand("SELECT gm.Page_ID, gm.User_ID, us.User_Name , gm.Group_Member_Role FROM `group_members` gm INNER JOIN users us on gm.User_ID = us.User_ID WHERE Page_ID ='" + Program.PreviousPageID + "'", db.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            StringBuilder sb = new StringBuilder();
+            foreach (DataRow dr in table.Rows)
+            {
+                object[] arr = dr.ItemArray;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    GroupMembers.Add(Convert.ToString(arr[i]));
+                    sb.Append('\n');
+                }
+            }
+            Console.WriteLine(sb);
+        }
+        public static void ImportEventMembers(ArrayList EventMembers)
+
+        {
+            DB db = new DB();
+
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            MySqlCommand command = new MySqlCommand("SELECT gm.Page_ID, gm.User_ID, us.User_Name , gm.Event_Member_Role FROM `event_members` gm INNER JOIN users us on gm.User_ID = us.User_ID WHERE Page_ID ='" + Program.PreviousPageID + "'", db.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            StringBuilder sb = new StringBuilder();
+            foreach (DataRow dr in table.Rows)
+            {
+                object[] arr = dr.ItemArray;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    EventMembers.Add(Convert.ToString(arr[i]));
+                    sb.Append('\n');
+                }
+            }
+            Console.WriteLine(sb);
+
+        }
+        public static void ExportMembers(string UserID , string Role) 
         
         {
-            switch(Program.PreviousPage)
+            if (Role == "")
             {
-                case "Event":
-                    break;
-                case "Group":
-                    break ;
+                MessageBox.Show("Make sure to give a role to this user ");
             }
-        
-        
+            else
+            {
+                DB db = new DB();
+                switch (Program.PreviousPage)
+                {
+                    case "Event":
+                        MySqlCommand command = new MySqlCommand("INSERT INTO `event_members` (`Page_ID`, `User_ID`, `Event_Member_Role`) VALUES(@pgID, @usrID, @role)", db.getConnection());
+
+                        command.Parameters.Add("@pgID", MySqlDbType.Int32).Value = Program.PreviousPageID;
+                        command.Parameters.Add("@usrID", MySqlDbType.Int32).Value = Convert.ToInt32(UserID);
+                        command.Parameters.Add("@role", MySqlDbType.VarChar).Value = Role;
+
+                        db.openConnection();
+                        command.ExecuteNonQuery();
+                        db.closeConnection();
+                        break;
+
+
+                    case "Group":
+
+                        
+                        MySqlCommand command2 = new MySqlCommand("INSERT INTO `group_members` (`Page_ID`, `User_ID`, `Group_Member_Role`) VALUES(@pgID, @usrID, @role)", db.getConnection());
+
+                        command2.Parameters.Add("@pgID", MySqlDbType.Int32).Value = Program.PreviousPageID;
+                        command2.Parameters.Add("@usrID", MySqlDbType.Int32).Value = Convert.ToInt32(UserID);
+                        command2.Parameters.Add("@role", MySqlDbType.VarChar).Value = Role;
+
+                        db.openConnection();
+                        command2.ExecuteNonQuery();
+                        db.closeConnection();
+                        break;
+
+
+                }
+
+            }
+
+
+        }
+
+        public static void DeleteMember(string ID)
+        {
+            DB db = new DB();
+            switch (Program.PreviousPage)
+
+            {
+                case "Group":
+                   
+
+                    MySqlCommand command = new MySqlCommand("DELETE FROM group_members WHERE User_ID='" + ID + "'", db.getConnection());
+
+
+                    //open the connection
+                    db.openConnection();
+                    command.ExecuteNonQuery();
+                    db.closeConnection();
+                    MessageBox.Show("Member is Removed From Group ");
+                    break;
+                case "Event":
+               
+                    MySqlCommand command2 = new MySqlCommand("DELETE FROM event_members WHERE User_ID='" + ID + "'", db.getConnection());
+                    //open the connection
+                    db.openConnection();
+                    command2.ExecuteNonQuery();
+                    db.closeConnection();
+                    MessageBox.Show("Member is Removed From Event ");
+                    break;
+            }
+            
         }
 
     }

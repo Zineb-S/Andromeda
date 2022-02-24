@@ -13,6 +13,9 @@ namespace Andromeda
     {
         public static ArrayList liOfUsers = new ArrayList();
         public static ArrayList liOfPosts = new ArrayList();
+        public static ArrayList liOfnonMembers = new ArrayList();
+        public static ArrayList liOfGroupMembers = new ArrayList();
+        public static ArrayList liOfEventMembers = new ArrayList();
         public static ArrayList liOfPostsComments = new ArrayList();
         public static ArrayList liOfPages = new ArrayList();
         public static ArrayList liOfEvents = new ArrayList();

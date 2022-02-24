@@ -39,7 +39,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(212, 62);
+            this.label1.Location = new System.Drawing.Point(155, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 28);
             this.label1.TabIndex = 3;
@@ -50,7 +50,7 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pictureBox1.Location = new System.Drawing.Point(25, 16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 114);
+            this.pictureBox1.Size = new System.Drawing.Size(89, 99);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -61,15 +61,16 @@
             "Admin ",
             "Moderator ",
             "Guest "});
-            this.comboBox1.Location = new System.Drawing.Point(384, 40);
+            this.comboBox1.Location = new System.Drawing.Point(410, 31);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(384, 86);
+            this.button1.Location = new System.Drawing.Point(410, 71);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 29);
             this.button1.TabIndex = 5;
@@ -87,6 +88,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "AddMemberBox";
             this.Size = new System.Drawing.Size(561, 150);
+            this.Load += new System.EventHandler(this.AddMemberBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -24,7 +24,7 @@ namespace Andromeda
             TITLE = T;
             SDATE = S;
             EDATE = E;
-                
+            Program.PreviousPageID = Convert.ToInt32(ID);
             InitializeComponent();
             label1.Text = T;
             label4.Text = S;

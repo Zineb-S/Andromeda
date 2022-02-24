@@ -21,7 +21,7 @@ namespace Andromeda
             InitializeComponent();
             label1.Text = Title;
 
-
+            Program.PreviousPageID = Convert.ToInt32( ID );
 
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.WrapContents = false;

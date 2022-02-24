@@ -33,6 +33,7 @@ namespace Andromeda.Frames
             S = comboBox8.Text + "-" + comboBox2.Text + "-" + comboBox1.Text + " " + comboBox4.Text + ":" + comboBox5.Text + ":00";
             E= comboBox7.Text + "-" + textBoxBirthMonth.Text + "-" + textBoxBirthDay.Text + " " + comboBox3.Text + ":" + comboBox6.Text + ":00";
             Event.updateEvent(I,T,S,E);
+            this.Dispose();
             EventsList eventsList = new EventsList();
             eventsList.Show();
         }
