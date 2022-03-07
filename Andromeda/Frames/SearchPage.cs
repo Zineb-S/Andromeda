@@ -15,6 +15,38 @@ namespace Andromeda
         public SearchPage()
         {
             InitializeComponent();
+            SearchResultPanel.FlowDirection = FlowDirection.TopDown;
+            SearchResultPanel.WrapContents = false;
+            SearchResultPanel.AutoScroll = true;
+            SearchResultPanel.Controls.Clear();
+            Page.importPages(Program.liOfPages);
+           
+            for (int i = 0; i < Program.liOfPages.Count; i += 6)
+            {
+               if (!Program.liOfPages[i + 3].ToString().Equals("Profile"))
+                    {
+                    SearchResultPanel.Controls.Add(new SearchResult(Convert.ToInt32(Program.liOfPages[i]), Program.liOfPages[i + 1].ToString(), Program.liOfPages[i + 2].ToString(), Program.liOfPages[i + 3].ToString(), Program.liOfPages[i + 4].ToString(), Program.liOfPages[i + 5].ToString()));
+
+                }
+
+
+
+
+
+            }
+            for (int i = 0; i < Program.liOfUsers.Count; i += 9)
+            {
+
+                if (Convert.ToInt32(Program.liOfUsers[i]).Equals(Program.CurrentUserID))
+                {
+                    continue;
+                }
+                else
+                {
+                    SearchResultPanel.Controls.Add(new SearchResult(Convert.ToInt32(Program.liOfUsers[i]), Program.liOfUsers[i + 1].ToString(), "", "User", "", ""));
+                }
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -22,6 +54,37 @@ namespace Andromeda
             this.Hide();
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
+        }
+
+        private void SearchPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // li of all pages 
+            // li of users 
+
+           
+            
+            for (int i = 0; i < Program.liOfPages.Count; i+=6)
+            {
+                if (Program.liOfPages[i+1].ToString()==textBox1.Text)
+                {
+                    SearchResultPanel.Controls.Clear();
+                    SearchResultPanel.Controls.Add(new SearchResult(Convert.ToInt32(Program.liOfPages[i]), Program.liOfPages[i + 1].ToString(), Program.liOfPages[i + 2].ToString(), Program.liOfPages[i + 3].ToString(), Program.liOfPages[i + 4].ToString(), Program.liOfPages[i + 5].ToString()));
+                }
+
+            }
+            for (int i = 0; i < Program.liOfUsers.Count; i+=9)
+            {
+                if (Program.liOfUsers[i + 1].ToString() == textBox1.Text)
+                {
+                    SearchResultPanel.Controls.Clear();
+                    SearchResultPanel.Controls.Add(new SearchResult(Convert.ToInt32(Program.liOfUsers[i]), Program.liOfUsers[i + 1].ToString(), "", "User", "", ""));
+                }
+            }
         }
     }
 }
