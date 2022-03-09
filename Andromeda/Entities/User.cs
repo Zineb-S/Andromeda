@@ -421,7 +421,7 @@ namespace Andromeda
             
         }
 
-        public static void ImportRequests( ArrayList requestslist) 
+        public static void ImportRequests( ArrayList requestslist , ArrayList receivedrequests) 
         {
 
 
@@ -430,27 +430,42 @@ namespace Andromeda
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
+            DataTable table2 = new DataTable();
             MySqlCommand command = new MySqlCommand("SELECT * FROM `friend_requests` WHERE request_Sender='"+Program.CurrentUserID+"' ", db.getConnection());
+            MySqlCommand command2 = new MySqlCommand("SELECT * FROM `friend_requests` WHERE request_Receiver='" + Program.CurrentUserID + "' ", db.getConnection());
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            StringBuilder sb = new StringBuilder();
+           
             foreach (DataRow dr in table.Rows)
             {
                 object[] arr = dr.ItemArray;
                 for (int i = 0; i < arr.Length; i++)
                 {
                     requestslist.Add(Convert.ToString(arr[i]));
-                    sb.Append('\n');
+                    
                 }
             }
-            Console.WriteLine(sb);
+        
+            adapter.SelectCommand = command2;
+            adapter.Fill(table2);
+
+            foreach (DataRow dr in table2.Rows)
+            {
+                object[] arr = dr.ItemArray;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    receivedrequests.Add(Convert.ToString(arr[i]));
+                   
+                }
+            }
+           
         }
         public static void SendRequest(string SenderID , string ReceiverID )
         {
             bool found = false;
-            ImportRequests(Program.liOfRequests);
+            ImportRequests(Program.liOfRequests,Program.liOfReceivedRequests);
             for (int i = 0;i < Program.liOfRequests.Count;i+=4)
             {
                if (Program.liOfRequests[i+1].ToString()==SenderID && Program.liOfRequests[i+2].ToString()==ReceiverID)

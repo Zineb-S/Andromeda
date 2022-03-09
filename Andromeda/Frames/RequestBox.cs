@@ -12,9 +12,22 @@ namespace Andromeda
 {
     public partial class RequestBox : UserControl
     {
-        public RequestBox()
+        
+        public RequestBox(string Sender , string Receiver )
         {
             InitializeComponent();
+            
+            if ( Receiver == "your" )
+            {
+                BackColor = Color.LightBlue;
+            }
+            else
+            {
+                BackColor = Color.LightGreen;
+            }
+            
+            label1.Text = Sender;
+            label2.Text = " wants to explore " + Receiver +" planet. ";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -23,6 +36,11 @@ namespace Andromeda
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RequestBox_Load(object sender, EventArgs e)
         {
 
         }

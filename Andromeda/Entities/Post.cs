@@ -107,7 +107,7 @@ namespace Andromeda
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
-            MySqlCommand command = new MySqlCommand("SELECT P.`Post_ID`, `Post_Title`, `Post_Date`, `Post_Content`,Post_Up_Votes,Post_Down_Votes, P.`User_ID` FROM post P INNER JOIN post_informations PI ON p.Post_ID = pi.Post_ID AND pi.User_ID ='" + CurrentUserID + "' AND pi.Page_ID='" + PreviousPageID + "'", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT P.`Post_ID`, `Post_Title`, `Post_Date`, `Post_Content`,Post_Up_Votes,Post_Down_Votes, P.`User_ID` FROM post P INNER JOIN post_informations PI ON p.Post_ID = pi.Post_ID  AND pi.Page_ID='" + PreviousPageID + "'", db.getConnection());
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
