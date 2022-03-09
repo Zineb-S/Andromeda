@@ -12,9 +12,14 @@ namespace Andromeda
 {
     public partial class Aliens : Form
     {
-        public Aliens()
+        public string nameLabel;
+        public string IDLabel;
+        public Aliens(string ID , string name)
         {
+            nameLabel = name;
+            IDLabel = ID;
             InitializeComponent();
+            label1.Text = name;
         }
 
         private void Aliens_Load(object sender, EventArgs e)
@@ -31,9 +36,9 @@ namespace Andromeda
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainMenu menu = new MainMenu();
-            menu.Show();
+            Aliens.ActiveForm.Dispose();
+            SearchPage search = new SearchPage();
+            search.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -41,6 +46,17 @@ namespace Andromeda
             this.Hide();
             PostsList posts = new PostsList();
             posts.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            User.SendRequest(Program.CurrentUserID.ToString(),IDLabel);
+
         }
     }
 }

@@ -17,7 +17,22 @@ namespace Andromeda
         
         public PageDetails( string Title,string PageID)
         {
+            Console.WriteLine("WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Console.WriteLine(Program.PreviousPage);
             InitializeComponent();
+            button1.Visible = true;
+            button4.Visible = true;
+            button5.Visible = true;
+
+            if (Program.PreviousPage.Equals("Search"))
+
+            {
+                button1.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+            }
+              
+       
             label1.Text = Title;
 
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
@@ -76,9 +91,21 @@ namespace Andromeda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            Pages pages = new Pages();
-            pages.Show();
+            if (Program.PreviousPage.Equals("Page"))
+            {
+                PageDetails.ActiveForm.Dispose();
+                Pages pages = new Pages();
+                pages.Show();
+            }
+             if (Program.PreviousPage.Equals("Search"))
+             {
+                 PageDetails.ActiveForm.Dispose();
+                 SearchPage n = new SearchPage();
+                 n.Show();
+
+             }
+           
+
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -92,6 +119,11 @@ namespace Andromeda
             this.Dispose();
             Pages pages2 = new Pages();
             pages2.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

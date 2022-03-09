@@ -19,6 +19,12 @@ namespace Andromeda
         public PostBox(int PostID, string Title, string Date, string Content, string upVotes, string Downvotes , int L,int DL)
         {
             InitializeComponent();
+
+            if (Program.PreviousPage.Equals("Search"))
+            { 
+                button5.Visible = false;
+                button4.Visible = false;
+            }
             Console.WriteLine(PostID + " : " + L + " " + DL);
             if (L == 0 & DL == 0)
             {

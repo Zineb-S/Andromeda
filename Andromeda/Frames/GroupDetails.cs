@@ -19,6 +19,13 @@ namespace Andromeda
         {
             T = Title;
             InitializeComponent();
+            if (Program.PreviousPage.Equals("Search"))
+            {
+                button1.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+                button3.Visible = false;
+            }
             label1.Text = Title;
 
             Program.PreviousPageID = Convert.ToInt32( ID );
@@ -71,9 +78,20 @@ namespace Andromeda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            GroupsList grpList = new GroupsList();
-            grpList.Show();
+            if (Program.PreviousPage.Equals("Search"))
+            {
+                GroupDetails.ActiveForm.Dispose();
+                SearchPage n = new SearchPage();
+                n.Show();
+
+            }
+
+            else
+            {
+                this.Hide();
+                GroupsList grpList = new GroupsList();
+                grpList.Show();
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)

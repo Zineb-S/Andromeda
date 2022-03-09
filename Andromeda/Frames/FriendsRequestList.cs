@@ -15,6 +15,15 @@ namespace Andromeda
         public FriendsRequestList()
         {
             InitializeComponent();
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.WrapContents = false;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Controls.Clear();
+            User.ImportRequests(Program.liOfRequests);/// receiver list 
+            for (int i = 0; i < Program.liOfRequests.Count; i+=4)
+            {
+                flowLayoutPanel1.Controls.Add(new RequestBox());
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -22,6 +31,16 @@ namespace Andromeda
             this.Hide();
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
+        }
+
+        private void FriendsRequestList_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

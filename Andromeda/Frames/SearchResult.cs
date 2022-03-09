@@ -18,6 +18,7 @@ namespace Andromeda
         public string E = "";
         public SearchResult(int ID , string Title, string date, string Type,string sdate , string edate )
         {
+           // Program.PreviousPage = "Search";
             T = Title;
             I = ID;
             S = sdate;
@@ -75,6 +76,13 @@ namespace Andromeda
                     GroupDetails groupDetails = new GroupDetails(T, I.ToString());
                     groupDetails.Show();
                     break;
+                case "User":
+                    Program.PreviousPageID = I;
+                    SearchPage.ActiveForm.Dispose();
+                    Aliens aliens = new Aliens(Program.PreviousPageID.ToString(),T);
+                    aliens.Show();
+                    break ;
+
 
             }
         }

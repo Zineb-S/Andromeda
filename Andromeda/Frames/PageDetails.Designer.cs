@@ -59,6 +59,7 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Owner";
             this.label2.Visible = false;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 

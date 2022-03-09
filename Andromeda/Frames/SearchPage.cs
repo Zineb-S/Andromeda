@@ -14,6 +14,7 @@ namespace Andromeda
     {
         public SearchPage()
         {
+            Program.PreviousPage = "Search";
             InitializeComponent();
             SearchResultPanel.FlowDirection = FlowDirection.TopDown;
             SearchResultPanel.WrapContents = false;
@@ -23,7 +24,7 @@ namespace Andromeda
            
             for (int i = 0; i < Program.liOfPages.Count; i += 6)
             {
-               if (!Program.liOfPages[i + 3].ToString().Equals("Profile"))
+               if (Program.liOfPages[i + 3].ToString().Equals("Event") || Program.liOfPages[i + 3].ToString().Equals("Group") || Program.liOfPages[i + 3].ToString().Equals("Page"))
                     {
                     SearchResultPanel.Controls.Add(new SearchResult(Convert.ToInt32(Program.liOfPages[i]), Program.liOfPages[i + 1].ToString(), Program.liOfPages[i + 2].ToString(), Program.liOfPages[i + 3].ToString(), Program.liOfPages[i + 4].ToString(), Program.liOfPages[i + 5].ToString()));
 
@@ -67,7 +68,37 @@ namespace Andromeda
             // li of users 
 
            
-            
+            if (textBox1.Text.Equals(""))
+            {
+                SearchResultPanel.Controls.Clear();
+                for (int i = 0; i < Program.liOfPages.Count; i += 6)
+                {
+                    if (!Program.liOfPages[i + 3].ToString().Equals("Profile"))
+                    {
+                        SearchResultPanel.Controls.Add(new SearchResult(Convert.ToInt32(Program.liOfPages[i]), Program.liOfPages[i + 1].ToString(), Program.liOfPages[i + 2].ToString(), Program.liOfPages[i + 3].ToString(), Program.liOfPages[i + 4].ToString(), Program.liOfPages[i + 5].ToString()));
+
+                    }
+
+
+
+
+
+                }
+                for (int i = 0; i < Program.liOfUsers.Count; i += 9)
+                {
+
+                    if (Convert.ToInt32(Program.liOfUsers[i]).Equals(Program.CurrentUserID))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        SearchResultPanel.Controls.Add(new SearchResult(Convert.ToInt32(Program.liOfUsers[i]), Program.liOfUsers[i + 1].ToString(), "", "User", "", ""));
+                    }
+                }
+
+
+            }
             for (int i = 0; i < Program.liOfPages.Count; i+=6)
             {
                 if (Program.liOfPages[i+1].ToString()==textBox1.Text)

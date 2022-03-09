@@ -26,6 +26,13 @@ namespace Andromeda
             EDATE = E;
             Program.PreviousPageID = Convert.ToInt32(ID);
             InitializeComponent();
+            if (Program.PreviousPage.Equals("Search"))
+            {
+                button1.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+                button3.Visible = false;
+            }
             label1.Text = T;
             label4.Text = S;
             label5.Text = E;
@@ -78,9 +85,21 @@ namespace Andromeda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            EventsList EVlist = new EventsList();
-            EVlist.Show();
+            if (Program.PreviousPage.Equals("Search"))
+            {
+                EventDetails.ActiveForm.Dispose();
+                SearchPage n = new SearchPage();
+                n.Show();
+            
+            }
+
+            else
+            {
+                this.Hide();
+                EventsList EVlist = new EventsList();
+                EVlist.Show();
+            }
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
