@@ -25,7 +25,6 @@ namespace Andromeda
                 button5.Visible = false;
                 button4.Visible = false;
             }
-            Console.WriteLine(PostID + " : " + L + " " + DL);
             if (L == 0 & DL == 0)
             {
                 Like = false;

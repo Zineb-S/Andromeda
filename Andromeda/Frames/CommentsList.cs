@@ -22,7 +22,6 @@ namespace Andromeda
             CommentsPanel.WrapContents = false;
             CommentsPanel.AutoScroll = true;
             CommentsPanel.Controls.Clear();
-            Console.WriteLine(Program.liOfPostsComments.Count);
             for (int i = 0; i < Program.liOfPostsComments.Count; i += 5)
             {
                 CommentsPanel.Controls.Add(new CommentBox(PostID,Convert.ToInt32(Program.liOfPostsComments[i]), Program.liOfPostsComments[i + 4].ToString(), Program.liOfPostsComments[i + 2].ToString(), Program.liOfPostsComments[i+1].ToString()));

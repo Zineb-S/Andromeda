@@ -74,6 +74,7 @@
             this.Name = "EditPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditPage";
+            this.Load += new System.EventHandler(this.EditPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

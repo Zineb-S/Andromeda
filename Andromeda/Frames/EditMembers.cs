@@ -21,5 +21,10 @@ namespace Andromeda.Frames
         {
 
         }
+
+        private void EditMembers_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

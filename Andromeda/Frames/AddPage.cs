@@ -24,5 +24,10 @@ namespace Andromeda
             Pages page = new Pages();
             page.Show();
         }
+
+        private void AddPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,5 +35,10 @@ namespace Andromeda
             RegisterForm register = new RegisterForm();
             register.Show();
         }
+
+        private void Welcome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

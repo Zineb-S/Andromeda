@@ -31,5 +31,10 @@ namespace Andromeda.Frames
             pages.Show();
 
         }
+
+        private void EditPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

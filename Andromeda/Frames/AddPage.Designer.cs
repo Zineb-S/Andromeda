@@ -73,6 +73,7 @@
             this.Name = "AddPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddPage";
+            this.Load += new System.EventHandler(this.AddPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

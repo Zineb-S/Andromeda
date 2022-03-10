@@ -94,6 +94,7 @@ namespace Andromeda
             this.Name = "Welcome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
+            this.Load += new System.EventHandler(this.Welcome_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

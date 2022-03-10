@@ -17,7 +17,7 @@ namespace Andromeda
         {
 
             Program.liOfProfilePosts.Clear();
-             Program.liOfUserPages.Clear();
+            Program.liOfUserPages.Clear();
             Program.liOfPages.Clear();
             Program.liOfEvents.Clear();
             Program.liOfNormalPages.Clear();

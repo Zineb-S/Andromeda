@@ -17,8 +17,7 @@ namespace Andromeda
         
         public PageDetails( string Title,string PageID)
         {
-            Console.WriteLine("WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            Console.WriteLine(Program.PreviousPage);
+
             InitializeComponent();
             button1.Visible = true;
             button4.Visible = true;

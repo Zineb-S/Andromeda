@@ -15,8 +15,6 @@ namespace Andromeda
         public Pages()
         {
             Program.PreviousPage = "Page";
-            Console.WriteLine("Wiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-            Console.WriteLine(Program.PreviousPage);
             InitializeComponent();
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.WrapContents = false;
