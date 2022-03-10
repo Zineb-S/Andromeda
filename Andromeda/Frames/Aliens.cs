@@ -55,7 +55,7 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User.SendRequest(Program.CurrentUserID.ToString(),IDLabel);
+            Request.SendRequest(Program.CurrentUserID.ToString(),IDLabel);
 
         }
     }

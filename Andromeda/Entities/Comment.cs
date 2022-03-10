@@ -14,7 +14,9 @@ namespace Andromeda
     internal class Comment
     {
         public MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=andromeda");
-        public int CommentID { get; set; }
+        
+        /*
+         public int CommentID { get; set; }
         public string CommentText { get; set; }
         public DateTime CommentDate { get; set; }
 
@@ -26,7 +28,7 @@ namespace Andromeda
             this.CommentDate = date;
 
         }
-
+        */
         public static void importComments( ArrayList commentsList)
         {
             DB db = new DB();
@@ -41,17 +43,17 @@ namespace Andromeda
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            StringBuilder sb = new StringBuilder();
+            
             foreach (DataRow dr in table.Rows)
             {
                 object[] arr = dr.ItemArray;
                 for (int i = 0; i < arr.Length; i++)
                 {
                     commentsList.Add(Convert.ToString(arr[i]));
-                    sb.Append('\n');
+                 
                 }
             }
-            Console.WriteLine(sb);
+           
         }
         public static void importPostsComments(int PostID, ArrayList commentsList)
         {
@@ -66,17 +68,16 @@ namespace Andromeda
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            StringBuilder sb = new StringBuilder();
             foreach (DataRow dr in table.Rows)
             {
                 object[] arr = dr.ItemArray;
                 for (int i = 0; i < arr.Length; i++)
                 {
                     commentsList.Add(Convert.ToString(arr[i]));
-                    sb.Append('\n');
+                  
                 }
             }
-            Console.WriteLine(sb);
+           
         }
         public static void exportComments(string text,int postID) 
         {

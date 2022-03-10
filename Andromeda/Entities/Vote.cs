@@ -13,7 +13,7 @@ namespace Andromeda.Entities
     internal class Vote
     {
         public MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=andromeda");
-
+        /*
         public int PostID { get; set; }
 
         public int VoteNumber { get; set; }
@@ -40,7 +40,7 @@ namespace Andromeda.Entities
 
         }
 
-
+        */
         public static void ImportAllPostsVotes(ArrayList AllVotesList)
         {
             DB db = new DB();
@@ -57,19 +57,15 @@ namespace Andromeda.Entities
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            StringBuilder sb = new StringBuilder();
             foreach (DataRow dr in table.Rows)
             {
                 object[] arr = dr.ItemArray;
                 for (int i = 0; i < arr.Length; i++)
                 {
                     AllVotesList.Add(Convert.ToString(arr[i]));
-                    sb.Append('\n');
                 }
             }
-            Console.WriteLine(sb);
         }
-
         public static void ImportPostVotes(int PostID, ArrayList PostVotesList)
         {
             Program.AllVotesList.Clear();
@@ -90,8 +86,6 @@ namespace Andromeda.Entities
             }
 
         }
-
-
         public static void exportPostVotes(string PostID, string VoteType)
         {
             bool checkUserVoted(int UserID, string PoID)
@@ -115,6 +109,7 @@ namespace Andromeda.Entities
                 switch (VoteType)
                 {
                     case "Like":
+
                         MySqlCommand command = new MySqlCommand("INSERT INTO votes(Post_ID,User_ID,Vote_Like,Vote_Dislike) VALUES(@postID, @userID, @VoteL,@VoteDL)", db.getConnection());
                         command.Parameters.Add("@postID", MySqlDbType.Int32).Value = PostID;
                         command.Parameters.Add("@userID", MySqlDbType.Int32).Value = Program.CurrentUserID;
@@ -124,6 +119,7 @@ namespace Andromeda.Entities
                         command.ExecuteNonQuery();
                         db.closeConnection();
                         break;
+
                     case "Dislike":
 
                         MySqlCommand command2 = new MySqlCommand("INSERT INTO votes(Post_ID,User_ID,Vote_Like,Vote_Dislike) VALUES(@postID, @userID, @VoteL,@VoteDL)", db.getConnection());

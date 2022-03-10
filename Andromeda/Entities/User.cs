@@ -14,7 +14,7 @@ namespace Andromeda
     public class User
     {   
         public MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=andromeda");
-        public int UserID { get; set; }
+        /*public int UserID { get; set; }
         public string UserName { get; set; }
         public string UserFirstName { get; set; }
         public string UserLastName { get; set; }
@@ -38,7 +38,9 @@ namespace Andromeda
             this.Gender = gender;
             this.UserStatus = status;
         }
+        */
 
+        //USERS
         public static void importUsers(ArrayList usersList)
 
         {
@@ -52,75 +54,17 @@ namespace Andromeda
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            StringBuilder sb = new StringBuilder();
             foreach (DataRow dr in table.Rows)
             {
                 object[] arr = dr.ItemArray;
                 for (int i = 0; i < arr.Length; i++)
                 {
                     usersList.Add(Convert.ToString(arr[i]));
-                    sb.Append('\n');
+            
                 }
-            }
-            Console.WriteLine(sb);
-
-
-        }
-
-        public static void importNONmembers(ArrayList nonmembers)
-
-
-        {
-            DB db = new DB();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            DataTable table = new DataTable();
-            switch (Program.PreviousPage)
-            {
-                case "Group":
-
-                    MySqlCommand command = new MySqlCommand("SELECT us.User_ID, us.User_Name FROM users us WHERE us.User_ID not in (SELECT User_ID from group_members gm WHERE gm.Page_ID = '" + Program.PreviousPageID + "')", db.getConnection());
-
-                    adapter.SelectCommand = command;
-                    adapter.Fill(table);
-
-                    StringBuilder sb = new StringBuilder();
-                    foreach (DataRow dr in table.Rows)
-                    {
-                        object[] arr = dr.ItemArray;
-                        for (int i = 0; i < arr.Length; i++)
-                        {
-                            nonmembers.Add(Convert.ToString(arr[i]));
-                            sb.Append('\n');
-                        }
-                    }
-                    Console.WriteLine(sb);
-
-                    break;
-                case "Event":
-
-                    MySqlCommand command2 = new MySqlCommand("SELECT us.User_ID, us.User_Name FROM users us WHERE us.User_ID not in (SELECT User_ID from event_members gm WHERE gm.Page_ID = '" + Program.PreviousPageID + "')", db.getConnection());
-
-                    adapter.SelectCommand = command2;
-                    adapter.Fill(table);
-
-                  
-                    foreach (DataRow dr in table.Rows)
-                    {
-                        object[] arr = dr.ItemArray;
-                        for (int i = 0; i < arr.Length; i++)
-                        {
-                            nonmembers.Add(Convert.ToString(arr[i]));
-                           
-                        }
-                    }
-                    
-
-                    break;
             }
             
 
-
-           
 
         }
         public static void exportUsers(string fname, string lname, string username, string email, string pass, string confirm, string year, string month, string day, string date, string gender)
@@ -209,7 +153,6 @@ namespace Andromeda
             //close connection
             db.closeConnection();
         }
-    
         public static void DeleteUser() 
         {
 
@@ -292,7 +235,64 @@ namespace Andromeda
 
             
         }
+        
+        //MEMBERS
+        public static void importNONmembers(ArrayList nonmembers)
 
+
+        {
+            DB db = new DB();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            switch (Program.PreviousPage)
+            {
+                case "Group":
+
+                    MySqlCommand command = new MySqlCommand("SELECT us.User_ID, us.User_Name FROM users us WHERE us.User_ID not in (SELECT User_ID from group_members gm WHERE gm.Page_ID = '" + Program.PreviousPageID + "')", db.getConnection());
+
+                    adapter.SelectCommand = command;
+                    adapter.Fill(table);
+
+
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        object[] arr = dr.ItemArray;
+                        for (int i = 0; i < arr.Length; i++)
+                        {
+                            nonmembers.Add(Convert.ToString(arr[i]));
+
+                        }
+                    }
+
+
+                    break;
+                case "Event":
+
+                    MySqlCommand command2 = new MySqlCommand("SELECT us.User_ID, us.User_Name FROM users us WHERE us.User_ID not in (SELECT User_ID from event_members gm WHERE gm.Page_ID = '" + Program.PreviousPageID + "')", db.getConnection());
+
+                    adapter.SelectCommand = command2;
+                    adapter.Fill(table);
+
+
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        object[] arr = dr.ItemArray;
+                        for (int i = 0; i < arr.Length; i++)
+                        {
+                            nonmembers.Add(Convert.ToString(arr[i]));
+
+                        }
+                    }
+
+
+                    break;
+            }
+
+
+
+
+
+        }
         public static void ImportGroupMembers(ArrayList GroupMembers)
 
         {
@@ -421,84 +421,7 @@ namespace Andromeda
             
         }
 
-        public static void ImportRequests( ArrayList requestslist , ArrayList receivedrequests) 
-        {
-
-
-            DB db = new DB();
-
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            DataTable table = new DataTable();
-            DataTable table2 = new DataTable();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `friend_requests` WHERE request_Sender='"+Program.CurrentUserID+"' ", db.getConnection());
-            MySqlCommand command2 = new MySqlCommand("SELECT * FROM `friend_requests` WHERE request_Receiver='" + Program.CurrentUserID + "' ", db.getConnection());
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
-           
-            foreach (DataRow dr in table.Rows)
-            {
-                object[] arr = dr.ItemArray;
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    requestslist.Add(Convert.ToString(arr[i]));
-                    
-                }
-            }
+       
         
-            adapter.SelectCommand = command2;
-            adapter.Fill(table2);
-
-            foreach (DataRow dr in table2.Rows)
-            {
-                object[] arr = dr.ItemArray;
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    receivedrequests.Add(Convert.ToString(arr[i]));
-                   
-                }
-            }
-           
-        }
-        public static void SendRequest(string SenderID , string ReceiverID )
-        {
-            bool found = false;
-            ImportRequests(Program.liOfRequests,Program.liOfReceivedRequests);
-            for (int i = 0;i < Program.liOfRequests.Count;i+=4)
-            {
-               if (Program.liOfRequests[i+1].ToString()==SenderID && Program.liOfRequests[i+2].ToString()==ReceiverID)
-                {
-                    MessageBox.Show("You have already sent a friend request to this Alien ");
-                    found = true;
-                    break;
-                }
-            }
-         
-              if (found==false)
-            {
-                DB db = new DB();
-
-                MySqlCommand command = new MySqlCommand("INSERT INTO `friend_requests` (`request_Sender`, `request_Receiver`, `request_Status`) VALUES(@sender, @receiver, @status)", db.getConnection());
-
-                command.Parameters.Add("@sender", MySqlDbType.Int32).Value = Convert.ToInt32(SenderID);
-                command.Parameters.Add("@receiver", MySqlDbType.Int32).Value = Convert.ToInt32(ReceiverID);
-                command.Parameters.Add("@status", MySqlDbType.Int32).Value = 0;
-
-                db.openConnection();
-                command.ExecuteNonQuery();
-                db.closeConnection();
-                MessageBox.Show(" You've Sent a friend request to this alien *-*  ");
-            }
-                       
-
-                    
-
-
-        }
-
-        //public static void AcceptRequest() { };
-        //public static void RejectRequest() { };
     }
 }

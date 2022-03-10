@@ -14,6 +14,8 @@ namespace Andromeda
     public class Post
     {
         public MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=andromeda");
+        /*
+        
         public string PostId { get; set; }
         public string PostTitle { get; set; }
         public DateTime PostDate { get; set; }
@@ -36,7 +38,7 @@ namespace Andromeda
             this.PostDownVotes = downvotes;
 
         }
-
+        */
         public static void importPosts(ArrayList postsList) 
         
         {
@@ -52,17 +54,14 @@ namespace Andromeda
             adapter.SelectCommand = command;
             adapter.Fill(table);
                 
-            StringBuilder sb = new StringBuilder();
             foreach (DataRow dr in table.Rows)
             {
                 object[] arr = dr.ItemArray;
                 for (int i = 0; i < arr.Length; i++)
                 {
                     postsList.Add(Convert.ToString(arr[i]));
-                    sb.Append('\n');
                 }
             }
-            Console.WriteLine(sb);
         }
 
         public static void importProfilePosts(ArrayList postsList, int CurrentUserID, int CurrentUserPfpID)
@@ -79,7 +78,6 @@ namespace Andromeda
             adapter.Fill(table);
             importPosts(Program.liOfPosts);
             Console.WriteLine(Program.liOfPosts.Count);
-            StringBuilder sb = new StringBuilder();
             foreach (DataRow dr in table.Rows)
             {
                 object[] arr = dr.ItemArray;
@@ -113,7 +111,6 @@ namespace Andromeda
             adapter.Fill(table);
             importPosts(Program.liOfPosts);
             Console.WriteLine(Program.liOfPosts.Count);
-            StringBuilder sb = new StringBuilder();
             foreach (DataRow dr in table.Rows)
             {
                 object[] arr = dr.ItemArray;

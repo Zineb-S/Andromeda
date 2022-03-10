@@ -13,6 +13,7 @@ namespace Andromeda
 {
     internal class Group
     {
+        /*
         public int GroupId { get; set; }
         public string GroupName { get; set; }
 
@@ -25,6 +26,7 @@ namespace Andromeda
             this.GroupName=name;
             this.GroupDate=date;
         }
+        */
         public static void importGroups(ArrayList liOfGroups ) 
         {
 
@@ -38,17 +40,16 @@ namespace Andromeda
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            StringBuilder sb = new StringBuilder();
             foreach (DataRow dr in table.Rows)
             {
                 object[] arr = dr.ItemArray;
                 for (int i = 0; i < arr.Length; i++)
                 {
                     liOfGroups.Add(Convert.ToString(arr[i]));
-                    sb.Append('\n');
+                    
                 }
             }
-            Console.WriteLine(sb);
+            
 
         }
         public static void exportGroups(string Title) 
@@ -81,7 +82,7 @@ namespace Andromeda
                 int index = Convert.ToInt32(Program.liOfPages.Count) - 6;
 
                 string PageID = Program.liOfPages[index].ToString();
-                Console.WriteLine(PageID);
+              
                 command2.Parameters.Add("@ID", MySqlDbType.Int32).Value = Program.CurrentUserID;
                 command2.Parameters.Add("@pageID", MySqlDbType.Int32).Value = Int32.Parse(PageID);
 
