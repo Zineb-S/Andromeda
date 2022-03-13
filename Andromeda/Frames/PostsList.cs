@@ -14,13 +14,26 @@ namespace Andromeda
     public partial class PostsList : Form
     {
         public PostsList()
-        {   
+        {
+            InitializeComponent();
             Program.liOfProfilePosts.Clear();
+
+            if (Program.PreviousPage.Equals("Corner"))
+            {
+                Post.importProfilePosts(Program.liOfProfilePosts, Program.thatid, Program.thatProfileid);
+                button1.Visible = false;
+
+            }
+            else
+            {
+                button1.Visible = true;
+                Post.importProfilePosts(Program.liOfProfilePosts, Program.CurrentUserID, Program.CurrentUserProfileID);
+            }
            
             Program.PreviousPage = "Profile";
             
-            Post.importProfilePosts(Program.liOfProfilePosts, Program.CurrentUserID, Program.CurrentUserProfileID);
-            InitializeComponent();               
+           
+                       
             postsPanel.FlowDirection = FlowDirection.TopDown;
             postsPanel.WrapContents = false;
             postsPanel.AutoScroll = true;

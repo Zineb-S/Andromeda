@@ -21,10 +21,15 @@ namespace Andromeda
             flowLayoutPanel1.WrapContents = false;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Clear();
-            for (int i = 0; i < Program.liOfMessages.Count; i+=5)
+            if(Program.liOfMessages.Count > 0)
             {
-                flowLayoutPanel1.Controls.Add(new MessageBoxItem(Program.liOfMessages[i+1].ToString(), Program.liOfMessages[i + 3].ToString(), Program.liOfMessages[i + 4].ToString()));
+                for (int i = 0; i < Program.liOfMessages.Count; i += 7)
+                {
+                    flowLayoutPanel1.Controls.Add(new MessageBoxItem(Program.liOfMessages[i + 2].ToString(), Program.liOfMessages[i + 5 ].ToString(), Program.liOfMessages[i + 6].ToString()));
+                }
             }
+           
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

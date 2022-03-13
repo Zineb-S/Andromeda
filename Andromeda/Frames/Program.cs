@@ -11,6 +11,9 @@ namespace Andromeda
 {
     static class Program
     {
+        public static ArrayList here = new ArrayList();
+        public static int thatid = 0;
+        public static int thatProfileid = 0;
         //USERS
         public static ArrayList liOfUsers = new ArrayList();
 
@@ -76,7 +79,7 @@ namespace Andromeda
         public static int PreviousPageID = 0;
         public static string PreviousPage = "";
         
-
+        
         [STAThread]
 
         

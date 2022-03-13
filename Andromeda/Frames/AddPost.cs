@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Andromeda.Frames;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,8 +27,8 @@ namespace Andromeda
             switch(Program.PreviousPage)
             {
                 case "Profile":
-                    PostsList newMenu = new PostsList();
-                    newMenu.Show();
+                    PostsList personalCorner = new PostsList();
+                    personalCorner.Show();
                     break;
                 case "Page":
                     Pages newP = new Pages();

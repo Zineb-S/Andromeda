@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Andromeda.Frames;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -140,5 +141,7 @@ namespace Andromeda
         {
 
         }
+
+        
     }
 }

@@ -129,7 +129,7 @@
             this.button7.Location = new System.Drawing.Point(307, 322);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(159, 49);
+            this.button7.Size = new System.Drawing.Size(175, 49);
             this.button7.TabIndex = 6;
             this.button7.Text = "Groups";
             this.button7.UseVisualStyleBackColor = true;
@@ -138,10 +138,10 @@
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.button8.Location = new System.Drawing.Point(434, 440);
+            this.button8.Location = new System.Drawing.Point(307, 423);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(159, 50);
+            this.button8.Size = new System.Drawing.Size(175, 50);
             this.button8.TabIndex = 7;
             this.button8.Text = "Profile";
             this.button8.UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.button11.Location = new System.Drawing.Point(179, 438);
+            this.button11.Location = new System.Drawing.Point(80, 423);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(157, 52);

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Andromeda.Frames;
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,8 +47,41 @@ namespace Andromeda
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PostsList posts = new PostsList();
-            posts.Show();
+            
+            Program.here.Clear();
+            DB db = new DB();
+
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            MySqlCommand command = new MySqlCommand("SELECT PP.Page_ID , P.Page_Type,PP.User_ID FROM profile_page PP INNER JOIN page P ON PP.Page_ID=P.Page_ID  WHERE User_ID = '" + IDLabel + "' and P.Page_Type = 'Profile'", db.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            foreach (DataRow dr in table.Rows)
+            {
+                object[] arr = dr.ItemArray;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    Program.here.Add(Convert.ToString(arr[i]));
+
+
+                }
+            }
+            for (int i = 0;i < Program.here.Count;i+=3)
+            {
+                
+                    Program.thatid = Convert.ToInt32(Program.here[i + 2]);
+                    Program.thatProfileid = Convert.ToInt32((Program.here[i]));
+                
+                
+                
+            }
+            Program.PreviousPage = "Corner";
+            PostsList personalCorner = new PostsList();
+            personalCorner.Show();
+
         }
 
         private void label1_Click(object sender, EventArgs e)

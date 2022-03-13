@@ -22,9 +22,11 @@ namespace Andromeda
             Request.ImportRequests(Program.liOfRequests,Program.liOfReceivedRequests);
             for (int i = 0; i < Program.liOfReceivedRequests.Count; i += 6)
             {
-                
-                    flowLayoutPanel1.Controls.Add(new RequestBox(Program.liOfRequests[i + 1].ToString(),Program.liOfRequests[i + 2].ToString(), Program.liOfRequests[i + 3].ToString(), "your"));
-
+                int val = Convert.ToInt32(Program.liOfReceivedRequests[i + 5]);
+                if (val ==0)
+                {
+                    flowLayoutPanel1.Controls.Add(new RequestBox(Program.liOfReceivedRequests[i + 1].ToString(), Program.liOfReceivedRequests[i + 2].ToString(), Program.liOfReceivedRequests[i + 3].ToString(), "your"));
+                }
                 
             }
             for (int i = 0; i < Program.liOfRequests.Count; i+=6)

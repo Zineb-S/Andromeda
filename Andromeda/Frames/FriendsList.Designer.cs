@@ -49,6 +49,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(474, 596);
             this.flowLayoutPanel1.TabIndex = 6;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // FriendsList
             // 
@@ -60,6 +61,7 @@
             this.Name = "FriendsList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FriendsList";
+            this.Load += new System.EventHandler(this.FriendsList_Load);
             this.ResumeLayout(false);
 
         }

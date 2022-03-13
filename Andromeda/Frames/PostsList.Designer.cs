@@ -36,7 +36,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(581, 12);
+            this.button1.Location = new System.Drawing.Point(572, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 50);
             this.button1.TabIndex = 0;
