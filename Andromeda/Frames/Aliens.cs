@@ -12,9 +12,9 @@ namespace Andromeda
 {
     public partial class Aliens : Form
     {
-        public string nameLabel;
+        public string nameLabel; 
         public string IDLabel;
-        public Aliens(string ID , string name)
+        public Aliens(string ID , string name)  
         {
             nameLabel = name;
             IDLabel = ID;
@@ -30,7 +30,7 @@ namespace Andromeda
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Send_Message msg = new Send_Message();
+            Send_Message msg = new Send_Message(Convert.ToInt32(IDLabel));
             msg.Show();
         }
 

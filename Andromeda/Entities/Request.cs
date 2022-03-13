@@ -22,8 +22,8 @@ namespace Andromeda
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
             DataTable table2 = new DataTable();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `friend_requests` WHERE request_Sender='" + Program.CurrentUserID + "' ", db.getConnection());
-            MySqlCommand command2 = new MySqlCommand("SELECT * FROM `friend_requests` WHERE request_Receiver='" + Program.CurrentUserID + "' ", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT R.request_ID,R.request_Sender,US.User_Name Sender_Name,request_Receiver,UR.User_Name Receiver_Name,request_Status FROM friend_requests R INNER JOIN users US ON R.request_Sender = US.User_ID INNER JOIN users UR ON R.request_Receiver = UR.User_ID WHERE request_Sender='" + Program.CurrentUserID + "' ", db.getConnection());
+            MySqlCommand command2 = new MySqlCommand("SELECT R.request_ID,R.request_Sender,US.User_Name Sender_Name,request_Receiver,UR.User_Name Receiver_Name,request_Status  FROM friend_requests R INNER JOIN users US ON R.request_Sender = US.User_ID INNER JOIN users UR ON R.request_Receiver = UR.User_ID WHERE request_Receiver='" + Program.CurrentUserID + "' ", db.getConnection());
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
@@ -89,9 +89,26 @@ namespace Andromeda
 
         }
 
-        public static void AcceptRequest()
-        { MessageBox.Show("Request Accepted , This alien has been added to your humans list :) "); }
-        public static void RejectRequest() 
-        { MessageBox.Show("Request Rejected , This alien will stay in their own planet :( "); }
+        public static void AcceptRequest(int sender) // take id of current user and the one who sent the request and change the status to 1
+        {
+
+            DB db = new DB();
+
+            MySqlCommand command = new MySqlCommand("UPDATE `friend_requests` SET request_Status = 1 WHERE request_Sender="+sender+" AND request_Receiver="+Program.CurrentUserID+"", db.getConnection());
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+            MessageBox.Show("Request Accepted , This alien has been added to your humans list :) "); }
+        public static void RejectRequest(int sender) // take id of current user and the one who sent the request and change the status to -1
+        {
+            DB db = new DB();
+
+            MySqlCommand command = new MySqlCommand("UPDATE `friend_requests` SET request_Status = -1 WHERE request_Sender=" + sender + " AND request_Receiver=" + Program.CurrentUserID + "", db.getConnection());
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+            MessageBox.Show("Request Rejected , This alien will stay in their own planet :( "); 
+        
+        }
     }
 }

@@ -20,13 +20,16 @@ namespace Andromeda
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Clear();
             Request.ImportRequests(Program.liOfRequests,Program.liOfReceivedRequests);
-            for (int i = 0; i < Program.liOfReceivedRequests.Count; i += 4)
+            for (int i = 0; i < Program.liOfReceivedRequests.Count; i += 6)
             {
-                flowLayoutPanel1.Controls.Add(new RequestBox("Alien", "your"));
+                
+                    flowLayoutPanel1.Controls.Add(new RequestBox(Program.liOfRequests[i + 1].ToString(),Program.liOfRequests[i + 2].ToString(), Program.liOfRequests[i + 3].ToString(), "your"));
+
+                
             }
-            for (int i = 0; i < Program.liOfRequests.Count; i+=4)
+            for (int i = 0; i < Program.liOfRequests.Count; i+=6)
             {
-                flowLayoutPanel1.Controls.Add(new RequestBox(Program.CurrentUserUsername+" (You) ", "Alien"));
+                flowLayoutPanel1.Controls.Add(new RequestBox(Program.liOfRequests[i + 1].ToString(), Program.CurrentUserUsername+" (You) ", Program.liOfRequests[i + 3].ToString(), Program.liOfRequests[i+4].ToString()));
             }
             
         }

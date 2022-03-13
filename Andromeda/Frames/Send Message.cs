@@ -12,8 +12,10 @@ namespace Andromeda
 {
     public partial class Send_Message : Form
     {
-        public Send_Message()
+        public int received = 0;
+        public Send_Message(int receiver)// get id of the user we are going to send a message to 
         {
+            received = receiver;
             InitializeComponent();
         }
 
@@ -24,10 +26,16 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Message Sent Succefully");
-            this.Hide();
-            Inbox Dms = new Inbox();
-            Dms.Show();
+            
+            Message.SendMsg(received,textBox1.Text);  // param current user id , the one we gonna send it to and the content of the msg  
+            this.Dispose();
+            SearchPage searchPage = new SearchPage();
+            searchPage.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,9 +12,12 @@ namespace Andromeda
 {
     public partial class MessageBoxItem : UserControl
     {
-        public MessageBoxItem()
+        public MessageBoxItem(string sender , string content , string date )
         {
             InitializeComponent();
+            label3.Text = content;
+            label2.Text = date;
+            label1.Text = sender;
         }
 
         private void MessageBox_Load(object sender, EventArgs e)

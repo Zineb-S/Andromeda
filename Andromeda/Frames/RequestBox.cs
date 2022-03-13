@@ -12,9 +12,10 @@ namespace Andromeda
 {
     public partial class RequestBox : UserControl
     {
-        
-        public RequestBox(string Sender , string Receiver )
+        public int send = 0;
+        public RequestBox(string SenderID,string Sender ,string ReceiverID, string Receiver )
         {
+            send = Convert.ToInt32( SenderID );
             InitializeComponent();
             
             if ( Receiver == "your" )
@@ -36,9 +37,9 @@ namespace Andromeda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Request.AcceptRequest();
+            Request.AcceptRequest(send);
         }
-
+         
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -51,7 +52,7 @@ namespace Andromeda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Request.RejectRequest();        
+            Request.RejectRequest(send);        
         }
     }
 }

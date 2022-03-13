@@ -49,6 +49,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(771, 476);
             this.flowLayoutPanel1.TabIndex = 10;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // Inbox
             // 
@@ -60,6 +61,7 @@
             this.Name = "Inbox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inbox";
+            this.Load += new System.EventHandler(this.Inbox_Load);
             this.ResumeLayout(false);
 
         }

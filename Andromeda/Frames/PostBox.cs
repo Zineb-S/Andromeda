@@ -186,7 +186,7 @@ namespace Andromeda
                 button2.BackColor = Color.White;
             }
 
-            
+          
      
 
         }
@@ -220,9 +220,9 @@ namespace Andromeda
             {
                 button1.BackColor = Color.White;
             }
-            
-         
 
+
+            
 
         }
     }

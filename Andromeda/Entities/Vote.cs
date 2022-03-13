@@ -140,11 +140,13 @@ namespace Andromeda.Entities
                 {
 
                     case "Like":
-                        MySqlCommand command = new MySqlCommand("UPDATE  votes SET Vote_Like=1,Vote_Dislike=0  WHERE Post_ID = " + PostID + " and User_ID= " + Program.CurrentUserID + "", db.getConnection());
-               
+
+                        MySqlCommand command = new MySqlCommand("UPDATE  votes SET Vote_Like=1 , Vote_Dislike=0  WHERE Post_ID = " + PostID + " and User_ID= " + Program.CurrentUserID + "", db.getConnection());
+                        Console.WriteLine("WE ARE HEREEEEE");
                         db.openConnection();
                         command.ExecuteNonQuery();
                         db.closeConnection();
+
                         break;
 
                     case "Dislike":

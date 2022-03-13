@@ -49,9 +49,11 @@ namespace Andromeda
         //REQUESTS
         public static ArrayList liOfRequests = new ArrayList();
         public static ArrayList liOfReceivedRequests = new ArrayList();
-        
-       
-        
+
+        //MESSAGES 
+        public static ArrayList liOfMessages = new ArrayList();
+
+
 
         //CURRENT USER INFO
 

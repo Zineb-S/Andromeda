@@ -30,18 +30,18 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.label3 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(569, 23);
+            this.label2.Location = new System.Drawing.Point(411, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 22);
             this.label2.TabIndex = 5;
@@ -58,26 +58,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Username";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(283, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 22);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Message Content";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(30, 65);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(739, 163);
-            this.panel1.TabIndex = 3;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -92,27 +72,51 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(457, 23);
+            this.label5.Location = new System.Drawing.Point(335, 27);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 22);
             this.label5.TabIndex = 7;
             this.label5.Text = "AT :";
             // 
-            // MessageBox
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(40, 30);
+            this.label3.Margin = new System.Windows.Forms.Padding(40, 30, 40, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 22);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Message Content";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Controls.Add(this.label3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(26, 70);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(622, 171);
+            this.flowLayoutPanel1.TabIndex = 8;
+            // 
+            // MessageBoxItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
-            this.Name = "MessageBox";
-            this.Size = new System.Drawing.Size(800, 259);
+            this.Name = "MessageBoxItem";
+            this.Size = new System.Drawing.Size(674, 274);
             this.Load += new System.EventHandler(this.MessageBox_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,9 +126,9 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
