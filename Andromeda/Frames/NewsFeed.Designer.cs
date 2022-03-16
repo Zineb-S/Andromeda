@@ -35,7 +35,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(30, 588);
+            this.button2.Location = new System.Drawing.Point(28, 608);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 55);
@@ -46,10 +46,11 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(55, 36);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 36);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(689, 527);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 551);
             this.flowLayoutPanel1.TabIndex = 4;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // NewsFeed
             // 

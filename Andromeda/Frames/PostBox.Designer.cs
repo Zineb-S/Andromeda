@@ -43,6 +43,7 @@
             this.ContentLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,11 +213,22 @@
             this.label9.Text = "label9";
             this.label9.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(328, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 22);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Title";
+            // 
             // PostBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -257,5 +269,6 @@
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.Label TitleLabel;
         public System.Windows.Forms.Label ContentLabel;
+        public System.Windows.Forms.Label label3;
     }
 }

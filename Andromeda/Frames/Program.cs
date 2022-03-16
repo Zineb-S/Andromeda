@@ -14,6 +14,7 @@ namespace Andromeda
         public static ArrayList here = new ArrayList();
         public static int thatid = 0;
         public static int thatProfileid = 0;
+        public static string OP;
         //USERS
         public static ArrayList liOfUsers = new ArrayList();
 

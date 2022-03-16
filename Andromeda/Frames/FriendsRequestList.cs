@@ -14,6 +14,8 @@ namespace Andromeda
     {
         public FriendsRequestList()
         {
+            Program.liOfRequests.Clear();
+            Program.liOfReceivedRequests.Clear();
             InitializeComponent();
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.WrapContents = false;

@@ -19,9 +19,12 @@ namespace Andromeda
         public PostBox(int PostID, string Title, string Date, string Content, string upVotes, string Downvotes , int L,int DL)
         {
             InitializeComponent();
+            label3.Visible = false;
+            if (Program.PreviousPage.Equals("Search") || Program.PreviousPage.Equals("NewsFeed"))
 
-            if (Program.PreviousPage.Equals("Search"))
-            { 
+            {
+                label3.Visible = true;
+                label3.Text = Program.OP;
                 button5.Visible = false;
                 button4.Visible = false;
             }
@@ -119,7 +122,7 @@ namespace Andromeda
 
         private void PostBox_Load(object sender, EventArgs e)
         {
-
+             
         }
 
         private void label10_Click(object sender, EventArgs e)
