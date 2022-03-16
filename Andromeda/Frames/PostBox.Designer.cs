@@ -222,6 +222,7 @@
             this.label3.Size = new System.Drawing.Size(42, 22);
             this.label3.TabIndex = 25;
             this.label3.Text = "Title";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // PostBox
             // 
