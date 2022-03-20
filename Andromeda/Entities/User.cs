@@ -421,7 +421,25 @@ namespace Andromeda
             
         }
 
-       
-        
+        public static void LogIn()
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("UPDATE users SET User_Status_Users=1 WHERE User_ID = '"+Program.CurrentUserID+"'", db.getConnection());
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+
+        }
+    public static void LogOut()
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("UPDATE users SET User_Status_Users=0  WHERE User_ID = '" + Program.CurrentUserID + "'", db.getConnection());
+            db.openConnection();
+            command.ExecuteNonQuery();
+            db.closeConnection();
+
+        }
+
+
     }
 }

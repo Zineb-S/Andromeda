@@ -83,6 +83,7 @@ namespace Andromeda
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
+            User.LogOut();
             Welcome logout = new Welcome();
             logout.Show();
         }

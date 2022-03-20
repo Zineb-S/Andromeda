@@ -16,6 +16,7 @@ namespace Andromeda
         public MainMenu()
 
         {
+            User.LogIn();
 
             Program.liOfProfilePosts.Clear();
             Program.liOfUserPages.Clear();
@@ -66,6 +67,7 @@ namespace Andromeda
 
         private void button9_Click(object sender, EventArgs e)
         {
+            User.LogOut();
             this.Hide();
             Welcome logout = new Welcome();
             logout.Show();

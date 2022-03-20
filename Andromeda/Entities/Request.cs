@@ -57,9 +57,9 @@ namespace Andromeda
         {
             bool found = false;
             ImportRequests(Program.liOfRequests, Program.liOfReceivedRequests);
-            for (int i = 0; i < Program.liOfRequests.Count; i += 4)
+            for (int i = 0; i < Program.liOfRequests.Count; i += 6)
             {
-                if (Program.liOfRequests[i + 1].ToString() == SenderID && Program.liOfRequests[i + 2].ToString() == ReceiverID)
+                if (Program.liOfRequests[i + 1].ToString() == SenderID && Program.liOfRequests[i + 3].ToString() == ReceiverID)
                 {
                     MessageBox.Show("You have already sent a friend request to this Alien ");
                     found = true;

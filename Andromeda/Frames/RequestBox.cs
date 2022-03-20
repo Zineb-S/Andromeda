@@ -40,7 +40,10 @@ namespace Andromeda
         private void button1_Click(object sender, EventArgs e)
         {
             Request.AcceptRequest(send);
-            Request.SendRequest( send.ToString() , recv.ToString() );
+            FriendsRequestList.ActiveForm.Dispose();
+            FriendsRequestList friendsRequestList = new FriendsRequestList();
+            friendsRequestList.Show();
+
         }
          
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -55,7 +58,10 @@ namespace Andromeda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Request.RejectRequest(send);        
+            Request.RejectRequest(send);
+            FriendsRequestList.ActiveForm.Dispose();
+            FriendsRequestList friendsRequestList = new FriendsRequestList();
+            friendsRequestList.Show();
         }
     }
 }
