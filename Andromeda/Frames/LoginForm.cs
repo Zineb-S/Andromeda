@@ -18,6 +18,7 @@ namespace Andromeda
 
         public LoginForm()
         {
+            
             InitializeComponent();
             
         }
